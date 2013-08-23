@@ -1,0 +1,123 @@
+{
+	"odata.metadata": "https://127.0.0.1:8079/sbo/Queries/$metadata#EntitiesNameSpace.EntitisContainer/Queries@Element",
+	"value": [
+		{
+			"id": 1,
+			"name": "Opportunity",
+			"properties": [
+				{
+					"id": 1,
+					"hidden": false,
+					"boName": "SalesOpportunity",
+					"boNamespace": "com.sap.sbo",
+					"boLabel": "Opportunity",
+					"name": "stageDescription",
+					"label": "SalesOpportunity.stageDescription",
+					"displayLabel": "SalesOpportunity.stageDescription",
+					"sortType": "none",
+					"aggregationType": "none",
+					"dateFormatType": "date",
+					"filters": []
+				}, {
+					"id": 2,
+					"hidden": false,
+					"boName": "SalesOpportunity",
+					"boNamespace": "com.sap.sbo",
+					"boLabel": "Opportunity",
+					"name": "sequentialNo",
+					"label": "Number",
+					"displayLabel": "Number",
+					"sortType": "none",
+					"aggregationType": "count",
+					"dateFormatType": "date",
+					"filters": []
+				}, {
+					"id": 3,
+					"hidden": false,
+					"boName": "SalesOpportunity",
+					"boNamespace": "com.sap.sbo",
+					"boLabel": "Opportunity",
+					"name": "maxLocalTotal",
+					"label": "Potential Amount",
+					"displayLabel": "Potential Amount",
+					"sortType": "none",
+					"aggregationType": "sum",
+					"dateFormatType": "date",
+					"filters": []
+				}, {
+					"id": 4,
+					"hidden": false,
+					"boName": "SalesOpportunity",
+					"boNamespace": "com.sap.sbo",
+					"boLabel": "Opportunity",
+					"name": "weightedSumLC",
+					"label": "Weighted Amount",
+					"displayLabel": "Weighted Amount",
+					"sortType": "none",
+					"aggregationType": "sum",
+					"dateFormatType": "date",
+					"filters": []
+				}
+			]
+		}, {
+			"id": 2,
+			"name": "Purchase",
+			"properties": [
+				{
+					"id": 5,
+					"hidden": false,
+					"boName": "Order",
+					"boNamespace": "com.sap.sbo",
+					"boLabel": "Order",
+					"name": "cardName",
+					"label": "Customer Name",
+					"displayLabel": "Customer Name",
+					"sortType": "asc",
+					"aggregationType": "none",
+					"dateFormatType": "date",
+					"filters": []
+				}, {
+					"id": 6,
+					"hidden": false,
+					"boName": "Order",
+					"boNamespace": "com.sap.sbo",
+					"boLabel": "Order",
+					"name": "docDate",
+					"label": "Order Date",
+					"displayLabel": "Order Year",
+					"sortType": "asc",
+					"aggregationType": "none",
+					"dateFormatType": "year",
+					"filters": []
+				}, {
+					"id": 7,
+					"hidden": false,
+					"boName": "Order",
+					"boNamespace": "com.sap.sbo",
+					"boLabel": "Order",
+					"name": "docDate",
+					"label": "Order Date",
+					"displayLabel": "Order Month",
+					"sortType": "asc",
+					"aggregationType": "none",
+					"dateFormatType": "month",
+					"filters": []
+				}, {
+					"id": 8,
+					"hidden": false,
+					"boName": "Order",
+					"boNamespace": "com.sap.sbo",
+					"boLabel": "Order",
+					"name": "docTotal",
+					"label": "Total",
+					"displayLabel": "Total",
+					"sortType": "none",
+					"aggregationType": "sum",
+					"dateFormatType": "date",
+					"filters": []
+				}
+			]
+		}
+	],
+	"odata.count": 2
+}

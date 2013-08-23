@@ -1,0 +1,202 @@
+{
+	"odata.metadata": {
+		"type": "EntitisModel.CollectionView"
+	},
+	"objectType": "collection",
+	"totalItems": 1,
+	"hotCount": 3,
+	"items": {
+		"value": [{
+			"odata.metadata": {
+				"type": "EntitisModel.ObjectItemView"
+			},
+			"item": {
+				"odata.metadata": {
+					"type": "EntitisModel.ObjectView"
+				},
+				"objectType": null,
+				"id": "1278",
+				"verb": "post",
+				"url": null,
+				"read": false,
+				"hot": false,
+				"likeno": 0,
+				"unlikeno": 0,
+				"content": null,
+				"objectDisplayType": null,
+				"object": {
+					"odata.metadata": {
+						"type": "EntitisModel.ObjectView"
+					},
+					"objectType": "note",
+					"id": null,
+					"verb": null,
+					"url": null,
+					"read": null,
+					"hot": null,
+					"likeno": null,
+					"unlikeno": null,
+					"content": "${2}在联系人 ${0}中添加了一项新${1}",
+					"objectDisplayType": "note",
+					"userCode": null,
+					"displayName": null,
+					"published": null,
+					"im": null,
+					"portrait": null,
+					"liked": null,
+					"delFlag": null,
+					"needAt": null,
+					"embed": {
+						"odata.metadata": {
+							"type": "EntitisModel.CollectionView"
+						},
+						"objectType": "collection",
+						"totalItems": 3,
+						"hotCount": 0,
+						"items": {
+							"value": [{
+								"odata.metadata": {
+									"type": "EntitisModel.ObjectItemView"
+								},
+								"item": {
+									"odata.metadata": {
+										"type": "EntitisModel.ObjectView"
+									},
+									"objectType": "11",
+									"id": "12",
+									"verb": null,
+									"url": null,
+									"read": null,
+									"hot": null,
+									"likeno": null,
+									"unlikeno": null,
+									"content": null,
+									"objectDisplayType": "联系人",
+									"userCode": null,
+									"displayName": "xu",
+									"published": null,
+									"im": 0,
+									"portrait": null,
+									"liked": null,
+									"delFlag": false,
+									"needAt": false
+								}
+							}, {
+								"odata.metadata": {
+									"type": "EntitisModel.ObjectItemView"
+								},
+								"item": {
+									"odata.metadata": {
+										"type": "EntitisModel.ObjectView"
+									},
+									"objectType": "J0004",
+									"id": "35",
+									"verb": null,
+									"url": null,
+									"read": null,
+									"hot": null,
+									"likeno": null,
+									"unlikeno": null,
+									"content": null,
+									"objectDisplayType": "任务",
+									"userCode": null,
+									"displayName": "任务",
+									"published": null,
+									"im": 1,
+									"portrait": null,
+									"liked": null,
+									"delFlag": false,
+									"needAt": false
+								}
+							}, {
+								"odata.metadata": {
+									"type": "EntitisModel.ObjectItemView"
+								},
+								"item": {
+									"odata.metadata": {
+										"type": "EntitisModel.ObjectView"
+									},
+									"objectType": "person",
+									"id": "9",
+									"verb": null,
+									"url": null,
+									"read": null,
+									"hot": null,
+									"likeno": null,
+									"unlikeno": null,
+									"content": null,
+									"objectDisplayType": "note",
+									"userCode": null,
+									"displayName": "王 老板",
+									"published": null,
+									"im": 2,
+									"portrait": null,
+									"liked": null,
+									"delFlag": false,
+									"needAt": false
+								}
+							}]
+						}
+					},
+					"attached": {
+						"odata.metadata": {
+							"type": "EntitisModel.CollectionView"
+						},
+						"objectType": "collection",
+						"totalItems": 0,
+						"hotCount": 0,
+						"items": {
+							"value": [
+
+							]
+						}
+					}
+				},
+				"actor": {
+					"odata.metadata": {
+						"type": "EntitisModel.ObjectView"
+					},
+					"objectType": "person",
+					"id": "9",
+					"verb": null,
+					"url": null,
+					"read": null,
+					"hot": null,
+					"likeno": null,
+					"unlikeno": null,
+					"content": null,
+					"objectDisplayType": null,
+					"userCode": "laoban",
+					"displayName": "王 老板",
+					"published": null,
+					"im": null,
+					"portrait": -1,
+					"liked": null,
+					"delFlag": false,
+					"needAt": null
+				},
+				"userCode": null,
+				"displayName": null,
+				"published": "2013-08-23T07:22:39.000Z",
+				"im": null,
+				"portrait": null,
+				"liked": null,
+				"delFlag": null,
+				"needAt": null,
+				"comments": {
+					"odata.metadata": {
+						"type": "EntitisModel.CollectionView"
+					},
+					"objectType": "collection",
+					"totalItems": 0,
+					"hotCount": 0,
+					"items": {
+						"value": [
+
+						]
+					}
+				}
+			}
+		}]
+	}
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>new_file</title>
+		<meta name="description" content="">
+		<meta name="author" content="C5193511">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>new_file</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Home</a>
+				</p>
+				<p>
+					<a href="/contact">Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by C5193511
+				</p>
+			</footer>
+		</div>
+	</body>
+	<script src="../../lib/js/require.js" async  defer data-main="test"></script>
+	<script>
+		function createNS(oNS, NamespaceStr, obj) {
+			var firstNSs, subNamespaces = NamespaceStr.split('.'), base = oNS, i, ilen, target = subNamespaces.slice(-1)[0];
+			if (subNamespaces.length > 0 && subNamespaces[0].indexOf('!') > -1) {
+				firstNSs = subNamespaces[0].split('!');
+				subNamespaces.splice(0, 0, firstNSs[0]);
+				subNamespaces[1] = firstNSs[1];
+			}
+			for ( i = 0, ilen = subNamespaces.length; i < ilen; ++i) {
+				if (i !== 0) {
+					base = base[subNamespaces[i - 1]];
+				}
+				if (!base[subNamespaces[i]]) {
+					base[subNamespaces[i]] = {};
+				}
+			}
+			if (arguments.length > 1) {
+				base[target] = obj;
+			}
+		}
+		
+		/**
+		 * 这种模式可以把a.b.c.d转换为嵌套对象.也就是命名空间那种.
+		 */
+		function createNS2(oNS, NamespaceStr, obj) {
+			var subNamespaces = NamespaceStr.split('.'), base = oNS, i, ilen;
+			for ( i = 0, ilen = subNamespaces.length; i < ilen; ++i) {
+				if (i !== 0) {
+					var temp=subNamespaces[i - 1];					
+					var tempO=base[temp];
+					base = tempO;
+					console.log(base===oNS);
+				}
+				if (!base[subNamespaces[i]]) {
+					var item=subNamespaces[i];
+					base[item] = {};
+				}
+			}
+		}
+
+
+		createNS({}, "json!sap.ufo.qhm.dt.shr", {});
+
+	</script>
+
+</html>
