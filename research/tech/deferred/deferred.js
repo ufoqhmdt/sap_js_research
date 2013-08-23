@@ -7,7 +7,7 @@ function log(l) {
 }
 
 require.config({
-	baseUrl: '../../lib/js/vendor',
+	baseUrl: '../../../lib/js/vendor',
 	shim: {
 		underscore: {
 			exports: '_'
@@ -103,7 +103,7 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 	});
 
 
-	log("----->>>>>>>")
+	log("========================")
 	log($.when(dtd))
 	log($.when())
 	var dtd3 = $.Deferred();
