@@ -35,9 +35,23 @@ function start2(route, handle) {
 		});
 	}
 
+
+	http.createServer(onRequest).listen(8888);
+	console.log("Server has started.");
+}
+
+function start4Img(route, handle) {
+	function onRequest(request, response) {
+		var pathname = url.parse(request.url).pathname;
+		console.log("Request for " + pathname + " received.");
+		route(handle, pathname, response, request);
+	}
+
+
 	http.createServer(onRequest).listen(8888);
 	console.log("Server has started.");
 }
 
 exports.start = start;
 exports.start2 = start2;
+exports.start4Img = start4Img;
