@@ -1,0 +1,13 @@
+{ fields: { title: 'dddddd' },
+  files: 
+   { upload: 
+      { domain: null,
+        _events: null,
+        _maxListeners: 10,
+        size: 333590,
+        path: 'C:\\Users\\c5193511\\AppData\\Local\\Temp\\41c17f228b8f51103f892d2ba60a2297',
+        name: 'Untitled.png',
+        type: 'image/png',
+        hash: null,
+        lastModifiedDate: Fri Aug 30 2013 14:52:13 GMT+0800 (China Standard Time),
+        _writeStream: [Object] } } }
