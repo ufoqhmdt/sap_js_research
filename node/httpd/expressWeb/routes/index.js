@@ -78,3 +78,12 @@ exports.list = function(req, res) {
 		items : [1991, "a", "b", "c"]
 	});
 }; 
+
+module.exports=function(app){
+	app.get("/micro",function(req,res){
+		res.render("microblog/index",{title:"UFO"});
+	});
+	app.get("/micro/reg",function(req,res){
+		res.render("microblog/reg",{title:"UFO"});
+	});
+}

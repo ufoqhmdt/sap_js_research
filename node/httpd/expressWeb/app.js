@@ -21,7 +21,8 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.cookieParser());
 app.use(express.methodOverride());
-app.use(app.router);
+// app.use(app.router);
+app.use(express.router(routes));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.session({
 	secret : settings.cookieSecret,
