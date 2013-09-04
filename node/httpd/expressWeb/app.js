@@ -26,8 +26,10 @@ if ('development' == app.get('env')) {
 	app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+app.get(/^\/sap\/(\w+)(?:\.\.(\w+)\.\.(\w+)\.\.(\w+)\.\.(\w+))$/, routes.index);
+app.get(/^\/ufo\/(\w+)(?:\.\.(\w+)\.\.(\w+))?$/, routes.index);
 app.get('/users', user.list);
+app.get('/list', routes.list);
 
 http.createServer(app).listen(app.get('port'),"0.0.0.0", function() {
 	console.log('Express server listening on port ' + app.get('port'));

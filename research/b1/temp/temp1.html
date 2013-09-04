@@ -1,17 +1,81 @@
-<div class="well">
-	<h4>Address</h4>
-	<address>
-		<strong>Loop, Inc.</strong>
-		<br>
-		795 Park Ave, Suite 120
-		<br>
-		San Francisco, CA 94107
-		<br>
-		<abbr title="Phone">P:</abbr> (234) 145-1810
-	</address>
-	<address>
-		<strong>Email</strong>
-		<br>
-		<a href="mailto:#">first.last@email.com</a>
-	</address>
+<div id="control.input" data-sap-ui="control.input" style="width:100%;height:" class="sapMNavItem sapUiJSView sapUiView">
+	<div id="__page20" data-sap-ui="__page20" class="sapMPage sapMPageBgStandard sapMPageWithHeader sapUiStdPage">
+		<header id="__page20-intHeader" data-sap-ui="__page20-intHeader" class="sapMBar sapMBar-CTX sapMHeader-CTX sapMPageHeader">
+			<div id="__page20-intHeader-BarLeft" class="sapMBarLeft" style="width: auto;"></div>
+			<div id="__page20-intHeader-BarMiddle" class="sapMBarMiddle">
+				<div id="__page20-intHeader-BarPH" class="sapMBarPH" style="position: static; width: auto; visibility: inherit;">
+					<label id="__page20-title" data-sap-ui="__page20-title" dir="Inherit" style="text-align:left" class="sapMLabel">Input</label>
+				</div>
+			</div>
+			<div id="__page20-intHeader-BarRight" class="sapMBarRight" style="width: auto;">
+				<button type="button" id="__button47" data-sap-ui="__button47" class="sapMBtn sapMBtnDefault sapMBtnIcon">
+					<div class="sapMBtnContent">
+						<span id="__button47-img" data-sap-ui="__button47-img" data-sap-ui-icon-content="" style="font-family:'SAP-icons'" class="sapMBtnCustomIcon sapUiIcon sapUiIconMirrorInRTL"></span><span></span>
+					</div>
+				</button>
+			</div>
+		</header>
+		<section id="__page20-cont" style="overflow-x: hidden; overflow-y: auto;">
+			<div id="__page20-scroll" class="sapMPageScroll sapMPageScrollEnabled">
+				<div id="__vbox11" data-sap-ui="__vbox11" class="sapMFlexBox sapMVBox" style="width:;height:;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column">
+					<div class="sapMFlexItem">
+						<label id="__label5" data-sap-ui="__label5" dir="Inherit" style="text-align:left" class="sapMLabel">Name</label>
+					</div>
+					<div class="sapMFlexItem">
+						<div id="input1" data-sap-ui="input1" style="width:100%" class="sapMInput sapMInputBase sapMInputBaseCursor">
+							<input id="input1-inner" placeholder="Enter Name ..." tabindex="0" value="" type="text" class="sapMInputBaseInner">
+						</div>
+					</div>
+					<div class="sapMFlexItem">
+						<label id="__label6" data-sap-ui="__label6" dir="Inherit" style="text-align:left" class="sapMLabel">Email</label>
+					</div>
+					<div class="sapMFlexItem">
+						<div id="input2" data-sap-ui="input2" style="width:100%" class="sapMInput sapMInputBase sapMInputBaseCursor">
+							<input id="input2-inner" placeholder="Enter EMail ..." tabindex="0" value="" type="email" class="sapMInputBaseInner">
+						</div>
+					</div>
+					<div class="sapMFlexItem">
+						<label id="__label7" data-sap-ui="__label7" dir="Inherit" style="text-align:left" class="sapMLabel">Password</label>
+					</div>
+					<div class="sapMFlexItem">
+						<div id="input3" data-sap-ui="input3" style="width:100%" class="sapMInput sapMInputBase sapMInputBaseCursor">
+							<input id="input3-inner" placeholder="Enter Password ..." tabindex="0" value="" type="password" class="sapMInputBaseInner">
+						</div>
+					</div>
+					<div class="sapMFlexItem">
+						<label id="__label8" data-sap-ui="__label8" dir="Inherit" style="text-align:left" class="sapMLabel">Phone</label>
+					</div>
+					<div class="sapMFlexItem">
+						<div id="input4" data-sap-ui="input4" style="width:100%" class="sapMInput sapMInputBase sapMInputBaseCursor">
+							<input id="input4-inner" placeholder="Enter Telefon ..." tabindex="0" value="" type="tel" class="sapMInputBaseInner">
+						</div>
+					</div>
+					<div class="sapMFlexItem">
+						<label id="__label9" data-sap-ui="__label9" dir="Inherit" style="text-align:left" class="sapMLabel">Amount</label>
+					</div>
+					<div class="sapMFlexItem">
+						<div id="input5" data-sap-ui="input5" style="width:100%" class="sapMInput sapMInputBase sapMInputBaseCursor">
+							<input id="input5-inner" placeholder="Enter Amount ..." tabindex="0" value="" type="number" class="sapMInputBaseInner">
+						</div>
+					</div>
+					<div class="sapMFlexItem">
+						<label id="__label10" data-sap-ui="__label10" dir="Inherit" style="text-align:left" class="sapMLabel">Web Address</label>
+					</div>
+					<div class="sapMFlexItem">
+						<div id="input6" data-sap-ui="input6" style="width:100%" class="sapMInput sapMInputBase sapMInputBaseCursor">
+							<input id="input6-inner" placeholder="Enter Web Address ..." tabindex="0" value="" type="url" class="sapMInputBaseInner">
+						</div>
+					</div>
+					<div class="sapMFlexItem">
+						<label id="__label11" data-sap-ui="__label11" dir="Inherit" style="text-align:left" class="sapMLabel">Wrong input</label>
+					</div>
+					<div class="sapMFlexItem">
+						<div id="input7" data-sap-ui="input7" style="width:100%" class="sapMInput sapMInputBase sapMInputBaseCursor sapMInputBaseError" title="Invalid entry">
+							<input id="input7-inner" tabindex="0" value="" type="text" class="sapMInputBaseErrorInner sapMInputBaseInner">
+						</div>
+					</div>
+				</div><span id="__text23" data-sap-ui="__text23" dir="Inherit" class="description sapMText" style="text-align:left">Based on HTML5 standard mechanisms the Input control offers native input helps provided by the browser</span>
+			</div>
+		</section>
+	</div>
 </div>

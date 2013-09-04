@@ -3791,6 +3791,43 @@
 
 
 
+			.ufo-wrapperProduct2 {
+				position: absolute;
+				z-index: 1;
+				top: 45px;
+				bottom: 48px;
+				left: 2830px;
+				width: 1200px;
+				background: #FFF;
+				overflow: auto;
+				border: 1px solid;
+			}
+
+			.ufo-scrollerProduct2 {
+				position: absolute;
+				z-index: 1;
+				/*	-webkit-touch-callout:none;*/
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+				width: 1200px;
+				padding: 0;
+			}
+
+			.ufo-scrollerProduct2 ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				text-align: left;
+			}
+
+			.ufo-scrollerProduct2 li {
+				padding: 0 10px;
+				font-size: 14px;
+			}
+
+
+
+
 
 			.sap_product_head{
 				margin-right: 60px;
@@ -4054,6 +4091,7 @@
 			var myScrollOut;
 			var myScrollDetail;
 			var myScrollProduct;
+			var myScrollProduct2;
 			var myScrollContact;
 			var myScrollBusiness;
 			function loaded() {
@@ -4069,6 +4107,7 @@
 				 });
 				myScrollDetail = new iScroll('wrapperDetail');
 				myScrollProduct = new iScroll('wrapperProduct');
+				myScrollProduct2 = new iScroll('wrapperProduct2');
 				myScrollContact = new iScroll('wrapperContact');
 				myScrollBusiness = new iScroll('wrapperBusiness');
 			}
@@ -4133,6 +4172,18 @@
 	          <td>100<span>RMB</span><%=product.Tax%></td>
 	          <td>60%<%=product.Discount%></td>
 	          <td>100000<span>RMB</span><%=product.Total%></td>
+	        </tr>
+		<% } %>
+
+
+		<% function product2(product2) { %>
+			<tr>
+	          <td>Item XYZ<div>iPad_HK_White</div><%=product2.Code%></td>
+	          <td>10<div>Bottles</div><%=product2.Quantity%></td>
+	          <td>100<span>RMB</span><%=product2.Unit %></td>
+	          <td>100<span>RMB</span><%=product2.Tax%></td>
+	          <td>60%<%=product2.Discount%></td>
+	          <td>100000<span>RMB</span><%=product2.Total%></td>
 	        </tr>
 		<% } %>
 
@@ -4375,6 +4426,8 @@
 							</div>
 						</div>
 					</li>
+
+
 					<li class="ufo-scrollerOut-li">
 						<div id="wrapperBusiness" class="ufo-wrapperBusiness">
 							<div id="scrollerBusiness" class="ufo-scrollerBusiness">
@@ -4385,10 +4438,71 @@
 								</ul>
 							</div>
 						</div>
-					</div>
-
 					</li>
-					<li class="ufo-scrollerOut-li"></li>
+
+
+					<li class="ufo-scrollerOut-li">
+							<div id="wrapperProduct2" class="ufo-wrapperProduct2">
+							<div id="scrollerProduct2" class="ufo-scrollerProduct2">
+								<ul  class="ufo_scroller_ul">
+									<li>
+										<div data-sap-template="Content" class="feed_item sap-sbo-time-line-layout-item" index="26" data-sap-domid="684" data-sap-model="" style=" width: 1150px;">
+											<div data-sap-widget="sap.ui.View" data-sap-option="name: 'sap.sbo.page.pad.network.Feed', data: {{item}}" data-sap-domid="685" style="opacity: 1;">
+												<div class="feed-container thing-quote-listmode" data-sap-template="ViewContent" data-sap-domid="712" data-sap-model="">
+													<div class="author">
+														<div class="portrait" data-sap-domid="713">
+															<div><img src="/images/feed/computer.png">
+															</div>
+														</div>
+													</div>
+													<div class="main_content">
+														<div class="name" data-sap-domid="714"></div>
+														<div class="hot" data-sap-domid="715"><img class="status-icon" src="/images/feed/goldenstar32.png" alt="" data-sap-domid="719">
+														</div>
+														<div class="hideTarget" data-sap-domid="716">
+															<span data-sap-domid="720"></span>
+															<a href="javascript:void(0);" data-sap-widget="sap.sbo.ui.widget.BoLink" data-sap-option="keepHTMLText:true, boEntity: {{targetEntity}}" data-sap-domid="721"  class="sap-sbo-ui-widget-bo-link"></a>
+														</div>
+														<div class="content" data-sap-domid="717">
+															<a href="javascript:void(0)" data-sap-widget="sap.sbo.ui.widget.BoLink" data-sap-option="text: 'test test', boEntity: {{object/boEntity0}}" id="guilin_GUID_218" class="sap-sbo-ui-widget-bo-link" data-sap-domid="722">Before Discount</a>1000000<label>RMB</label>
+															<span class="sap_product2_head"><label class="sap_product2_head_title">TAX</label><label class="sap_product2_head_amount">100</label><label class="sap_product2_head_unit">RMB</label></span>
+															<span class="sap_product2_head"><label class="sap_product2_head_title">TAX</label><label class="sap_product2_head_amount">100</label><label class="sap_product2_head_unit">RMB</label></span>
+															<span class="sap_product2_head"><label class="sap_product2_head_title">TAX</label><label class="sap_product2_head_amount">100</label><label class="sap_product2_head_unit">RMB</label></span>
+														</div>
+														<div data-sbo-class="repeat" id="Div1" data-sap-widget="sap.ui.Repeat" data-sap-option="data: {{object/attached/items/value,two-way}}" data-sap-domid="718">
+															<div>
+																<img src="/images/approval/add_field.png">
+															</div>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div id="sap_product2_table">
+								            <table class="table">
+								              <thead>
+								                <tr>
+								                  <th>Code/Description</th>
+								                  <th>Quantity/UoM</th>
+								                  <th>Unit Price</th>
+								                  <th>Tax</th>
+								                  <th>Discount</th>
+								                  <th>Total</th>
+								                </tr>
+								              </thead>
+								              <tbody>
+								              	<% product2s.map(product2)%>
+								              </tbody>
+								            </table>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>	
+					</li>
 					<li class="ufo-scrollerOut-li"></li>
 					<li class="ufo-scrollerOut-li"></li>
 					<li class="ufo-scrollerOut-li"></li>
