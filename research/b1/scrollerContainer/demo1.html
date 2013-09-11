@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery UI Position - Image Cycler</title>
+		<script src="jquery-1.9.1.js"></script>
+		<script src="jquery-ui-1.10.3.custom.js"></script>
+		<script src="iscroll.js"></script>
+		<link rel="stylesheet" href="/resources/demos/style.css" />
+		<style>
+			body {
+				margin: 0;
+			}
+			#container {
+				overflow: hidden;
+				position: relative;
+				height: 400px;
+			}
+
+			img {
+				position: absolute;
+			}
+		</style>
+		<script>
+			$(function() {
+				// TODO refactor into a widget and get rid of these plugin methods
+				$.fn.left = function(using) {
+					return this.position({
+						my : "right middle",
+						at : "left+200 middle",
+						of : "#container",
+						collision : "none",
+						using : using
+					});
+				};
+				$.fn.right = function(using) {
+					return this.position({
+						my : "left middle",
+						at : "right-25 middle",
+						of : "#container",
+						collision : "none",
+						using : using
+					});
+				};
+				$.fn.center = function(using) {
+					return this.position({
+						my : "center middle",
+						at : "center middle",
+						of : "#container",
+						using : using
+					});
+				};
+
+				$("img:eq(0)").left();
+				$("img:eq(1)").center();
+				$("img:eq(2)").right();
+
+				function animate(to) {
+					console.log(to);
+					$(this).stop(true, false).animate(to);
+				}
+
+				function next(event) {
+					event.preventDefault();
+					$("img:eq(2)").center(animate);
+					$("img:eq(1)").left(animate);
+					$("img:eq(0)").right().appendTo("#container");
+				}
+
+				function previous(event) {
+					event.preventDefault();
+					$("img:eq(0)").center(animate);
+					$("img:eq(1)").right(animate);
+					$("img:eq(2)").left().prependTo("#container");
+				}
+
+
+				$("#previous").click(previous);
+				$("#next").click(next);
+
+				$("img").click(function(event) {
+					console.log($("img").index(this));
+					console.log(this);
+					$("img").index(this) === 0 ? previous(event) : next(event);
+				});
+
+				$(window).resize(function() {
+					$("img:eq(0)").left(animate);
+					$("img:eq(1)").center(animate);
+					$("img:eq(2)").right(animate);
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+		<div id="container">
+			<a id="previous" href="#">Previous</a>
+			<a id="next" href="#">Next</a>
+
+			<img src="images/earth.jpg" width="200" height="200" alt="earth" />
+			<img src="images/flight.jpg" width="200" height="200" alt="flight" />
+			<img src="images/rocket.jpg" width="200" height="200" alt="rocket" />
+
+		</div>
+
+	</body>
+</html>

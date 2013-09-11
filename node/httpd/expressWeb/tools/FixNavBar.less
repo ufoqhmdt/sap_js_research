@@ -1,0 +1,114 @@
+@contentWidth: 438px;
+@itemHeight: 70px;
+@itemPadding: 5px 10px;
+@itemMarginRight: 0px;
+@contentMaxHeight: 480px;
+
+div[data-sap-widget="sap.sbo.ui.widget.FixNavBar"] {
+  .bs-docs-nav{
+    .navbar-nav{
+       >.active{
+         >a{
+          color: #fff;
+          background-color: #463265;
+          &:hover{
+            color: #fff;
+            background-color: #463265;
+          }
+         }
+       }
+    }   
+  }
+  
+  
+  .mixin (dark, @color) {
+    color: darken(@color, 50%);
+  }
+  .mixin (light, @color) {
+    color: lighten(@color, 50%);
+  }
+  .mixin (@_, @color) {
+    display: block;
+    font-size:200px;
+  }
+  
+  
+  @switch: light;
+
+  .class {
+    .mixin(@switch, #000);
+  }
+    
+    
+    
+    
+  .truth (@a) when (@a) {font-size:100px;}
+  .truth (@a) when (@a = true) {font-size:100px;}
+  .truth (@a) when (@a =100) {font-size:200px;}
+  
+  .ufo_truth{
+    .truth(100);
+    .truth(true);
+  }
+  
+  
+  
+  @media: mobile;
+
+    .mixin (@a) when (@media = mobile) { type:"mobile";font-size:@a; }
+    .mixin (@a) when (@media = desktop) { type:"desktop"; font-size:@a;}
+    
+    .max (@a, @b) when (@a > @b) { width: @a }
+    .max (@a, @b) when (@a < @b) { width: @b }
+    .sap_type{
+      .mixin("200px");
+    }
+    
+    
+    .mixin (@a, @b: 0) when (isnumber(@b)) {type:"num";}
+    .mixin (@a, @b: black) when (iscolor(@b)) {type:"color";}
+    .mixin (@a, @b: ssss) when (isstring(@b)) {type:"isstring";}
+    
+    @reda:"aaa";
+    .sap_ufo{
+      .mixin(a,@reda);
+    }
+    
+    
+    @str: "hello";
+    @var: `~"@@@@:::---==ddd=>>".toUpperCase() + '!'`;
+    .ufo{
+      font-size:@var;
+    }
+    
+    #ufo>.ufo{
+      margin:0;
+    }
+    .sap-sbo-ui-widget-fixnavbar-container {
+      > .sap-sbo-ui-widget-fixnavbar-navbar-header{
+              #ufo>.ufo;
+      };
+      > .sap-sbo-ui-widget-fixnavbar-navbar-collapse{
+              #ufo>.ufo;
+         }
+    };
+    
+    
+    
+    .sap-sbo-ui-widget-fixnavbar-navbar-collapse{
+      &:after {
+          clear: both;
+          display: table;
+          content: " ";
+      };
+      &:before{
+        display: table;
+        content: " ";
+      }
+  }
+    
+    
+    
+}
+
+	
