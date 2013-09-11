@@ -2,7 +2,7 @@
  * @author ufoqhmdt
  */
 module.exports={
-	cookieSecret:"microblogbyUFO",
+	cookie_secret:"microblogbyUFO",
 	db:"microblog",
 	host:"localhost"
 }

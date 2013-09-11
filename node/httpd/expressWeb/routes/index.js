@@ -2,7 +2,7 @@
  * GET home page.
  */
 
-exports.index = function(req, res) {
+exports.test = function(req, res) {
 	console.log(req.params);
 	
 	var  itemsLen=req.params[0];
@@ -79,6 +79,33 @@ exports.list = function(req, res) {
 	});
 }; 
 
+
+
+exports.index=function(){
+
+};
+exports.user=function(){
+
+};
+exports.post=function(){
+
+};
+exports.reg=function(){
+
+};
+exports.doReg=function(){
+
+};
+exports.login=function(){
+
+};
+exports.doLogin=function(){
+
+};
+exports.logout=function(){
+
+};
+
 module.exports=function(app){
 	app.get("/micro",function(req,res){
 		res.render("microblog/index",{title:"UFO"});
@@ -87,3 +114,5 @@ module.exports=function(app){
 		res.render("microblog/reg",{title:"UFO"});
 	});
 }
+
+
