@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			button {
+				margin: 5px;
+			}
+			button#theone {
+				color: red;
+				background: yellow;
+			}
+		</style>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+
+	<body>
+		<button id="theone">
+			Does nothing...
+		</button>
+		<button id="bind">
+			Add Click
+		</button>
+		<button id="unbind">
+			Remove Click
+		</button>
+		<div style="display:none;">
+			Click!
+		</div>
+		<script>
+			function aClick() {
+				console.log("---");
+				$("div").show().fadeOut("slow");
+			}
+
+			function a1() {
+				console.log("al");
+			}
+
+			function a2() {
+				console.log("a2");
+			}
+
+
+			$("#bind").click(function() {
+				$("body")
+				.on("click", "#theone", aClick)
+				.on("click.a1", "#theone", a1)
+				.on("click.a2", "#theone", a2)
+				.find("#theone").text("Can Click!");
+			});
+			$("#unbind").click(function() {
+				$("body").off(".a1", "#theone", aClick).find("#theone").text("Does nothing...");
+			});
+		</script>
+
+		<p>
+			Has an attached custom event.
+		</p>
+		<button>
+			Trigger custom event
+		</button>
+		<span style="display:none;"> </span>
+		<script>
+		var i=0;
+			$("p").on("myCustomEvent", function(e, myName, myValue) {
+				console.log(myName);
+				console.log(myValue);
+				$(this).stop().css("opacity", 0.5).text((i++)+myName + ", hi there!").fadeIn(30);
+				$("span").stop().css("opacity", 1).text("myName = " + myName).fadeIn(30).fadeOut(1000);
+			});
+			$("button").click(function() {
+				$("p").trigger("myCustomEvent", ["John"]);
+			});
+		</script>
+
+	</body>
+
+</html>

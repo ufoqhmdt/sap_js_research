@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>demo1</title>
+		<meta name="description" content="">
+		<meta name="author" content="C5193511">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="stylesheet" href="../css/bootstrap.css" />
+
+		<style type="text/css" media="all">
+			.red {
+				background: red;
+			}
+			body, ul, li {
+				padding: 10px;
+				margin: 0;
+			}
+
+			body {
+				font-size: 12px;
+				-webkit-user-select: none;
+				-webkit-text-size-adjust: none;
+				font-family: helvetica;
+			}
+
+			#wrapperOut {
+				width: 300px;
+				/*height:160px;*/
+
+				float: left;
+				position: relative;	/* On older OS versions "position" and "z-index" must be defined, */
+				z-index: 1;	/* it seems that recent webkit is less picky and works anyway. */
+				overflow: hidden;
+				background: #aaa;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				-o-border-radius: 10px;
+				border-radius: 10px;
+				background: #e3e3e3;
+			}
+
+			#scrollerOut {
+				width: 2100px;
+				height: 100%;
+				float: left;
+				padding: 0;
+			}
+
+			#scrollerOut ul {
+				list-style: none;
+				display: block;
+				float: left;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+				text-align: left;
+			}
+
+			#scrollerOut li {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-o-box-sizing: border-box;
+				box-sizing: border-box;
+				display: block;
+				float: left;
+				width: 300px;
+				height: 160px;
+				text-align: center;
+				font-family: georgia;
+				font-size: 18px;
+				line-height: 140%;
+			}
+
+			#nav {
+				width: 300px;
+				float: left;
+			}
+
+			#prev, #next {
+				float: left;
+				font-weight: bold;
+				font-size: 14px;
+				padding: 5px 0;
+				width: 80px;
+			}
+
+			#next {
+				float: right;
+				text-align: right;
+			}
+
+			#indicatorOut, #indicatorOut > li {
+				display: block;
+				float: left;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			#indicatorOut {
+				width: 110px;
+				padding: 12px 0 0 30px;
+			}
+
+			#indicatorOut > li {
+				text-indent: -9999em;
+				width: 8px;
+				height: 8px;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				-o-border-radius: 4px;
+				border-radius: 4px;
+				background: #ddd;
+				overflow: hidden;
+				margin-right: 4px;
+			}
+
+			#indicatorOut > li.active {
+				background: #888;
+			}
+
+			#indicatorOut > li:last-child {
+				margin: 0;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		<div id="wrapperOut">
+			<div id="scrollerOut">
+				<ul id="thelistOut">
+					<li>
+						<strong>1.</strong><em>A robot may not injure a human being or, through inaction, allow a human being to come to harm.</em>
+					</li>
+					<li>
+						<strong>2.</strong><em>A robot must obey any orders given to it by human beings, except where such orders would conflict with the First Law.</em>
+					</li>
+					<li>
+						<strong>3.</strong><em>A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.</em>
+					</li>
+					<li>
+						<strong>Zeroth Law:</strong><em>A robot may not harm humanity, or, by inaction, allow humanity to come to harm.</em>
+					</li>
+					<li>
+						<strong>Lyuben Dilov's Forth law:</strong><em>A robot must establish its identity as a robot in all cases.</em>
+					</li>
+					<li>
+						<strong>Harry Harrison's Forth law:</strong><em>A robot must reproduce. As long as such reproduction does not interfere with the First or Second or Third Law.</em>
+					</li>
+					<li>
+						<strong>Nikola Kesarovski's Fifth law:</strong><em>A robot must know it is a robot.</em>
+					</li>
+				</ul>
+				<ul id="thelist2">
+					<li>
+						<strong>1.</strong><em>A robot may not injure a human being or, through inaction, allow a human being to come to harm.</em>
+					</li>
+					<li>
+						<strong>2.</strong><em>A robot must obey any orders given to it by human beings, except where such orders would conflict with the First Law.</em>
+					</li>
+					<li>
+						<strong>3.</strong><em>A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.</em>
+					</li>
+					<li>
+						<strong>Zeroth Law:</strong><em>A robot may not harm humanity, or, by inaction, allow humanity to come to harm.</em>
+					</li>
+					<li>
+						<strong>Lyuben Dilov's Forth law:</strong><em>A robot must establish its identity as a robot in all cases.</em>
+					</li>
+					<li>
+						<strong>Harry Harrison's Forth law:</strong><em>A robot must reproduce. As long as such reproduction does not interfere with the First or Second or Third Law.</em>
+					</li>
+					<li>
+						<strong>Nikola Kesarovski's Fifth law:</strong><em>A robot must know it is a robot.</em>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="nav">
+			<div id="prev" onclick="myScroll.scrollToPage('prev', 0);return false">
+				&larr; prev
+			</div>
+			<ul id="indicatorOut">
+				<li class="active">
+					1
+				</li>
+				<li>
+					2
+				</li>
+				<li>
+					3
+				</li>
+				<li>
+					4
+				</li>
+				<li>
+					5
+				</li>
+				<li>
+					6
+				</li>
+				<li>
+					7
+				</li>
+			</ul>
+			<div id="next" onclick="myScroll.scrollToPage('next', 0);return false">
+				next &rarr;
+			</div>
+		</div>
+		<script src="../js/jquery-1.9.1.js"></script>
+		<script src="../js/bootstrap.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="myTile.js"></script>
+		<script type="text/javascript">
+			var myScroll;
+
+			function loaded() {
+				myScroll = new iScroll('wrapperOut', {
+					snap : true,
+					hScroll : true,
+					momentum : true,
+					hScrollbar : true,
+					vScrollbar : true,
+					lockDirection : true,
+					fixedScrollbar : true,
+					fadeScrollbar : false,
+					onScrollEnd : function() {
+						document.querySelector('#indicatorOut > li.active').className = 'red';
+						console.log(this);
+						document.querySelector('#indicatorOut > li:nth-child(' + (this.currPageX + 1) + ')').className = 'active';
+					}
+				});
+			}
+
+
+			document.addEventListener('DOMContentLoaded', loaded, false);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			p {
+				background: yellow;
+				font-weight: bold;
+				cursor: pointer;
+				padding: 5px;
+			}
+			p.over {
+				background: #ccc;
+			}
+			span {
+				color: red;
+			}
+		</style>
+		<script src="../../../lib/js/vendor/jquery.js"></script>
+	</head>
+	<body>
+		<p>
+			Click me!
+		</p>
+		<span> </span>
+		<input type="button" id="ufo" />
+		<script>
+			var count = 0;
+			$("body").on("click", function(e) {
+				console.log("--");
+			});
+			$("body").on("click", "p", function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				console.log(e);
+				$(this).after("<p>Another paragraph! " + (++count) + "</p>");
+			});
+
+			$("#ufo").on("click", function(e) {
+				console.log(e);
+			});
+
+			var event = jQuery.Event("logged");
+			event.user = "foo";
+			event.pass = "bar";
+			console.log(event);
+			$("body").on("logged",function(e){
+				console.log(e);
+				console.log("-----");
+			});
+			$("body").trigger(event);
+		</script>
+
+	</body>
+</html>

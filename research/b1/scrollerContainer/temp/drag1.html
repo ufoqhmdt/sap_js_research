@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style type="text/css">
+			#div1 {
+				width: 350px;
+				height: 70px;
+				padding: 10px;
+				border: 1px solid #aaaaaa;
+			}
+		</style>
+		<script>
+			function log(l) {
+				console.log(l);
+			}
+
+			function allowDrop(ev) {
+				log("allowDrop");
+				log(ev);
+				ev.preventDefault();
+			}
+
+			function drag(ev) {
+				log("drag");
+				log(ev);
+				ev.dataTransfer.setData("Text", ev.target.id);
+			}
+
+			function drop(ev) {
+				log("drop");
+				log(ev);
+				ev.preventDefault();
+				var data = ev.dataTransfer.getData("Text");
+				ev.target.appendChild(document.getElementById(data));
+			}
+		</script>
+	</head>
+	<body>
+
+		<p>
+			Drag the W3Schools image into the rectangle:
+		</p>
+
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
+		<br>
+		<img id="drag1" src="" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
+	</body>
+</html>
