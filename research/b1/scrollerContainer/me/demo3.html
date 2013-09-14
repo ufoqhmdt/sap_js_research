@@ -397,7 +397,7 @@
 			document.addEventListener('DOMContentLoaded', loaded, false);
 
 			var gridly=$('.gridly').gridly({
-				base : 100, // px
+				base : 220, // px
 				gutter : 20, // px
 				columns : 6
 			});
@@ -409,12 +409,12 @@
 				$(function() {
 					var brick;
 					brick = "<div class='brick small'><div class='delete'>&times;</div></div>";
-					$(document).on("click", ".gridly .delete", function(event) {
+					$(document).on("click", ".gridly .brick", function(event) {
 						//return true;
 						var $this, size;
 						event.preventDefault();
 						event.stopPropagation();
-						$this = $(this).parent();
+						$this = $(this);
 
 						$this.toggleClass('small');
 						$this.toggleClass('large');
@@ -428,8 +428,8 @@
 						// $this.data('height', size);
 					
 						setTimeout(function(){
-								$('.gridly').gridly('layout');
-							}, 500);
+							$('.gridly').gridly('layout');
+						}, 500);
 						
 
 					});
@@ -446,7 +446,7 @@
 						event.preventDefault();
 						event.stopPropagation();
 						$('.gridly').append(brick);
-						//$('.gridly').gridly('layout');
+						$('.gridly').gridly('layout');
 					});
 					// return $('.gridly').gridly();
 				});
