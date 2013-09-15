@@ -14,7 +14,10 @@ Copyright 2013 Kevin Sylvestre
         return fn.apply(me, arguments);
       };
     },
-    __slice = [].slice;
+    __slice = [].slice,
+    log=function(l){
+      console.log(l);
+    };
 
   $ = jQuery;
 
@@ -60,6 +63,7 @@ Copyright 2013 Kevin Sylvestre
       this.moved = __bind(this.moved, this);
       this.ended = __bind(this.ended, this);
       this.began = __bind(this.began, this);
+
       this.coordinate = __bind(this.coordinate, this);
       this.off = __bind(this.off, this);
       this.on = __bind(this.on, this);
@@ -69,6 +73,7 @@ Copyright 2013 Kevin Sylvestre
       this.selector = selector;
       this.callbacks = callbacks;
       this.toggle();
+      
     }
 
     Draggable.prototype.bind = function(method) {
@@ -265,7 +270,9 @@ Copyright 2013 Kevin Sylvestre
     };
 
     Gridly.prototype.$sorted = function($elements) {
+      log("-sorted");
       return ($elements || this.$('> *')).sort(function(a, b) {
+        log("--");
         var $a, $b, aPosition, aPositionInt, bPosition, bPositionInt;
         $a = $(a);
         $b = $(b);
@@ -292,7 +299,8 @@ Copyright 2013 Kevin Sylvestre
           return +1;
         }
         return 0;
-      });
+      }
+      );
     };
 
     Gridly.prototype.draggingBegan = function(event) {
@@ -339,7 +347,9 @@ Copyright 2013 Kevin Sylvestre
     };
 
     Gridly.prototype.size = function($element) {
-      return (($element.data('width') || $element.width()) + this.settings.gutter) / (this.settings.base + this.settings.gutter);
+      var size=(($element.data('width') || $element.width()) + this.settings.gutter) / (this.settings.base + this.settings.gutter);
+      // log("size:"+size);
+      return size;
     };
 
     Gridly.prototype.position = function($element, columns) {
@@ -347,6 +357,7 @@ Copyright 2013 Kevin Sylvestre
       size = this.size($element);
       height = Infinity;
       column = 0;
+      //this loop is get min value in columns. I thinks. column最小那个的index.最小那个也就证明还没有被计算位置.
       for (i = _i = 0, _ref = columns.length - size; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
         max = Math.max.apply(Math, columns.slice(i, i + size));
         if (max < height) {
@@ -376,7 +387,7 @@ Copyright 2013 Kevin Sylvestre
           _results.push(0);
         }
         return _results;
-      }).call(this);
+      }).call(this);//搞出setting.columns个0的columns数组.这里面好像是没一个cloumn的width和height
       for (index = _i = 0, _ref = $elements.length; 0 <= _ref ? _i < _ref : _i > _ref; index = 0 <= _ref ? ++_i : --_i) {
         $element = $($elements[index]);
         position = this.position($element, columns);
@@ -396,7 +407,7 @@ Copyright 2013 Kevin Sylvestre
 
     Gridly.prototype.layout = function() {
       var $element, $elements, index, position, structure, _i, _ref, _ref1;
-      $elements = (((_ref = this.settings.callbacks) != null ? _ref.optimize : void 0) || this.optimize)(this.$sorted());
+      $elements = (((_ref = this.settings.callbacks) != null ? _ref.optimize : void 0) || this.optimize)(this.$sorted());//optimize后的元素.感觉没做什么工作.一样是sort后的.
       structure = this.structure($elements);
       for (index = _i = 0, _ref1 = $elements.length; 0 <= _ref1 ? _i < _ref1 : _i > _ref1; index = 0 <= _ref1 ? ++_i : --_i) {
         $element = $($elements[index]);
@@ -424,11 +435,11 @@ Copyright 2013 Kevin Sylvestre
           columns = 0;
         }
         index = 0;
-        for (index = _i = 0, _ref = originals.length; 0 <= _ref ? _i < _ref : _i > _ref; index = 0 <= _ref ? ++_i : --_i) {
-          if (columns + this.size($(originals[index])) <= this.settings.columns) {
-            break;
-          }
-        }
+        // for (index = _i = 0, _ref = originals.length; 0 <= _ref ? _i < _ref : _i > _ref; index = 0 <= _ref ? ++_i : --_i) {
+        //   if (columns + this.size($(originals[index])) <= this.settings.columns) {
+        //     break;
+        //   }
+        // }
         if (index === originals.length) {
           index = 0;
           columns = 0;
