@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>queryCommand</title>
+		<meta name="description" content="" />
+		<meta name="author" content="ufoqhmdt" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>queryCommand</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Home</a>
+				</p>
+				<p>
+					<a href="/contact">Contact</a>
+				</p>
+			</nav>
+
+			<div style="position: absolute; padding: 10px;margin: 20px;height: 100px;width:100px;background: green;">
+				<div style="position: absolute; padding: 10px;margin: 20px;height: 100px;width:100px;background: red;"></div>
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by ufoqhmdt
+				</p>
+			</footer>
+		</div>
+		<div style="height: 400px;width: 500px" contenteditable=""></div>
+		<input type="button" value="剪切" onclick="document.execCommand('Cut')"/>
+		<input type="button" value="拷贝" onclick="document.execCommand('Copy')"/>
+		<input type="button" value="粘贴" onclick="document.execCommand('Paste')"/>
+		<input type="button" value="撤消" onclick="document.execCommand('Undo')"/>
+		<input type="button" value="重做" onclick="document.execCommand('Redo') id=button2 name=button2"/>
+		<input type="button" value="删除" onclick="document.execCommand('Delete')"/>
+		<input type="button" value="黑体" onclick="document.execCommand('Bold')"/>
+		<input type="button" value="斜体" onclick="document.execCommand('Italic')"/>
+		<input type="button" value="下划线" onclick="document.execCommand('Underline')"/>
+		<input type="button" value="停止" onclick="document.execCommand('stop')"/>
+		<input type="button" value="保存" onclick="document.execCommand('SaveAs')"/>
+		<input type="button" value="另存为" onclick="document.execCommand('Saveas',false,'c:\\test.htm')"/>
+		<input type="button" value="字体" onclick="document.execCommand('FontName',false,fn)"/>
+		<input type="button" value="字体大小" onclick="document.execCommand('FontSize',false,fs)"/>
+		<input type="button" value="刷新" onclick="document.execCommand('refresh',false,0)"/>
+		<input type="button" value="all" onclick="document.execCommand(document.execCommand('selectAll'))"/>
+		<script></script>
+	</body>
+</html>
