@@ -18,52 +18,27 @@
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 		<link rel="stylesheet" href="../css/bootstrap.css" />
 		<style type="text/css" media="all">
-			#wrapperOut {
+			#tileContainer {
 				width: 1024px;
-				height: 800px;
-				/*float: left;*/
+				height: 100%;
+				margin: 0 auto;
+				margin-top: 40px;
+				position: relative;
+			}
+
+			#wrapperViewPoint {
 				position: relative;	/* On older OS versions "position" and "z-index" must be defined, */
-				z-index: 1;	/* it seems that recent webkit is less picky and works anyway. */
+				/*z-index: 1;*//* it seems that recent webkit is less picky and works anyway. */
 				overflow: hidden;
 				background: #aaa;
-				-webkit-border-radius: 10px;
-				-moz-border-radius: 10px;
-				-o-border-radius: 10px;
-				border-radius: 10px;
 				background: #e3e3e3;
 			}
 
-			#scrollerOut {
-				width: 2100px;
+			#containerContent {
+				width: 5120px;
 				height: 100%;
 				float: left;
 				padding: 0;
-			}
-
-			#scrollerOut ul {
-				list-style: none;
-				display: block;
-				float: left;
-				width: 100%;
-				height: 100%;
-				padding: 0;
-				margin: 0;
-				text-align: left;
-			}
-
-			#scrollerOut li {
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				-o-box-sizing: border-box;
-				box-sizing: border-box;
-				display: block;
-				float: left;
-				width: 300px;
-				height: 160px;
-				text-align: center;
-				font-family: georgia;
-				font-size: 18px;
-				line-height: 140%;
 			}
 
 			#nav {
@@ -131,6 +106,7 @@
 			.gridly {
 				position: relative;
 				width: 960px;
+				margin: 57px;
 			}
 			.brick.small {
 				width: 220px;
@@ -167,7 +143,7 @@
 				height: 220px;
 			}
 			.example .brick.large {
-				width: 460px;
+				width: 450px;
 				height: 220px;
 			}
 			.example .brick.dragging {
@@ -235,106 +211,96 @@
 			}
 
 		</style>
+
+		<style type="text/css">
+			.sapMTCEdge {
+				position: absolute;
+				top: 0;
+				width: 40px;
+				height: 100%;
+				border-left: 2px solid rgba(39,178,255,0.6);
+				opacity: 0.01;
+			}
+			[draggable] {
+				-moz-user-select: none;
+				-khtml-user-select: none;
+				-webkit-user-select: none;
+				user-select: none;
+				/* Required to make elements draggable in old WebKit */
+				-khtml-user-drag: element;
+				-webkit-user-drag: element;
+			}
+
+			.column {
+				height: 150px;
+				width: 150px;
+				float: left;
+				background-color: #ccc;
+				margin-right: 5px;
+				text-align: center;
+				cursor: move;
+				position: absolute;
+				/*top:500px;
+				left: 500px;*/
+			}
+			.column header {
+				color: #fff;
+				background-color:black;
+				padding: 5px;
+			}
+		</style>
 	</head>
 
 	<body>
-		<input type="button" id="resize" value="resize"/>
-		<input type="button" id="delete" value="delete"/>
-		
-		<section class="example">
-			<div class="gridly" style="height: 640px;">
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
 
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick large">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
+		<div id="tileContainer">
+			<div id="wrapperViewPoint">
+				<div id="containerContent" class="example">
+					<div id="dragTest" draggable="true" class="column">
+							<header>
+								drag me
+							</header>
+						</div>
 
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
 
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
+					<div id="" class="gridly">
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick large">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+							
+						</div>
 
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<a class="delete" href="#">×</a>
-				</div>
-				<div class="brick small">
-					<div class="delete">
-						×
 					</div>
-				</div>
-				<div class="brick small">
-					<div class="delete">
-						×
-					</div>
-				</div>
-				<div class="brick small">
-					<div class="delete">
-						×
-					</div>
+
+					<p class="actions">
+						<a class="add button" href="#">Add</a>
+					</p>
 				</div>
 			</div>
-
-
-
-			<p class="actions">
-				<a class="add button" href="#">Add</a>
-			</p>
-		</section>
-
-		<div id="wrapperOut">
-			<div id="scrollerOut">
-				<ul id="thelistOut">
-					<li>
-					</li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li>
-						<strong>Nikola Kesarovski's Fifth law:</strong><em>A robot must know it is a robot.</em>
-					</li>
-				</ul>
-			</div>
+			<div id="__container1-leftedge" class="sapMTCEdge" style="left: 0px; height: 100%; opacity: 0.3;background-color: red;"></div>
+			<div id="__container1-rightdge" class="sapMTCEdge" style="right: 0px; height: 100%; opacity: 0.3;background-color: red;"></div>
 		</div>
+
 		<div id="nav">
 			<div id="prev" onclick="myScroll.scrollToPage('prev', 0);return false">
 				&larr; prev
@@ -355,43 +321,35 @@
 				<li>
 					5
 				</li>
-				<li>
-					6
-				</li>
-				<li>
-					7
-				</li>
 			</ul>
 			<div id="next" onclick="myScroll.scrollToPage('next', 0);return false">
 				next &rarr;
 			</div>
 		</div>
-		
 
 		<script src="../js/jquery-1.9.1.js"></script>
 		<script src="../js/bootstrap.js"></script>
 		<script src="../js/iscroll.js"></script>
 		<script src="../js/jquery.gridly.js"></script>
 		<script type="text/javascript">
-			function log(l){
+			function log(l) {
 				console.log(l);
 			}
+
 			var myScroll;
 
 			function loaded() {
-				myScroll = new iScroll('wrapperOut', {
+				myScroll = new iScroll('wrapperViewPoint', {
 					snap : true,
 					hScroll : true,
-					momentum : true,
+					momentum : false,
 					hScrollbar : false,
 					vScrollbar : false,
 					lockDirection : true,
 					fixedScrollbar : false,
 					fadeScrollbar : false,
 					onScrollEnd : function() {
-						document.querySelector('#indicatorOut > li.active').className = 'red';
-						console.log(this.currPageX);
-						document.querySelector('#indicatorOut > li:nth-child(' + (this.currPageX + 1) + ')').className = 'active';
+						console.log(this);
 					}
 				});
 			}
@@ -399,13 +357,11 @@
 
 			document.addEventListener('DOMContentLoaded', loaded, false);
 
-			var gridly=$('.gridly').gridly({
+			var gridly = $('.gridly').gridly({
 				base : 220, // px
-				gutter : 20, // px
-				columns : 6
+				gutter : 10, // px
+				columns : 4
 			});
-
-
 
 			(function() {
 				$(function() {
@@ -420,19 +376,10 @@
 
 						$this.toggleClass('small');
 						$this.toggleClass('large');
-						// if ($this.hasClass('small')) {
-						// 	size = 220;
-						// }
-						// if ($this.hasClass('large')) {
-						// 	size = 460;
-						// }
-						// $this.data('width', size);
-						// $this.data('height', size);
-					
-						setTimeout(function(){
+
+						setTimeout(function() {
 							$('.gridly').gridly('layout');
 						}, 500);
-						
 
 					});
 					$(document).on("click", ".gridly .delete", function(event) {
@@ -455,22 +402,103 @@
 
 			}).call(this);
 
-			jQuery("#resize").on("click",function(event){
-				$('.gridly').gridly({
-					base : 220, // px
-					gutter : 50, // px
-					columns : 8,
-					action:'layout'
-				});
-				// $('.gridly').gridly('layout');
-			});
-			// jQuery("#delete").on("click",function(event){
-			// 	$(".brick.small")[0].remove();
-			// });
+			/*jQuery("#resize").on("click", function(event) {
+			 $('.gridly').gridly({
+			 base : 220, // px
+			 gutter : 50, // px
+			 columns : 8,
+			 action : 'layout'
+			 });
+			 // $('.gridly').gridly('layout');
+			 });*/
 
-			$(document).on("click","#delete",function(event){
-				$($(".brick.small")[0]).remove();
-			//	$('.gridly').gridly('layout');
+			$(function() {
+				var wrapperMargin = 120;
+				var resizedwProxy = function(event) {
+					return function() {
+						var currentInnerHeight = event.target.innerHeight;
+						// var currentInnerWidth = event.target.innerWidth;
+						log(event);
+						$("#wrapperViewPoint").height(currentInnerHeight - wrapperMargin);
+						// $("#wrapperViewPoint").width(currentInnerWidth-wrapperMargin);
+					};
+				};
+				var resizeTimeoutFlag;
+				$(window).resize(function(event) {
+					clearTimeout(resizeTimeoutFlag);
+					resizeTimeoutFlag = setTimeout(resizedwProxy(event), 200);
+				});
+
+				function handleClick(e) {
+					// e.preventDefault();
+					e.stopPropagation();
+					log("handleClick");
+				}
+
+				function handleDragStart(e) {
+					// e.preventDefault();
+					e.stopPropagation();
+					log("dragstart");
+					// this.style.opacity = '0.4';
+					// this / e.target is the source node.
+				}
+
+				function handleDragOver(e) {
+					log("dragOver");
+					e.stopPropagation();
+					if (e.preventDefault) {
+						e.preventDefault();
+						// Necessary. Allows us to drop.
+					}
+
+					e.dataTransfer.dropEffect = 'move';
+					// See the section on the DataTransfer object.
+
+					return false;
+				}
+
+				function handleDragEnter(e) {
+					e.stopPropagation();
+					e.preventDefault();
+					log("dragEnter");
+					// this / e.target is the current hover target.
+					this.classList.add('over');
+				}
+
+				function handleDragLeave(e) {
+					e.stopPropagation();
+					e.preventDefault();
+					log("dragLeave");
+					this.classList.remove('over');
+					// this / e.target is previous target element.
+				}
+
+				function handleMouseover(e) {
+					log("mouseover");
+				}
+
+				function handleMouseup(e) {
+					log("mouseup");
+				}
+
+				function handleMousedown(e) {
+					log("mousedown");
+				}
+
+				var dragTestDiv = $('#dragTest');
+				dragTestDiv.on("mouseup",handleMouseup);
+				dragTestDiv.on("mousedown",handleMousedown);
+				// dragTestDiv.on("mouseover",handleMouseover);
+				log(dragTestDiv);
+				log(dragTestDiv.get(0));
+				log("----");
+				// dragTestDiv.addEventListener('click', handleClick, false);
+				// dragTestDiv.addEventListener('dragstart', handleDragStart, false);
+				// dragTestDiv.addEventListener('dragenter', handleDragEnter, false);
+				// dragTestDiv.addEventListener('dragover', handleDragOver, false);
+				// dragTestDiv.addEventListener('dragleave', handleDragLeave, false);
+				dragTestDiv.get(0).addEventListener('mouseover;', handleMouseover, false);
+
 			});
 
 		</script>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>demo1</title>
+		<meta name="description" content="">
+		<meta name="author" content="C5193511">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="stylesheet" href="../css/bootstrap.css" />
+
+		<style type="text/css">
+			.sapMTCEdge {
+				position: absolute;
+				top: 0;
+				width: 40px;
+				height: 100%;
+				border-left: 2px solid rgba(39,178,255,0.6);
+				opacity: 0.01;
+			}
+			[draggable] {
+				-moz-user-select: none;
+				-khtml-user-select: none;
+				-webkit-user-select: none;
+				user-select: none;
+				/* Required to make elements draggable in old WebKit */
+				-khtml-user-drag: element;
+				-webkit-user-drag: element;
+			}
+
+			.column {
+				height: 150px;
+				width: 150px;
+				float: left;
+				background-color: #ccc;
+				margin-right: 5px;
+				text-align: center;
+				cursor: move;
+			}
+			.column header {
+				color: #fff;
+				background-color: black;
+				padding: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="dragTest" draggable="true" class="column">
+			<header>
+				drag me
+			</header>
+		</div>
+
+		<script src="../js/jquery-1.9.1.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/jquery.gridly.js"></script>
+		<script type="text/javascript">
+			function log(l) {
+				console.log(l);
+			}
+
+			function handleClick(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				log("handleClick");
+			}
+
+			function handleDragStart(e) {
+				// e.stopPropagation();
+				log("dragstart");
+				// this.style.opacity = '0.4';
+				// this / e.target is the source node.
+			}
+
+			function handleDragOver(e) {
+				log("dragOver");
+				e.stopPropagation();
+				if (e.preventDefault) {
+					e.preventDefault();
+					// Necessary. Allows us to drop.
+				}
+
+				e.dataTransfer.dropEffect = 'move';
+				// See the section on the DataTransfer object.
+
+				return false;
+			}
+
+			function handleDragEnter(e) {
+				e.stopPropagation();
+				e.preventDefault();
+				log("dragEnter");
+				// this / e.target is the current hover target.
+				this.classList.add('over');
+			}
+
+			function handleDragLeave(e) {
+				e.stopPropagation();
+				e.preventDefault();
+				log("dragLeave");
+				this.classList.remove('over');
+				// this / e.target is previous target element.
+			}
+
+			function handleMouseEnter(e) {
+				log("handleMouseEnter");
+			}
+
+			var dragTestDiv = document.querySelectorAll('#dragTest')[0];
+			log(dragTestDiv);
+			log("----");
+			// dragTestDiv.addEventListener('dragstart', handleDragStart, false);
+			// dragTestDiv.addEventListener('dragenter', handleDragEnter, false);
+			// dragTestDiv.addEventListener('dragover', handleDragOver, false);
+			// dragTestDiv.addEventListener('dragleave', handleDragLeave, false);
+			dragTestDiv.addEventListener('mouseover', handleMouseEnter, false);
+			// dragTestDiv.addEventListener('mouseup', handleMouseEnter, false);
+
+		</script>
+	</body>
+</html>
