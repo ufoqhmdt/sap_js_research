@@ -19,14 +19,14 @@
 		<link rel="stylesheet" href="../css/bootstrap.css" />
 		<style type="text/css" media="all">
 			#tileContainer {
-				width: 1024px;
+				width: 100%;
 				height: 100%;
 				margin: 0 auto;
 				margin-top: 40px;
 				position: relative;
 			}
 
-			#wrapperViewPoint {
+			#tileContainerViewPoint {
 				position: relative;	/* On older OS versions "position" and "z-index" must be defined, */
 				/*z-index: 1;*//* it seems that recent webkit is less picky and works anyway. */
 				overflow: hidden;
@@ -43,20 +43,8 @@
 
 			#nav {
 				width: 300px;
+				margin: 0 auto;
 				/*float: left;*/
-			}
-
-			#prev, #next {
-				float: left;
-				font-weight: bold;
-				font-size: 14px;
-				padding: 5px 0;
-				width: 80px;
-			}
-
-			#next {
-				float: right;
-				text-align: right;
 			}
 
 			#indicatorOut, #indicatorOut > li {
@@ -213,7 +201,7 @@
 		</style>
 
 		<style type="text/css">
-			.sapMTCEdge {
+			.sapGuilinEdge {
 				position: absolute;
 				top: 0;
 				width: 40px;
@@ -231,6 +219,33 @@
 				-webkit-user-drag: element;
 			}
 
+			.sapGuilinPager {
+				padding: 5px;
+				text-align: center;
+				height: 30px;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				position: absolute;
+				width: 100%;
+			}
+
+
+			.sapGuilinPager SPAN.sapGuilinActive {
+				background-color: #007cc0;
+				box-shadow: 0 0 2px 2px #ffffff;
+			}
+			.sapGuilinPager SPAN {
+				display: inline-block;
+				background-color: #999999;
+				border-radius: 4px;
+				height: 8px;
+				width: 8px;
+				margin-right: 8px;
+				margin-bottom: 1px;
+				cursor: default;
+				box-shadow: 0 0 1px 1px #ffffff;
+			}
+
 			.column {
 				height: 150px;
 				width: 150px;
@@ -240,13 +255,47 @@
 				text-align: center;
 				cursor: move;
 				position: absolute;
-				/*top:500px;
-				left: 500px;*/
 			}
 			.column header {
 				color: #fff;
 				background-color:black;
 				padding: 5px;
+			}
+
+			#tilesSwitcherLeft{
+				width: 60px; 
+				left: 0px;
+				top: 0px;
+				padding-bottom: 0px;
+				background-position: initial initial;
+				background-repeat: initial initial;			 
+			}
+
+			#tilesSwitcherRight{
+				width: 177px;
+				right: 0px;
+				top: 0px;
+				padding-bottom: 0px;					 
+			}
+
+
+			.page-switcher {
+				color: rgba(0,0,0, 0.5);
+			}
+			.page-switcher {
+				-webkit-transition: width 150ms, right 150ms, background-color 150ms;
+				background-color: transparent;
+				border: none;
+				bottom: 0;
+				font-size: 40px;
+				margin: 0;
+				max-width: 80px;
+				min-width: 40px;
+				outline: none;
+				padding: 0;
+				position: absolute;
+				top: 0;
+				z-index: 5;
 			}
 		</style>
 	</head>
@@ -254,15 +303,13 @@
 	<body>
 
 		<div id="tileContainer">
-			<div id="wrapperViewPoint">
+			<div id="tileContainerViewPoint">
 				<div id="containerContent" class="example">
-					<div id="dragTest" draggable="true" class="column">
-							<header>
-								drag me
-							</header>
-						</div>
-
-
+					<div id="dragTest" draggable="true" class="column"  style="left:100px;z-index:2;">
+						<header>
+							drag me1
+						</header>
+					</div>
 					<div id="" class="gridly">
 						<div class="brick small">
 							<a class="delete" href="#">×</a>
@@ -286,45 +333,24 @@
 							<a class="delete" href="#">×</a>
 						</div>
 						<div class="brick small">
-							<a class="delete" href="#">×</a>
-							
+							<a class="delete" href="#">×</a>							
 						</div>
-
 					</div>
 
 					<p class="actions">
 						<a class="add button" href="#">Add</a>
 					</p>
 				</div>
-			</div>
-			<div id="__container1-leftedge" class="sapMTCEdge" style="left: 0px; height: 100%; opacity: 0.3;background-color: red;"></div>
-			<div id="__container1-rightdge" class="sapMTCEdge" style="right: 0px; height: 100%; opacity: 0.3;background-color: red;"></div>
+				<button id="tilesSwitcherLeft" class="page-switcher custom-appearance" tabindex="2" aria-label="Go to left">‹</button>
+				<button id="tilesSwitcherRight" class="page-switcher custom-appearance" tabindex="2" aria-label="Go to right">›</button>
+			</div>		
 		</div>
 
-		<div id="nav">
-			<div id="prev" onclick="myScroll.scrollToPage('prev', 0);return false">
-				&larr; prev
-			</div>
-			<ul id="indicatorOut">
-				<li class="active">
-					1
-				</li>
-				<li>
-					2
-				</li>
-				<li>
-					3
-				</li>
-				<li>
-					4
-				</li>
-				<li>
-					5
-				</li>
-			</ul>
-			<div id="next" onclick="myScroll.scrollToPage('next', 0);return false">
-				next &rarr;
-			</div>
+		<div id="tileContainerPager" class="sapGuilinPager" style="display: block;">
+			<span class="sapGuilinActive"></span>
+			<span></span>
+			<span></span>
+			<span></span>
 		</div>
 
 		<script src="../js/jquery-1.9.1.js"></script>
@@ -338,30 +364,27 @@
 
 			var myScroll;
 
-			function loaded() {
-				myScroll = new iScroll('wrapperViewPoint', {
-					snap : true,
-					hScroll : true,
-					momentum : false,
-					hScrollbar : false,
-					vScrollbar : false,
-					lockDirection : true,
-					fixedScrollbar : false,
-					fadeScrollbar : false,
-					onScrollEnd : function() {
-						console.log(this);
-					}
-				});
-			}
+			// function loaded() {
+			// 	myScroll = new iScroll('tileContainerViewPoint', {
+			// 		snap : true,
+			// 		hScroll : true,
+			// 		momentum : false,
+			// 		hScrollbar : false,
+			// 		vScrollbar : false,
+			// 		lockDirection : true,
+			// 		fixedScrollbar : false,
+			// 		fadeScrollbar : false,
+			// 		onScrollEnd : function() {
+			// 			$('#tileContainerPager > span.sapGuilinActive').removeClass('sapGuilinActive');
+			// 			document.querySelector('#tileContainerPager > span:nth-child(' + (this.currPageX+1) + ')').className = 'sapGuilinActive';
+			// 		}
+			// 	});
+			// }
 
 
-			document.addEventListener('DOMContentLoaded', loaded, false);
+			// document.addEventListener('DOMContentLoaded', loaded, false);
 
-			var gridly = $('.gridly').gridly({
-				base : 220, // px
-				gutter : 10, // px
-				columns : 4
-			});
+			
 
 			(function() {
 				$(function() {
@@ -413,94 +436,249 @@
 			 });*/
 
 			$(function() {
-				var wrapperMargin = 120;
-				var resizedwProxy = function(event) {
-					return function() {
-						var currentInnerHeight = event.target.innerHeight;
-						// var currentInnerWidth = event.target.innerWidth;
-						log(event);
-						$("#wrapperViewPoint").height(currentInnerHeight - wrapperMargin);
-						// $("#wrapperViewPoint").width(currentInnerWidth-wrapperMargin);
-					};
-				};
-				var resizeTimeoutFlag;
-				$(window).resize(function(event) {
-					clearTimeout(resizeTimeoutFlag);
-					resizeTimeoutFlag = setTimeout(resizedwProxy(event), 200);
-				});
+
+				
+
+				// var marginOffset = 120;
+
+				// var resizedwProxy = function(event) {
+				// 	return function() {
+				// 		(function resizeContainer(event){
+				// 			var currentInnerHeight = event.target.innerHeight;
+				// 			// var currentInnerWidth = event.target.innerWidth;
+				// 			$("#tileContainerViewPoint").height(currentInnerHeight - marginOffset);
+				// 			// $("#tileContainerViewPoint").width(currentInnerWidth-marginOffset);
+				// 		})(event);
+				// 	};
+				// };
+
+				// var resizeTimeoutFlag;
+				// $(window).resize(function(event) {
+				// 	clearTimeout(resizeTimeoutFlag);
+				// 	resizeTimeoutFlag = setTimeout(resizedwProxy(event), 200);
+				// });
+
+
+
+				var coordinate = function(event) {
+			      switch (event.type) {
+			        case 'touchstart':
+			        case 'touchmove':
+			        case 'touchend':
+			        case 'touchcancel':
+			          return event.originalEvent.touches[0];
+			        default:
+			          return event;
+			      }
+			    };
+
+
 
 				function handleClick(e) {
-					// e.preventDefault();
+					// e.preventDefault();					
 					e.stopPropagation();
 					log("handleClick");
 				}
 
-				function handleDragStart(e) {
-					// e.preventDefault();
-					e.stopPropagation();
-					log("dragstart");
-					// this.style.opacity = '0.4';
-					// this / e.target is the source node.
-				}
-
-				function handleDragOver(e) {
-					log("dragOver");
-					e.stopPropagation();
-					if (e.preventDefault) {
-						e.preventDefault();
-						// Necessary. Allows us to drop.
-					}
-
-					e.dataTransfer.dropEffect = 'move';
-					// See the section on the DataTransfer object.
-
-					return false;
-				}
-
-				function handleDragEnter(e) {
-					e.stopPropagation();
-					e.preventDefault();
-					log("dragEnter");
-					// this / e.target is the current hover target.
-					this.classList.add('over');
-				}
-
-				function handleDragLeave(e) {
-					e.stopPropagation();
-					e.preventDefault();
-					log("dragLeave");
-					this.classList.remove('over');
-					// this / e.target is previous target element.
-				}
 
 				function handleMouseover(e) {
 					log("mouseover");
 				}
 
 				function handleMouseup(e) {
-					log("mouseup");
+					log("mouseup-------------");
+					$("#dragTest").css({"z-index":"2"});
+					$(document).off('mousemove touchmove', handleMousemove);
 				}
+
+				var origin={};
+
 
 				function handleMousedown(e) {
-					log("mousedown");
+					e.preventDefault();
+     				e.stopPropagation();
+
+					$(document).on('mousemove touchmove', handleMousemove);
+			      	$(document).on('mouseup touchend touchcancel',handleMouseup);
+			      	origin = {
+				        x: coordinate(event).pageX - $("#dragTest").position().left,
+				        y: coordinate(event).pageY - $("#dragTest").position().top
+				    };
+				    $("#dragTest").css({"z-index":"5"});
+				    console.log(origin);
+					log("handleMousedown");
 				}
 
-				var dragTestDiv = $('#dragTest');
-				dragTestDiv.on("mouseup",handleMouseup);
-				dragTestDiv.on("mousedown",handleMousedown);
-				// dragTestDiv.on("mouseover",handleMouseover);
-				log(dragTestDiv);
-				log(dragTestDiv.get(0));
-				log("----");
-				// dragTestDiv.addEventListener('click', handleClick, false);
-				// dragTestDiv.addEventListener('dragstart', handleDragStart, false);
-				// dragTestDiv.addEventListener('dragenter', handleDragEnter, false);
-				// dragTestDiv.addEventListener('dragover', handleDragOver, false);
-				// dragTestDiv.addEventListener('dragleave', handleDragLeave, false);
-				dragTestDiv.get(0).addEventListener('mouseover;', handleMouseover, false);
 
+				function handleMousemove(e){
+					e.stopPropagation();
+					e.preventDefault();
+					var p=$(e.target).position();
+
+					var pageX = event.pageX;
+					var pageY = event.pageY;
+
+					var setLeft=coordinate(event).pageX- origin.x;
+					var setTop=coordinate(event).pageY- origin.y;
+
+					$("#dragTest").css({
+				        left: coordinate(event).pageX- origin.x,
+				        top: coordinate(event).pageY-origin.y
+				    });
+				}
+
+				var tileContainerViewPoint = $('#tileContainerViewPoint');
+				tileContainerViewPoint.on("mousedown"," div[draggable=true]",handleMousedown);
 			});
 
+
+
+			(function() {
+			  "use strict";
+			  var $, GuilinPager,
+			    __bind = function(fn, me) {
+			      return function() {
+			        return fn.apply(me, arguments);
+			      };
+			    },
+			    __slice = [].slice,
+			    log=function(l){
+			      console.log(l);
+			    };
+
+			  	$ = jQuery;
+
+			  	GuilinPager=(function(){			  		
+			  		GuilinPager.settings = {
+				      base: 60,
+				      gutter: 20,
+				      columns: 12,
+				      draggable: {
+				        zIndex: 800
+				      }
+				    };
+
+				    GuilinPager.guilinPager=function($el){
+			    		log(this);
+
+			    		var guilinPagerInstance , __iScroll;
+
+			    		guilinPagerInstance=new GuilinPager($el);
+
+						__iScroll = new iScroll('tileContainerViewPoint', {
+							snap : true,
+							hScroll : true,
+							momentum : false,
+							hScrollbar : false,
+							vScrollbar : false,
+							lockDirection : true,
+							fixedScrollbar : false,
+							fadeScrollbar : false,
+							onScrollEnd : function() {
+								$('#tileContainerPager > span.sapGuilinActive').removeClass('sapGuilinActive');
+								document.querySelector('#tileContainerPager > span:nth-child(' + (this.currPageX+1) + ')').className = 'sapGuilinActive';
+							}
+						});
+
+						guilinPagerInstance.__tiles=$('.gridly').gridly({
+							base : 220, // px
+							gutter : 10, // px
+							columns : 4
+						});
+
+						$("#tilesSwitcherLeft,#tilesSwitcherRight").on("mousedown",function(e){
+							__iScroll._start(e);
+						});
+
+						$("#tilesSwitcherLeft").click(function(e){
+							__iScroll.scrollToPage('prev', 0);
+							return false;
+						})
+						$("#tilesSwitcherRight").click(function(e){
+							__iScroll.scrollToPage('next', 0);
+							return false;
+						})
+
+						guilinPagerInstance.__iScroll=__iScroll;
+
+						log(guilinPagerInstance);
+
+				    	return guilinPagerInstance;
+				    };
+
+				    function GuilinPager($el,settings){
+				    	if (settings == null) {
+					        settings = {};
+					    }
+					    this.settings = $.extend({}, GuilinPager.settings, settings);
+				    	this.$el = $el;
+				    	this.coordinate = __bind(this.coordinate, this);
+				    	this.appendPage = __bind(this.appendPage, this);
+				    	this.reducePage = __bind(this.reducePage, this);
+				    	this.lazyResizeHandler();
+				    	// return this;
+				    };
+
+			  		GuilinPager.prototype.coordinate=function(event){
+			  			switch (event.type) {
+				        case 'touchstart':
+				        case 'touchmove':
+				        case 'touchend':
+				        case 'touchcancel':
+				          return event.originalEvent.touches[0];
+				        default:
+				          return event;
+				      }
+				  	};
+
+				  	GuilinPager.prototype.lazyResizeHandler=function(callback){
+				  		var marginOffset=this.settings.marginOffset||0;
+				  		var resizedwProxy = function(event) {
+							return function() {
+								(function resizeContainer(event){
+									var currentInnerHeight = event.target.innerHeight;
+									// var currentInnerWidth = event.target.innerWidth;
+									$("#tileContainerViewPoint").height(currentInnerHeight - marginOffset);
+									// $("#tileContainerViewPoint").width(currentInnerWidth-marginOffset);
+								})(event);
+							};
+						};
+
+						var resizeTimeoutFlag;
+						$(window).resize(function(event) {
+							clearTimeout(resizeTimeoutFlag);
+							resizeTimeoutFlag = setTimeout(resizedwProxy(event), 200);
+						});
+				  		callback&&(typeof callback==="function")&&callback();
+				  	};
+
+				  	GuilinPager.prototype.appendPage=function(callback){
+				  		callback&&(typeof callback==="function")&&callback();
+				  	};
+
+				  	GuilinPager.prototype.reducePage=function(callback){
+				  		callback&&(typeof callback==="function")&&callback();
+				  	};
+
+			  		return GuilinPager;
+			  	})();
+
+
+
+			  	$.fn.extend({
+			  		guilinPager:function(){
+			  			return this.each(function(e){
+			  				var $this;
+        					$this = $(this);
+        					return GuilinPager.guilinPager($this);
+			  			});
+			  		}
+			  	});
+
+			}).call(this);
+
+			$("#tileContainerViewPoint").guilinPager();
+		
 		</script>
 	</body>
 </html>

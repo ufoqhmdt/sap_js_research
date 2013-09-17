@@ -59,6 +59,12 @@
 			<header>
 				drag me
 			</header>
+			<div id="cnt1" style="width:120px;height:120px;background-color:red;">
+				<div id="cnt2" style="width:80px;height:80px;background-color:green;">
+					<div id="cnt3" style="width:40px;height:40px;background-color:blue;">
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<script src="../js/jquery-1.9.1.js"></script>
@@ -116,18 +122,56 @@
 				log("handleMouseover");
 			}
 
-			var dragTestDiv = document.querySelectorAll('#dragTest')[0];
-			// var dragTestDiv = $('#dragTest');
-			log(dragTestDiv);
-			log("----");
-			dragTestDiv.addEventListener('dragstart', handleDragStart, false);
-			dragTestDiv.addEventListener('dragenter', handleDragEnter, false);
-			dragTestDiv.addEventListener('dragover', handleDragOver, false);
-			dragTestDiv.addEventListener('dragleave', handleDragLeave, false);
-			dragTestDiv.addEventListener('mouseover', handleMouseover, false);
+			function handleMouseDown(e) {
+				log("handleMouseDown");
+			}
+			function handleMouseDown1(e) {
+				log("handleMouseDown1");
+			}
+			function handleMouseDown2(e) {
+				log("handleMouseDown2");
+			}
+			function handleMouseDown3(e) {
+				log("handleMouseDown3");
+			}
 
-			dragTestDiv.addEventListener('mouseover', handleMouseover, false);
+			function handleMouseDownP(e) {
+				log("handleMouseDownP");
+			}
+			function handleMouseDown1P(e) {
+				log("handleMouseDown1P");
+			}
+			function handleMouseDown2P(e) {
+				log("handleMouseDown2P");
+			}
+			function handleMouseDown3P(e) {
+				log("handleMouseDown3P");
+			}
+
+			var dragTestDiv = document.querySelectorAll('#dragTest')[0];
+			var cnt1 = document.querySelectorAll('#cnt1')[0];
+			var cnt2 = document.querySelectorAll('#cnt2')[0];
+			var cnt3 = document.querySelectorAll('#cnt3')[0];
+			// var dragTestDiv = $('#dragTest');
+
+			// dragTestDiv.addEventListener('dragstart', handleDragStart, false);
+			// dragTestDiv.addEventListener('dragenter', handleDragEnter, false);
+			// dragTestDiv.addEventListener('dragover', handleDragOver, false);
+			// dragTestDiv.addEventListener('dragleave', handleDragLeave, false);
+
+			// dragTestDiv.addEventListener('mouseover', handleMouseover, false);
+			
 			// dragTestDiv.addEventListener('mouseup', handleMouseover, false);
+
+			dragTestDiv.addEventListener('mousedown', handleMouseDown, false);
+			cnt1.addEventListener('mousedown', handleMouseDown1, false);
+			cnt2.addEventListener('mousedown', handleMouseDown2, false);
+			cnt3.addEventListener('mousedown', handleMouseDown3, false);
+
+			dragTestDiv.addEventListener('mousedown', handleMouseDownP, true);
+			cnt1.addEventListener('mousedown', handleMouseDown1P, true);
+			cnt2.addEventListener('mousedown', handleMouseDown2P, true);
+			cnt3.addEventListener('mousedown', handleMouseDown3P, true);
 
 		</script>
 	</body>
