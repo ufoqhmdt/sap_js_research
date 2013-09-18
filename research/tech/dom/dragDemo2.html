@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>dragDemo1</title>
+		<meta name="description" content="">
+		<meta name="author" content="C5193511">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<form id="form1">
+			<div>
+				<input type="button" id="ufo1" value="ufo1"/>
+				<input type="button" id="ufo2" value="ufo2"/>
+				<input type="button" value="attachEvent" onclick="addEvent();" />
+			</div>
+		</form>
+
+		<script>
+			function AttachEvent(target, eventName, handler, argsObject) {
+				var eventHandler = handler;
+				if (argsObject) {
+					eventHander = function(e) {
+						handler.call(argsObject, e);
+					};
+				}
+				target.addEventListener(eventName, eventHander, false);
+			}
+
+			function LinkClick(e) {
+				console.log(this.name);
+				console.log(e);
+				//    var target = e.srcElement || e.target;
+				//    alert(target.getAttribute('aaa'));
+			}
+
+			function addEvent() {
+				var obj = new Object();
+				obj.name = "link1111";
+				var link1 = document.getElementById("ufo1");
+				AttachEvent(link1, "click", LinkClick, obj);
+				obj = new Object();
+				obj.name = "link2222";
+				var link2 = document.getElementById("ufo2");
+				AttachEvent(link2, "click", LinkClick, obj);
+			}
+		</script>
+
+	</body>
+</html>

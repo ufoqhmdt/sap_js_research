@@ -297,6 +297,10 @@
 				top: 0;
 				z-index: 5;
 			}
+
+			.tileDragging{
+
+			}
 		</style>
 	</head>
 
@@ -306,6 +310,21 @@
 			<div id="tileContainerViewPoint">
 				<div id="containerContent" class="example">
 					<div id="dragTest" draggable="true" class="column"  style="left:100px;z-index:2;">
+						<header>
+							drag me1
+						</header>
+					</div>
+					<div id="dragTest2" draggable="true" class="column"  style="-webkit-transition: -webkit-transform 3ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(1800px, 0px) scale(1) translateZ(0px);">
+						<header>
+							drag me1
+						</header>
+					</div>
+					<div id="dragTest3" draggable="true" class="column"  style="-webkit-transition: -webkit-transform 3ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(3400px, 0px) scale(1) translateZ(0px);">
+						<header>
+							drag me1
+						</header>
+					</div>
+					<div id="dragTest4" draggable="true" class="column"  style="-webkit-transition: -webkit-transform 3ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(3600px, 0px) scale(1) translateZ(0px);">
 						<header>
 							drag me1
 						</header>
@@ -497,6 +516,8 @@
 				function handleMousedown(e) {
 					e.preventDefault();
      				e.stopPropagation();
+     				var grandpa = $("#dragTest").parent().parent();
+     				grandpa.append($("#dragTest"));
 
 					$(document).on('mousemove touchmove', handleMousemove);
 			      	$(document).on('mouseup touchend touchcancel',handleMouseup);
@@ -505,6 +526,7 @@
 				        y: coordinate(event).pageY - $("#dragTest").position().top
 				    };
 				    $("#dragTest").css({"z-index":"5"});
+
 				    console.log(origin);
 					log("handleMousedown");
 				}
@@ -521,6 +543,8 @@
 					var setLeft=coordinate(event).pageX- origin.x;
 					var setTop=coordinate(event).pageY- origin.y;
 
+					guilinPagerInstance.isEdge(e)
+
 					$("#dragTest").css({
 				        left: coordinate(event).pageX- origin.x,
 				        top: coordinate(event).pageY-origin.y
@@ -530,6 +554,9 @@
 				var tileContainerViewPoint = $('#tileContainerViewPoint');
 				tileContainerViewPoint.on("mousedown"," div[draggable=true]",handleMousedown);
 			});
+
+
+
 
 
 
@@ -548,22 +575,22 @@
 
 			  	$ = jQuery;
 
-			  	GuilinPager=(function(){			  		
+			  	GuilinPager=(function(){
+
 			  		GuilinPager.settings = {
-				      base: 60,
-				      gutter: 20,
-				      columns: 12,
-				      draggable: {
-				        zIndex: 800
+				      tilesSwitcher:{
+				      	width:60
+				      },
+				      containerContent:{
+				      		height:800,
+				      		width:1024
 				      }
 				    };
 
-				    GuilinPager.guilinPager=function($el){
-			    		log(this);
+				    GuilinPager.guilinPager=function($el,settings){
+			    		var guilinPagerInstance , __iScroll;   		
 
-			    		var guilinPagerInstance , __iScroll;
-
-			    		guilinPagerInstance=new GuilinPager($el);
+			    		guilinPagerInstance=new GuilinPager($el,settings);
 
 						__iScroll = new iScroll('tileContainerViewPoint', {
 							snap : true,
@@ -601,8 +628,6 @@
 
 						guilinPagerInstance.__iScroll=__iScroll;
 
-						log(guilinPagerInstance);
-
 				    	return guilinPagerInstance;
 				    };
 
@@ -616,6 +641,7 @@
 				    	this.appendPage = __bind(this.appendPage, this);
 				    	this.reducePage = __bind(this.reducePage, this);
 				    	this.lazyResizeHandler();
+				    	this.initRender(5);
 				    	// return this;
 				    };
 
@@ -637,9 +663,7 @@
 							return function() {
 								(function resizeContainer(event){
 									var currentInnerHeight = event.target.innerHeight;
-									// var currentInnerWidth = event.target.innerWidth;
 									$("#tileContainerViewPoint").height(currentInnerHeight - marginOffset);
-									// $("#tileContainerViewPoint").width(currentInnerWidth-marginOffset);
 								})(event);
 							};
 						};
@@ -652,7 +676,18 @@
 				  		callback&&(typeof callback==="function")&&callback();
 				  	};
 
-				  	GuilinPager.prototype.appendPage=function(callback){
+				  	GuilinPager.prototype.initRender=function(pageCount,callback){
+				  		this.$el.children("#containerContent").width(window.innerWidth*pageCount);
+				  		var pagers="<span class='sapGuilinActive'></span>";
+				  		for (var i = 0; i < pageCount-1; i++) {
+				  			pagers+="<span></span>";
+				  		};				  		
+				  		$("#tileContainerPager").empty().append(pagers);
+				  		callback&&(typeof callback==="function")&&callback();
+				  	};
+
+				  	GuilinPager.prototype.appendPage=function(pageCount,callback){
+				  		this.containerContent&&this.containerContent.width=window.innerWidth*pageCount;
 				  		callback&&(typeof callback==="function")&&callback();
 				  	};
 
@@ -660,25 +695,107 @@
 				  		callback&&(typeof callback==="function")&&callback();
 				  	};
 
+				  	GuilinPager.prototype.scrollToPrev=function(event,callback){
+				  		this.clearTimer();
+				  		this.timeOutFlag=setTimeout(this.scrollToPrevProxy(event),500);
+				  		callback&&(typeof callback==="function")&&callback();
+				  	};				  	
+
+				  	GuilinPager.prototype.scrollToNext=function(event,callback){
+				  		this.clearTimer();
+				  		this.timeOutFlag=setTimeout(this.scrollToNextProxy(event),500);
+				  		callback&&(typeof callback==="function")&&callback();
+				  	};
+
+				  	GuilinPager.prototype.scrollToPrevProxy=function(event){
+			  			var self=this;
+						return function() {
+							(function (){
+			  					self.__iScroll&&self.__iScroll.scrollToPage('prev', 0);
+			  					setTimeout((function(event){
+			  							return function(){self.isEdge(event);};
+			  						})(event),500);
+							})();
+						};
+				  	};
+
+				  	GuilinPager.prototype.scrollToNextProxy=function(event){
+			  			var self=this;
+						return function() {
+							(function (){
+			  					self.__iScroll&&self.__iScroll.scrollToPage('next', 0);
+			  					setTimeout((function(event){
+			  							return function(){self.isEdge(event);};
+			  						})(event),500);
+							})();
+						};
+				  	};
+
+				  	GuilinPager.prototype.clearTimer=function(){
+				  		clearTimeout(this.timeOutFlag);
+				  	};
+
+				  	GuilinPager.prototype.isEdge=function(event,callback,ddd){
+				  		if(!event){
+				  			return;
+				  		}
+				  		var isLeft=false;
+				  		var isRight=false;
+				  		var innerHeight=window.innerHeight;
+						var innerWidth=window.innerWidth;
+				  		var clientX=event.clientX;
+				  		var clientY=event.clientY;
+				  		var tilesSwitcherWidth=this.settings.tilesSwitcher.width;
+				  		var leftInXMax=tilesSwitcherWidth;
+				  		var rightXMin=innerWidth-tilesSwitcherWidth;
+				  		if(clientX>0&&clientX<leftInXMax){
+				  			isLeft=true;
+				  			isRight=false;
+				  		}else if(clientX>rightXMin&&clientX<innerWidth){
+				  			isLeft=false;
+				  			isRight=true;
+				  		}else{
+				  			isLeft=false;
+							isRight=false;
+				  		}
+				  		if(isLeft){
+				    		this.scrollToPrev(event);
+				    	}else if(isRight){
+				    		this.scrollToNext(event);
+				    	}else{
+				    		this.clearTimer();
+				    	}
+				  		callback&&(typeof callback==="function")&&callback();
+				  	};
 			  		return GuilinPager;
 			  	})();
 
-
-
 			  	$.fn.extend({
 			  		guilinPager:function(){
-			  			return this.each(function(e){
+			  			var option, otherParameters,settings,rtn={};
+					    option = arguments[0];
+					    otherParameters = ((2 <= arguments.length) ? __slice.call(arguments, 1) : []);
+					    if (option == null) {
+					      option = {};
+					    };
+			  			settings = $.extend({}, $.fn.guilinPager.defaults, typeof option === "object" && option);
+			  			rtn.$el=this.each(function(e){
 			  				var $this;
         					$this = $(this);
-        					return GuilinPager.guilinPager($this);
+        					rtn.instance=GuilinPager.guilinPager($this,settings);
 			  			});
+			  			return rtn;
 			  		}
 			  	});
 
 			}).call(this);
 
-			$("#tileContainerViewPoint").guilinPager();
-		
+			var guilinPager=$("#tileContainerViewPoint").guilinPager({
+				marginOffset:120,
+			});
+			var guilinPagerInstance=guilinPager.instance;
+			
+
 		</script>
 	</body>
 </html>
