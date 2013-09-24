@@ -158,6 +158,7 @@ Copyright 2013 Kevin Sylvestre
       });
       this.dragged = this.$target;
       return (_ref = this.callbacks) != null ? typeof _ref.moved === "function" ? _ref.moved(event) : void 0 : void 0;
+      // return void 0;
     };
 
     Draggable.prototype.click = function(event) {
@@ -335,6 +336,7 @@ Copyright 2013 Kevin Sylvestre
     Gridly.prototype.draggingMoved = function(event) {
       var $dragging, $elements, element, i, index, original, positions, _i, _j, _len, _ref, _ref1, _ref2;
       $dragging = $(event.target).closest(this.$('> *'));
+      // log("----draggingMoved")
       // $dragging = $(event.target);//I think this is not right.
       $elements = this.$sorted();
       positions = this.structure($elements).positions;
@@ -353,11 +355,11 @@ Copyright 2013 Kevin Sylvestre
       $elements = positions.map(function(position) {
         return position.$element;
       });
-      $elements = (((_ref1 = this.settings.callbacks) != null ? _ref1.optimize : void 0) || this.optimize)($elements);
+      // $elements = (((_ref1 = this.settings.callbacks) != null ? _ref1.optimize : void 0) || this.optimize)($elements);
       for (i = _j = 0, _ref2 = $elements.length; 0 <= _ref2 ? _j < _ref2 : _j > _ref2; i = 0 <= _ref2 ? ++_j : --_j) {
         this.reordinalize($($elements[i]), i);
       }
-      return this.layout();
+      // return this.layout();//启用可以连续layout.但是性能很差.
     };
 
     Gridly.prototype.size = function($element) {
@@ -371,7 +373,7 @@ Copyright 2013 Kevin Sylvestre
       size = this.size($element);
       height = Infinity;
       column = 0;
-      //this loop is get min value in columns. I thinks. column最小那个的index.最小那个也就证明还没有被计算位置.
+      //this loop is get min value in columns. I think. column最小那个的index.最小那个也就证明还没有被计算位置.
       for (i = _i = 0, _ref = columns.length - size; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
         max = Math.max.apply(Math, columns.slice(i, i + size));
         if (max < height) {

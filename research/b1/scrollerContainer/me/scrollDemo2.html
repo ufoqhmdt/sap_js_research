@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>demo1</title>
+		<meta name="description" content="">
+		<meta name="author" content="C5193511">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="stylesheet" href="../css/bootstrap.css" />
+		<style type="text/css" media="all">
+			#sapTileContainer {
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
+				margin-top: 40px;
+				position: relative;
+			}
+
+			#sapTileContainerViewPoint {
+				position: relative;	/* On older OS versions "position" and "z-index" must be defined, */
+				/*z-index: 1;*//* it seems that recent webkit is less picky and works anyway. */
+				overflow: hidden;
+				background: #aaa;
+				background: #e3e3e3;
+			}
+
+			#sapTileContainerContent {
+				width: 5120px;
+				height: 100%;
+				float: left;
+				padding: 0;
+			}
+
+		</style>
+		<style type="text/css">
+			.gridly, .gridly > :not(.dragging) {
+				-webkit-transition: all 0.4s ease-in-out;
+				-moz-transition: all 0.4s ease-in-out;
+				transition: all 0.4s ease-in-out;
+			}
+			.gridly .dragging {
+				z-index: 800;
+			}
+			.gridly {
+				position: relative;
+				width: 960px;
+				margin: 57px;
+			}
+			.brick.small {
+				width: 220px;
+				height: 220px;
+			}
+			.brick.large {
+				width: 450px;
+				height: 220px;
+			}
+		</style>
+		<style type="text/css">
+			#sapTileContainerContent {
+				position: relative;
+			}
+			#sapTileContainerContent .brick {
+				opacity: 1;
+				cursor: pointer;
+				position: relative;
+			}
+			#sapTileContainerContent .brick .delete {
+				display: block;
+				color: white;
+				background: rgba(255, 255, 255, 0.2);
+				width: 40px;
+				height: 40px;
+				top: 0;
+				right: 0;
+				position: absolute;
+				text-align: center;
+				line-height: 40px;
+			}
+			#sapTileContainerContent .brick.small {
+				width: 220px;
+				height: 220px;
+			}
+			#sapTileContainerContent .brick.large {
+				width: 450px;
+				height: 220px;
+			}
+			#sapTileContainerContent .brick.dragging {
+				opacity: 0.8;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 1) {
+				background: #1abc9c;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 2) {
+				background: #16a085;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 3) {
+				background: #2ecc71;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 4) {
+				background: #27ae60;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 5) {
+				background: #3498db;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 6) {
+				background: #2980b9;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 7) {
+				background: #9b59b6;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 8) {
+				background: #8e44ad;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 9) {
+				background: #34495e;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 10) {
+				background: #2c3e50;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 11) {
+				background: #f1c40f;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 12) {
+				background: #f39c12;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 13) {
+				background: #e67e22;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 14) {
+				background: #d35400;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 15) {
+				background: #e74c3c;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 16) {
+				background: #c0392b;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 17) {
+				background: #ecf0f1;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 18) {
+				background: #bdc3c7;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 19) {
+				background: #95a5a6;
+			}
+			#sapTileContainerContent .brick:nth-child(20n + 20) {
+				background: #7f8c8d;
+			}
+
+		</style>
+
+		<style type="text/css">
+
+			.sapGuilinPager {
+				padding: 5px;
+				text-align: center;
+				height: 30px;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				position: absolute;
+				width: 100%;
+			}
+
+			.sapGuilinPager SPAN.sapGuilinActive {
+				background-color: #007cc0;
+				box-shadow: 0 0 2px 2px #ffffff;
+			}
+			.sapGuilinPager SPAN {
+				display: inline-block;
+				background-color: #999999;
+				border-radius: 4px;
+				height: 8px;
+				width: 8px;
+				margin-right: 8px;
+				margin-bottom: 1px;
+				cursor: default;
+				box-shadow: 0 0 1px 1px #ffffff;
+			}
+
+			.column {
+				height: 150px;
+				width: 150px;
+				float: left;
+				background-color: #ccc;
+				margin-right: 5px;
+				text-align: center;
+				cursor: move;
+				position: absolute;
+			}
+			.column header {
+				color: #fff;
+				background-color: black;
+				padding: 5px;
+			}
+
+			#sapTilesSwitcherLeft {
+				width: 60px;
+				left: 0px;
+				top: 0px;
+				padding-bottom: 0px;
+				background-position: initial initial;
+				background-repeat: initial initial;
+			}
+
+			#sapTilesSwitcherRight {
+				width: 177px;
+				right: 0px;
+				top: 0px;
+				padding-bottom: 0px;
+			}
+
+			.sapPageSwitcher {
+				color: rgba(0,0,0, 0.5);
+			}
+			.sapPageSwitcher {
+				-webkit-transition: width 150ms, right 150ms, background-color 150ms;
+				background-color: transparent;
+				border: none;
+				bottom: 0;
+				font-size: 40px;
+				margin: 0;
+				max-width: 80px;
+				min-width: 40px;
+				outline: none;
+				padding: 0;
+				position: absolute;
+				top: 0;
+				z-index: 5;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<input type="button" id="appendPage" value="append page" class="btn"/>
+		<input type="button" id="reducePage" value="reduce page" class="btn"/>
+
+		<div id="sapTileContainer">
+			<div id="sapTileContainerViewPoint">
+				<div id="sapTileContainerContent">
+					<div id="dragTest" draggable="true" class="column"  style="left:100px;z-index:2;">
+						<header>
+							drag me1
+						</header>
+					</div>
+					<div id="dragTest2" draggable="true" class="column"  style="-webkit-transition: -webkit-transform 3ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(1800px, 0px) scale(1) translateZ(0px);">
+						<header>
+							drag me1
+						</header>
+					</div>
+					<div id="dragTest3" draggable="true" class="column"  style="-webkit-transition: -webkit-transform 3ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(3400px, 0px) scale(1) translateZ(0px);">
+						<header>
+							drag me1
+						</header>
+					</div>
+					<div id="dragTest4" draggable="true" class="column"  style="-webkit-transition: -webkit-transform 3ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(3600px, 0px) scale(1) translateZ(0px);">
+						<header>
+							drag me1
+						</header>
+					</div>
+					<div id="" class="gridly">
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick large">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+						<div class="brick small">
+							<a class="delete" href="#">×</a>
+						</div>
+					</div>
+
+					<p class="actions">
+						<a class="add button" href="#">Add</a>
+					</p>
+				</div>
+				<button id="sapTilesSwitcherLeft" class="sapPageSwitcher" tabindex="2" aria-label="Go to left">
+					‹
+				</button>
+				<button id="sapTilesSwitcherRight" class="sapPageSwitcher" tabindex="2" aria-label="Go to right">
+					›
+				</button>
+			</div>
+		</div>
+
+		<div id="sapTileContainerPager" class="sapGuilinPager">
+			<span class="sapGuilinActive"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<script src="../js/jquery-1.9.1.js"></script>
+		<script src="../js/bootstrap.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/jquery.gridly.js"></script>
+		<script type="text/javascript">
+			function log(l) {
+				console.log(l);
+			}
+
+
+			(function() {
+				$(function() {
+					var brick;
+					brick = "<div class='brick small'><div class='delete'>&times;</div></div>";
+					$(document).on("click", ".gridly .brick", function(event) {
+						var $this, size;
+						event.preventDefault();
+						event.stopPropagation();
+						$this = $(this);
+
+						$this.toggleClass('small');
+						$this.toggleClass('large');
+
+						setTimeout(function() {
+							$('.gridly').gridly('layout');
+						}, 500);
+
+					});
+					$(document).on("click", ".gridly .delete", function(event) {
+						return false;
+						var $this;
+						event.preventDefault();
+						event.stopPropagation();
+						$this = $(this);
+						$this.closest('.brick').remove();
+						$('.gridly').gridly('layout');
+					});
+					$(document).on("click", ".add", function(event) {
+						event.preventDefault();
+						event.stopPropagation();
+						$('.gridly').append(brick);
+						$('.gridly').gridly('layout');
+					});
+				});
+
+			}).call(this);
+
+
+			$(function() {
+
+				var coordinate = function(event) {
+					switch (event.type) {
+						case 'touchstart':
+						case 'touchmove':
+						case 'touchend':
+						case 'touchcancel':
+							return event.originalEvent.touches[0];
+						default:
+							return event;
+					}
+				};
+
+				function handleMouseup(e) {
+					log("mouseup-------------");
+					$("#dragTest").css({
+						"z-index" : "2"
+					});
+					$(document).off('mousemove touchmove', handleMousemove);
+				}
+
+				var origin = {};
+
+				function handleMousedown(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					var grandpa = $("#dragTest").parent().parent();
+					grandpa.append($("#dragTest"));
+
+					$(document).on('mousemove touchmove', handleMousemove);
+					$(document).on('mouseup touchend touchcancel', handleMouseup);
+					origin = {
+						x : coordinate(e).pageX - $("#dragTest").position().left,
+						y : coordinate(e).pageY - $("#dragTest").position().top
+					};
+					$("#dragTest").css({
+						"z-index" : "5"
+					});
+
+					console.log(origin);
+					log("handleMousedown");
+				}
+
+				function handleMousemove(e) {
+					e.stopPropagation();
+					e.preventDefault();
+					var p = $(e.target).position();
+
+					var pageX = e.pageX;
+					var pageY = e.pageY;
+
+					var setLeft = coordinate(e).pageX - origin.x;
+					var setTop = coordinate(e).pageY - origin.y;
+					console.log("move----------------");
+					guilinPagerInstance.isEdge(e);
+
+					$("#dragTest").css({
+						left : coordinate(e).pageX - origin.x,
+						top : coordinate(e).pageY - origin.y
+					});
+				}
+
+				var sapTileContainerViewPoint = $('#sapTileContainerViewPoint');
+				sapTileContainerViewPoint.on("mousedown", " div[draggable=true]", handleMousedown);
+			});
+
+			(function() {"use strict";
+				var $, GuilinPager, __bind = function(fn, me) {
+					return function() {
+						return fn.apply(me, arguments);
+					};
+				}, __slice = [].slice, log = function(l) {
+					console.log(l);
+				};
+
+				$ = jQuery;
+
+				GuilinPager = (function() {
+
+					GuilinPager.settings = {
+						tilesSwitcher : {
+							width : 60
+						},
+						sapTileContainerContent : {
+							height : 800,
+							width : 1024
+						}
+					};
+
+					GuilinPager.guilinPager = function($el, settings) {
+						var guilinPagerInstance, __iScroll;
+
+						guilinPagerInstance = new GuilinPager($el, settings);
+
+						guilinPagerInstance.__tiles = $('.gridly').gridly({
+							base : 220, // px
+							gutter : 10, // px
+							columns : 4
+						});
+
+						return guilinPagerInstance;
+					};
+
+					function GuilinPager($el, settings) {
+						if (settings == null) {
+							settings = {};
+						}
+						this.settings = $.extend({}, GuilinPager.settings, settings);
+						this.$el = $el;
+						this.coordinate = __bind(this.coordinate, this);
+						this.appendPage = __bind(this.appendPage, this);
+						this.reducePage = __bind(this.reducePage, this);
+						this.lazyResizeHandler();
+						this.initRender(5);
+						this.createIscroll();
+						this.createPager();
+						// return this;
+					};
+
+					GuilinPager.prototype.coordinate = function(event) {
+						switch (event.type) {
+							case 'touchstart':
+							case 'touchmove':
+							case 'touchend':
+							case 'touchcancel':
+								return event.originalEvent.touches[0];
+							default:
+								return event;
+						}
+					};
+
+					GuilinPager.prototype.lazyResizeHandler = function(callback) {
+						var marginOffset = this.settings.marginOffset || 0;
+						var resizedwProxy = function(event) {
+							return function() {
+								(function resizeContainer(event) {
+									var currentInnerHeight = event.target.innerHeight;
+									$("#sapTileContainerViewPoint").height(currentInnerHeight - marginOffset);
+								})(event);
+							};
+						};
+
+						var resizeTimeoutFlag;
+						$(window).resize(function(event) {
+							clearTimeout(resizeTimeoutFlag);
+							resizeTimeoutFlag = setTimeout(resizedwProxy(event), 200);
+						});
+						callback && ( typeof callback === "function") && callback();
+					};
+
+					GuilinPager.prototype.initRender = function(pageCount, callback) {
+						this.sapTileContainerContent=this.$el.children("#sapTileContainerContent");
+						this.sapTileContainerContent.width(window.innerWidth * pageCount);
+						var pagerSpan = "<span class='sapGuilinActive'></span>";
+						for (var i = 0; i < pageCount - 1; i++) {
+							pagerSpan += "<span></span>";
+						};
+						$("#sapTileContainerPager").empty().append(pagerSpan);
+						callback && ( typeof callback === "function") && callback();
+					};
+
+					GuilinPager.prototype.createIscroll = function() {
+						var __iScroll = new iScroll('sapTileContainerViewPoint', {
+							snap : true,
+							hScroll : true,
+							momentum : false,
+							hScrollbar : false,
+							vScrollbar : false,
+							lockDirection : true,
+							fixedScrollbar : false,
+							fadeScrollbar : false,
+							onScrollEnd : function() {
+								$('#sapTileContainerPager > span.sapGuilinActive').removeClass('sapGuilinActive');
+								document.querySelector('#sapTileContainerPager > span:nth-child(' + (this.currPageX + 1) + ')').className = 'sapGuilinActive';
+							}
+						});
+						this.__iScroll=__iScroll;
+						return __iScroll;
+					};
+
+					GuilinPager.prototype.createPager = function() {
+						$("#sapTilesSwitcherLeft,#sapTilesSwitcherRight").on("mousedown", function(e) {
+							this.__iScroll._start(e);
+						});
+						$("#sapTilesSwitcherLeft").click(function(e) {
+							this.__iScroll.scrollToPage('prev', 0);
+							return false;
+						})
+						$("#sapTilesSwitcherRight").click(function(e) {
+							this.__iScroll.scrollToPage('next', 0);
+							return false;
+						})
+					};
+
+					GuilinPager.prototype.appendPage = function(pageCount, callback) {
+						if(this.sapTileContainerContent){
+							var newWidth=this.sapTileContainerContent.width()+window.innerWidth * pageCount;
+							this.sapTileContainerContent.width(newWidth);
+						}
+						var pagerSpan = "";
+						for (var i = 0; i < pageCount; i++) {
+							pagerSpan += "<span></span>";
+						};
+						$("#sapTileContainerPager").append(pagerSpan);
+						this.createIscroll();
+						callback && ( typeof callback === "function") && callback();
+					};
+
+					GuilinPager.prototype.reducePage = function(callback) {
+						callback && ( typeof callback === "function") && callback();
+					};
+
+					GuilinPager.prototype.scrollToPrev = function(event, callback) {
+						log("---prev");
+						this.__iScroll && this.__iScroll.scrollToPage('prev', 0);
+						callback && ( typeof callback === "function") && callback();
+					};
+
+					GuilinPager.prototype.scrollToNext = function(event, callback) {
+						log("---next");
+						this.__iScroll && this.__iScroll.scrollToPage('next', 0);
+						callback && ( typeof callback === "function") && callback();
+					};
+
+					GuilinPager.prototype.scrollToPrevProxy = function(event) {
+						var self = this;
+						return function() {
+							(function() {
+								self.__iScroll && self.__iScroll.scrollToPage('prev', 0);
+								self.timeOutFlag = setTimeout((function(event) {
+									return function() {
+										self.isEdge(event);
+									};
+								})(event), 500);
+							})();
+						};
+					};
+
+					GuilinPager.prototype.scrollToNextProxy = function(event) {
+						var self = this;
+						return function() {
+							(function() {
+								self.__iScroll && self.__iScroll.scrollToPage('next', 0);
+								self.timeOutFlag = setTimeout((function(event) {
+									return function() {
+										self.isEdge(event);
+									};
+								})(event), 500);
+							})();
+						};
+					};
+
+					GuilinPager.prototype.clearTimer = function() {
+						clearTimeout(this.timeOutFlag);
+					};
+
+					GuilinPager.prototype.isEdge = function(event, callback) {
+						if (!event) {
+							return;
+						}
+						var self=this,
+						isLeft = false,
+						isRight = false,
+						innerHeight = window.innerHeight,
+						innerWidth = window.innerWidth,
+						clientX = event.clientX,
+						clientY = event.clientY,
+						tilesSwitcherWidth = this.settings.tilesSwitcher.width,
+						leftInXMax = tilesSwitcherWidth,
+						rightXMin = innerWidth - tilesSwitcherWidth;
+
+						if (clientX > 0 && clientX < leftInXMax) {
+							isLeft = true;
+							isRight = false;
+						} else if (clientX > rightXMin && clientX < innerWidth) {
+							isLeft = false;
+							isRight = true;
+						} else {
+							isLeft = false;
+							isRight = false;
+						}
+						if (isLeft) {
+							self.scrollToPrev(event);
+						} else if (isRight) {
+							self.scrollToNext(event);
+						} else {
+							this.clearTimer();
+						}
+						callback && ( typeof callback === "function") && callback();
+					};
+
+					return GuilinPager;
+				})();
+
+				$.fn.extend({
+					guilinPager : function() {
+						var option, otherParameters, settings, rtn = {};
+						option = arguments[0];
+						otherParameters = ((2 <= arguments.length) ? __slice.call(arguments, 1) : []);
+						if (option == null) {
+							option = {};
+						};
+						settings = $.extend({}, $.fn.guilinPager.defaults, typeof option === "object" && option);
+						rtn.$el = this.each(function(e) {
+							var $this;
+							$this = $(this);
+							rtn.instance = GuilinPager.guilinPager($this, settings);
+						});
+						return rtn;
+					}
+				});
+
+			}).call(this);
+
+			var guilinPager = $("#sapTileContainerViewPoint").guilinPager({
+				marginOffset : 120,
+			});
+			var guilinPagerInstance = guilinPager.instance;
+
+			$(function(){
+				$("#appendPage").click(function(){guilinPagerInstance.appendPage(6)});
+				$("#reducePage").click(function(){guilinPagerInstance.reducePage(1)});
+			})
+
+		</script>
+	</body>
+</html>

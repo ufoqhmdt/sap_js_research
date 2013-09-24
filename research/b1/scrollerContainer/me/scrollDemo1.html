@@ -379,38 +379,13 @@
 		<script type="text/javascript">
 			function log(l) {
 				console.log(l);
-			}
-
-			var myScroll;
-
-			// function loaded() {
-			// 	myScroll = new iScroll('tileContainerViewPoint', {
-			// 		snap : true,
-			// 		hScroll : true,
-			// 		momentum : false,
-			// 		hScrollbar : false,
-			// 		vScrollbar : false,
-			// 		lockDirection : true,
-			// 		fixedScrollbar : false,
-			// 		fadeScrollbar : false,
-			// 		onScrollEnd : function() {
-			// 			$('#tileContainerPager > span.sapGuilinActive').removeClass('sapGuilinActive');
-			// 			document.querySelector('#tileContainerPager > span:nth-child(' + (this.currPageX+1) + ')').className = 'sapGuilinActive';
-			// 		}
-			// 	});
-			// }
-
-
-			// document.addEventListener('DOMContentLoaded', loaded, false);
-
-			
+			}			
 
 			(function() {
 				$(function() {
 					var brick;
 					brick = "<div class='brick small'><div class='delete'>&times;</div></div>";
 					$(document).on("click", ".gridly .brick", function(event) {
-						//return true;
 						var $this, size;
 						event.preventDefault();
 						event.stopPropagation();
@@ -456,29 +431,6 @@
 
 			$(function() {
 
-				
-
-				// var marginOffset = 120;
-
-				// var resizedwProxy = function(event) {
-				// 	return function() {
-				// 		(function resizeContainer(event){
-				// 			var currentInnerHeight = event.target.innerHeight;
-				// 			// var currentInnerWidth = event.target.innerWidth;
-				// 			$("#tileContainerViewPoint").height(currentInnerHeight - marginOffset);
-				// 			// $("#tileContainerViewPoint").width(currentInnerWidth-marginOffset);
-				// 		})(event);
-				// 	};
-				// };
-
-				// var resizeTimeoutFlag;
-				// $(window).resize(function(event) {
-				// 	clearTimeout(resizeTimeoutFlag);
-				// 	resizeTimeoutFlag = setTimeout(resizedwProxy(event), 200);
-				// });
-
-
-
 				var coordinate = function(event) {
 			      switch (event.type) {
 			        case 'touchstart':
@@ -490,19 +442,6 @@
 			          return event;
 			      }
 			    };
-
-
-
-				function handleClick(e) {
-					// e.preventDefault();					
-					e.stopPropagation();
-					log("handleClick");
-				}
-
-
-				function handleMouseover(e) {
-					log("mouseover");
-				}
 
 				function handleMouseup(e) {
 					log("mouseup-------------");
@@ -522,8 +461,8 @@
 					$(document).on('mousemove touchmove', handleMousemove);
 			      	$(document).on('mouseup touchend touchcancel',handleMouseup);
 			      	origin = {
-				        x: coordinate(event).pageX - $("#dragTest").position().left,
-				        y: coordinate(event).pageY - $("#dragTest").position().top
+				        x: coordinate(e).pageX - $("#dragTest").position().left,
+				        y: coordinate(e).pageY - $("#dragTest").position().top
 				    };
 				    $("#dragTest").css({"z-index":"5"});
 
@@ -537,17 +476,18 @@
 					e.preventDefault();
 					var p=$(e.target).position();
 
-					var pageX = event.pageX;
-					var pageY = event.pageY;
+					var pageX = e.pageX;
+					var pageY = e.pageY;
 
-					var setLeft=coordinate(event).pageX- origin.x;
-					var setTop=coordinate(event).pageY- origin.y;
+					var setLeft=coordinate(e).pageX- origin.x;
+					var setTop=coordinate(e).pageY- origin.y;
+					console.log("move----------------");
+					guilinPagerInstance.isEdge(e);
 
-					guilinPagerInstance.isEdge(e)
 
 					$("#dragTest").css({
-				        left: coordinate(event).pageX- origin.x,
-				        top: coordinate(event).pageY-origin.y
+				        left: coordinate(e).pageX- origin.x,
+				        top: coordinate(e).pageY-origin.y
 				    });
 				}
 
@@ -687,7 +627,7 @@
 				  	};
 
 				  	GuilinPager.prototype.appendPage=function(pageCount,callback){
-				  		this.containerContent&&this.containerContent.width=window.innerWidth*pageCount;
+				  		this.containerContent&&(this.containerContent.width=window.innerWidth*pageCount);
 				  		callback&&(typeof callback==="function")&&callback();
 				  	};
 
@@ -710,32 +650,32 @@
 				  	GuilinPager.prototype.scrollToPrevProxy=function(event){
 			  			var self=this;
 						return function() {
-							(function (){
-			  					self.__iScroll&&self.__iScroll.scrollToPage('prev', 0);
-			  					setTimeout((function(event){
-			  							return function(){self.isEdge(event);};
-			  						})(event),500);
-							})();
-						};
+									(function (){
+					  					self.__iScroll&&self.__iScroll.scrollToPage('prev', 0);
+					  					self.timeOutFlag=setTimeout((function(event){
+					  						return function(){self.isEdge(event);};
+					  					})(event),500);
+									})();
+								};
 				  	};
 
 				  	GuilinPager.prototype.scrollToNextProxy=function(event){
 			  			var self=this;
 						return function() {
-							(function (){
-			  					self.__iScroll&&self.__iScroll.scrollToPage('next', 0);
-			  					setTimeout((function(event){
-			  							return function(){self.isEdge(event);};
-			  						})(event),500);
-							})();
-						};
+									(function (){
+					  					self.__iScroll&&self.__iScroll.scrollToPage('next', 0);
+					  					self.timeOutFlag=setTimeout((function(event){
+					  						return function(){self.isEdge(event);};
+					  					})(event),500);
+									})();
+								};
 				  	};
 
 				  	GuilinPager.prototype.clearTimer=function(){
 				  		clearTimeout(this.timeOutFlag);
 				  	};
 
-				  	GuilinPager.prototype.isEdge=function(event,callback,ddd){
+				  	GuilinPager.prototype.isEdge=function(event,callback){
 				  		if(!event){
 				  			return;
 				  		}
@@ -767,6 +707,7 @@
 				    	}
 				  		callback&&(typeof callback==="function")&&callback();
 				  	};
+
 			  		return GuilinPager;
 			  	})();
 
