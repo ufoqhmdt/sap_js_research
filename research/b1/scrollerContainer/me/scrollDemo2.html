@@ -19,224 +19,213 @@
 		<link rel="stylesheet" href="../css/bootstrap.css" />
 		<style type="text/css" media="all">
 			#sapTilesContainer {
-				width: 100%;
-				height: 100%;
-				margin: 0 auto;
-				margin-top: 40px;
-				position: relative;
+				width:100%;
+				height:100%;
+				margin:0 auto;
+				margin-top:40px;
+				position:relative;
 			}
-
 			#sapTilesContainerViewPoint {
-				position: relative;	/* On older OS versions "position" and "z-index" must be defined, */
+				position:relative;	/* On older OS versions "position" and "z-index" must be defined, */
 				/*z-index: 1;*//* it seems that recent webkit is less picky and works anyway. */
-				overflow: hidden;
-				background: #aaa;
-				background: #e3e3e3;
+				overflow:hidden;
+				background:#aaa;
+				background:#e3e3e3;
 			}
-
 			#sapTilesContainerContent {
-				width: 5120px;
-				height: 100%;
-				float: left;
-				padding: 0;
+				width:5120px;
+				height:100%;
+				float:left;
+				padding:0;
 			}
-
 		</style>
 		<style type="text/css">
-			.gridly, .gridly > :not(.dragging) {
-				-webkit-transition: all 0.4s ease-in-out;
-				-moz-transition: all 0.4s ease-in-out;
-				transition: all 0.4s ease-in-out;
+			.gridly, .gridly> :not(.dragging) {
+				-webkit-transition:all 0.4s ease-in-out;
+				-moz-transition:all 0.4s ease-in-out;
+				transition:all 0.4s ease-in-out;
 			}
 			.gridly .dragging {
-				z-index: 800;
+				z-index:800;
 			}
 			.gridly {
-				position: relative;
-				width: 960px;
-				margin: 57px;
+				position:relative;
+				width:960px;
+				margin:57px;
 			}
 			.sapGuilinTile.small {
-				width: 220px;
-				height: 220px;
+				width:220px;
+				height:220px;
 			}
 			.sapGuilinTile.large {
-				width: 450px;
-				height: 220px;
+				width:450px;
+				height:220px;
 			}
 		</style>
 		<style type="text/css">
 			#sapTilesContainerContent {
-				position: relative;
+				position:relative;
 			}
 			#sapTilesContainerContent .sapGuilinTile {
-				opacity: 1;
-				cursor: pointer;
-				position: relative;
+				opacity:1;
+				cursor:pointer;
+				position:relative;
 			}
 			#sapTilesContainerContent .sapGuilinTile .delete {
-				display: block;
-				color: white;
-				background: rgba(255, 255, 255, 0.2);
-				width: 40px;
-				height: 40px;
-				top: 0;
-				right: 0;
-				position: absolute;
-				text-align: center;
-				line-height: 40px;
+				display:block;
+				color:white;
+				background:rgba(255, 255, 255, 0.2);
+				width:40px;
+				height:40px;
+				top:0;
+				right:0;
+				position:absolute;
+				text-align:center;
+				line-height:40px;
 			}
 			#sapTilesContainerContent .sapGuilinTile.small {
-				width: 220px;
-				height: 220px;
+				width:220px;
+				height:220px;
 			}
 			#sapTilesContainerContent .sapGuilinTile.large {
-				width: 450px;
-				height: 220px;
+				width:450px;
+				height:220px;
 			}
 			#sapTilesContainerContent .sapGuilinTile.dragging {
-				opacity: 0.8;
+				opacity:0.8;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 1) {
-				background: #1abc9c;
+				background:#1abc9c;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 2) {
-				background: #16a085;
+				background:#16a085;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 3) {
-				background: #2ecc71;
+				background:#2ecc71;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 4) {
-				background: #27ae60;
+				background:#27ae60;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 5) {
-				background: #3498db;
+				background:#3498db;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 6) {
-				background: #2980b9;
+				background:#2980b9;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 7) {
-				background: #9b59b6;
+				background:#9b59b6;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 8) {
-				background: #8e44ad;
+				background:#8e44ad;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 9) {
-				background: #34495e;
+				background:#34495e;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 10) {
-				background: #2c3e50;
+				background:#2c3e50;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 11) {
-				background: #f1c40f;
+				background:#f1c40f;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 12) {
-				background: #f39c12;
+				background:#f39c12;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 13) {
-				background: #e67e22;
+				background:#e67e22;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 14) {
-				background: #d35400;
+				background:#d35400;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 15) {
-				background: #e74c3c;
+				background:#e74c3c;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 16) {
-				background: #c0392b;
+				background:#c0392b;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 17) {
-				background: #ecf0f1;
+				background:#ecf0f1;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 18) {
-				background: #bdc3c7;
+				background:#bdc3c7;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 19) {
-				background: #95a5a6;
+				background:#95a5a6;
 			}
 			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 20) {
-				background: #7f8c8d;
+				background:#7f8c8d;
 			}
-
 		</style>
 
 		<style type="text/css">
-
 			.sapGuilinPager {
-				padding: 5px;
-				text-align: center;
-				height: 30px;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
-				position: absolute;
-				width: 100%;
+				padding:5px;
+				text-align:center;
+				height:30px;
+				-moz-box-sizing:border-box;
+				box-sizing:border-box;
+				position:absolute;
+				width:100%;
 			}
-
 			.sapGuilinPager SPAN.sapGuilinActive {
-				background-color: #007cc0;
-				box-shadow: 0 0 2px 2px #ffffff;
+				background-color:#007cc0;
+				box-shadow:0 0 2px 2px #ffffff;
 			}
 			.sapGuilinPager SPAN {
-				display: inline-block;
-				background-color: #999999;
-				border-radius: 4px;
-				height: 8px;
-				width: 8px;
-				margin-right: 8px;
-				margin-bottom: 1px;
-				cursor: default;
-				box-shadow: 0 0 1px 1px #ffffff;
+				display:inline-block;
+				background-color:#999999;
+				border-radius:4px;
+				height:8px;
+				width:8px;
+				margin-right:8px;
+				margin-bottom:1px;
+				cursor:default;
+				box-shadow:0 0 1px 1px #ffffff;
 			}
-
 			.column {
-				height: 150px;
-				width: 150px;
-				float: left;
-				background-color: #ccc;
-				margin-right: 5px;
-				text-align: center;
-				cursor: move;
-				position: absolute;
+				height:150px;
+				width:150px;
+				float:left;
+				background-color:#ccc;
+				margin-right:5px;
+				text-align:center;
+				cursor:move;
+				position:absolute;
 			}
 			.column header {
-				color: #fff;
-				background-color: black;
-				padding: 5px;
+				color:#fff;
+				background-color:black;
+				padding:5px;
 			}
-
 			#sapTilesSwitcherLeft {
-				width: 60px;
-				left: 0px;
-				top: 0px;
-				padding-bottom: 0px;
-				background-position: initial initial;
-				background-repeat: initial initial;
+				width:60px;
+				left:0px;
+				top:0px;
+				padding-bottom:0px;
+				background-position:initial initial;
+				background-repeat:initial initial;
 			}
-
 			#sapTilesSwitcherRight {
-				width: 177px;
-				right: 0px;
-				top: 0px;
-				padding-bottom: 0px;
+				width:177px;
+				right:0px;
+				top:0px;
+				padding-bottom:0px;
 			}
-
 			.sapPageSwitcher {
-				-webkit-transition: width 150ms, right 150ms, background-color 150ms;
-				color: rgba(0,0,0, 0.5);
-				background-color: transparent;
-				border: none;
-				bottom: 0;
-				font-size: 40px;
-				margin: 0;
-				max-width: 80px;
-				min-width: 40px;
-				outline: none;
-				padding: 0;
-				position: absolute;
-				top: 0;
-				z-index: 5;
+				-webkit-transition:width 150ms,right 150ms,background-color 150ms;
+				color:rgba(0,0,0, 0.5);
+				background-color:transparent;
+				border:none;
+				bottom:0;
+				font-size:40px;
+				margin:0;
+				max-width:80px;
+				min-width:40px;
+				outline:none;
+				padding:0;
+				position:absolute;
+				top:0;
+				z-index:5;
 			}
-
 		</style>
 	</head>
 
@@ -360,7 +349,6 @@
 				});
 
 			}).call(this);
-
 
 			$(function() {
 
@@ -516,13 +504,13 @@
 					};
 
 					GuilinPager.prototype.initRender = function(pageCount, callback) {
-						this.sapTilesContainerContent=this.$el.children("#sapTilesContainerContent");
+						this.sapTilesContainerContent = this.$el.children("#sapTilesContainerContent");
 						this.sapTilesContainerContent.width(window.innerWidth * pageCount);
 						var pagerSpan = "<span class='sapGuilinActive'></span>";
 						for (var i = 0; i < pageCount - 1; i++) {
 							pagerSpan += "<span></span>";
 						};
-						this.$sapTilesContainerPager=$("#sapTilesContainerPager");
+						this.$sapTilesContainerPager = $("#sapTilesContainerPager");
 						this.$sapTilesContainerPager.empty().append(pagerSpan);
 						callback && ( typeof callback === "function") && callback();
 					};
@@ -542,12 +530,12 @@
 								document.querySelector('#sapTilesContainerPager > span:nth-child(' + (this.currPageX + 1) + ')').className = 'sapGuilinActive';
 							}
 						});
-						this.__iScroll=__iScroll;
+						this.__iScroll = __iScroll;
 						return __iScroll;
 					};
 
 					GuilinPager.prototype.createPager = function() {
-						var self=this;
+						var self = this;
 						$("#sapTilesSwitcherLeft,#sapTilesSwitcherRight").on("mousedown", function(e) {
 							self.__iScroll._start(e);
 						});
@@ -562,8 +550,8 @@
 					};
 
 					GuilinPager.prototype.appendPage = function(pageCount, callback) {
-						if(this.sapTilesContainerContent){
-							var newWidth=this.sapTilesContainerContent.width()+window.innerWidth * pageCount;
+						if (this.sapTilesContainerContent) {
+							var newWidth = this.sapTilesContainerContent.width() + window.innerWidth * pageCount;
 							this.sapTilesContainerContent.width(newWidth);
 						}
 						var pagerSpan = "";
@@ -576,13 +564,13 @@
 					};
 
 					GuilinPager.prototype.reducePage = function(callback) {
-						if(this.sapTilesContainerContent){
-							var newWidth=this.sapTilesContainerContent.width()-window.innerWidth * pageCount;
+						if (this.sapTilesContainerContent) {
+							var newWidth = this.sapTilesContainerContent.width() - window.innerWidth * pageCount;
 							this.sapTilesContainerContent.width(newWidth);
 						}
-						var pagerSpanNow=this.$sapTilesContainerPager.find("span");
+						var pagerSpanNow = this.$sapTilesContainerPager.find("span");
 						this.$sapTilesContainerPager.empty().append(pagerSpan);
-						var slicePagerSpan=[].slice.apply(pagerSpanNow,[0,-2]);
+						var slicePagerSpan = [].slice.apply(pagerSpanNow, [0, -2]);
 						this.createIscroll();
 						callback && ( typeof callback === "function") && callback();
 					};
@@ -635,16 +623,7 @@
 						if (!event) {
 							return;
 						}
-						var self=this,
-						isLeft = false,
-						isRight = false,
-						innerHeight = window.innerHeight,
-						innerWidth = window.innerWidth,
-						clientX = event.clientX,
-						clientY = event.clientY,
-						tilesSwitcherWidth = this.settings.tilesSwitcher.width,
-						leftInXMax = tilesSwitcherWidth,
-						rightXMin = innerWidth - tilesSwitcherWidth;
+						var self = this, isLeft = false, isRight = false, innerHeight = window.innerHeight, innerWidth = window.innerWidth, clientX = event.clientX, clientY = event.clientY, tilesSwitcherWidth = this.settings.tilesSwitcher.width, leftInXMax = tilesSwitcherWidth, rightXMin = innerWidth - tilesSwitcherWidth;
 
 						if (clientX > 0 && clientX < leftInXMax) {
 							isLeft = true;
@@ -694,9 +673,13 @@
 			});
 			var guilinPagerInstance = guilinPager.instance;
 
-			$(function(){
-				$("#appendPage").click(function(){guilinPagerInstance.appendPage(6)});
-				$("#reducePage").click(function(){guilinPagerInstance.reducePage(1)});
+			$(function() {
+				$("#appendPage").click(function() {
+					guilinPagerInstance.appendPage(6)
+				});
+				$("#reducePage").click(function() {
+					guilinPagerInstance.reducePage(1)
+				});
 			})
 
 		</script>

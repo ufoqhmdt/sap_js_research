@@ -1,0 +1,210 @@
+@import "../../common.less";
+.sbo-advtiles-layout {
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;.sapTilesContainerContent {
+	position:relative;
+	width:5120px;
+	height:100%;
+	padding:0;
+}
+.sapGuilinTileContent {
+	position:absolute;
+	height:100%;
+	width:100%;
+}
+.sapGuilinTile {
+	opacity:1;
+	cursor:pointer;
+	position:absolute;&.small {
+	width:220px;
+	height:220px;
+}
+&
+.large {
+	width:450px;
+	height:220px;
+}
+&
+.dragging {
+	opacity:0.8;
+}
+}
+.sapTilesContainer {
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	margin-top:40px;
+	position:relative;&.sapGuilinEditable{
+	.sapGuilinTile{
+	position:absolute;&.sapGuilinBreatheAble{
+	/*border:1px solid #2b92d4;*/
+	/*border-radius:5px;*/
+	/*box-shadow:0 1px 10px rgba(59,255,255,1); */
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-name:sapGuilinBreathe;
+	-webkit-animation-duration:500ms;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-direction:alternate;
+}
+.sapGuilinTileRemove {
+	position:absolute;
+	cursor:pointer;
+	background-color:#4c4c4c;
+	display:block;
+	height:24px;
+	width:25px;
+	border-radius:50%;
+	font-size:20px;
+	color:#ffffff;
+	padding-top:2px;
+	padding-left:6px;
+	box-sizing:border-box;
+	margin-top:-0.3em;
+	margin-left:-0.2em;
+	box-shadow:0 1px 3px #4c4c4c;
+	z-index:2;
+}
+}
+.sapTilesContainerViewPoint {
+	margin-left:150px !important;
+}
+.sapGuilinTileRemove:before {
+	content:"×";
+}
+.sapGuilinTileMask {
+	position:absolute;
+	height:100%;
+	width:100%;
+	box-shadow:1px 2px 4px #000000;
+	z-index:1;
+	opacity:0.2;
+}
+}
+&
+:not(.sapGuilinEditable) .sapGuilinTileMask {
+	display:none;
+}
+.sapTilesContainerViewPoint {
+	position:relative;
+	/*z-index: 1;*//* it seems that recent webkit is less picky and works anyway. */
+	overflow:hidden;
+	background:#e3e3e3;
+	height:100%;
+}
+.sapGuilinGridly, .sapGuilinGridly> :not(.dragging) {
+	-webkit-transition:all 0.4s ease-in-out;
+	-moz-transition:all 0.4s ease-in-out;
+	transition:all 0.4s ease-in-out;
+	margin:0px;
+}
+.sapGuilinGridly .dragging {
+	z-index:800;
+}
+@-webkit-keyframes sapGuilinBreathe {
+0% {
+/*opacity: 0.9;*/
+-webkit-transform: scale(0.98);
+/*box-shadow:0 1px 10px rgba(59,255,255,1);*/
+}
+100% {
+/*opacity: 1;*/
+-webkit-transform: scale(1);
+/*border:1px solid rgba(59,235,235,1); */
+/*box-shadow:0 1px 10px rgba(59,255,255,1);*/
+}
+}
+.sapTilesContainerPager {
+	padding:5px;
+	text-align:center;
+	height:30px;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	position:absolute;
+	width:100%;SPAN {
+	display:inline-block;
+	background-color:#999999;
+	border-radius:4px;
+	height:8px;
+	width:8px;
+	margin-right:8px;
+	margin-bottom:1px;
+	cursor:default;
+	box-shadow:0 0 1px 1px #ffffff;&.sapGuilinActive {
+	background-color:#007cc0;
+	box-shadow:0 0 2px 2px #ffffff;
+}
+}
+}
+#sapTilesSwitcherLeft {
+	width:60px;
+	left:0px;
+	top:0px;
+	padding-bottom:0px;
+	background-position:initial initial;
+	background-repeat:initial initial;
+}
+#sapTilesSwitcherRight {
+	width:177px;
+	right:0px;
+	top:0px;
+	padding-bottom:0px;
+}
+.sapPageSwitcher {
+	-webkit-transition:width 150ms,right 150ms,background-color 150ms;
+	color:rgba(0,0,0, 0.5);
+	background-color:transparent;
+	border:none;
+	bottom:0;
+	font-size:40px;
+	margin:0;
+	max-width:80px;
+	min-width:40px;
+	outline:none;
+	padding:0;
+	position:absolute;
+	top:0;
+	z-index:5;
+	height:100%;
+	background-image:none;
+}
+/*BEGIN SIDEBAR*/
+.sapPageSidebar {
+	position:absolute;
+	height:100%;
+	width:150px;
+	overflow:visible;
+	background-color:#3d3d3d;
+	-webkit-transition:height .35s ease;
+	-moz-transition:height .35s ease;
+	-o-transition:height .35s ease;
+	transition:height .35s ease;
+}
+ul.sapPageSidebarKeepContainer {
+	list-style:none;
+	margin:0;
+	padding:0;
+	margin:0;
+	padding:0;
+}
+ul.sapPageSidebarKeepContainer> li {
+	display:block;
+	margin:0;
+	padding:0;
+	border:0px;
+}
+.sapPageSidebarTile {
+	transform:scale(0.5);
+	-ms-transform:scale(0.5); /* IE 9 */
+	-webkit-transform:scale(0.5); /* Safari and Chrome */
+}
+.sapPageSidebar .sapGuilinTile {
+	margin-left:-35px;
+	margin-bottom:-50px;
+	background-color:white;
+}
+/*END SIDEBAR*/
+}
+}

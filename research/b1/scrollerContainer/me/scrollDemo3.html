@@ -19,250 +19,233 @@
 		<link rel="stylesheet" href="../css/bootstrap.css" />
 
 		<style type="text/css">
-			#sapTilesContainerContent {
-				position: relative;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 1) {
+				background:white;
 			}
-			#sapTilesContainerContent .sapGuilinTile {
-				opacity: 1;
-				cursor: pointer;
-				position: relative;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 2) {
+				background:#16a085;
 			}
-			#sapTilesContainerContent .sapGuilinTile .delete {
-				display: block;
-				color: white;
-				background: rgba(255, 255, 255, 0.2);
-				width: 40px;
-				height: 40px;
-				top: 0;
-				right: 0;
-				position: absolute;
-				text-align: center;
-				line-height: 40px;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 3) {
+				background:#2ecc71;
 			}
-			#sapTilesContainerContent .sapGuilinTile.small {
-				width: 220px;
-				height: 220px;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 4) {
+				background:#27ae60;
 			}
-			#sapTilesContainerContent .sapGuilinTile.large {
-				width: 450px;
-				height: 220px;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 5) {
+				background:#3498db;
 			}
-			#sapTilesContainerContent .sapGuilinTile.dragging {
-				opacity: 0.8;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 6) {
+				background:#2980b9;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 1) {
-				background: white;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 7) {
+				background:#9b59b6;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 2) {
-				background: #16a085;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 8) {
+				background:#8e44ad;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 3) {
-				background: #2ecc71;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 9) {
+				background:#34495e;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 4) {
-				background: #27ae60;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 10) {
+				background:#2c3e50;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 5) {
-				background: #3498db;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 11) {
+				background:#f1c40f;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 6) {
-				background: #2980b9;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 12) {
+				background:#f39c12;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 7) {
-				background: #9b59b6;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 13) {
+				background:#e67e22;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 8) {
-				background: #8e44ad;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 14) {
+				background:#d35400;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 9) {
-				background: #34495e;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 15) {
+				background:#e74c3c;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 10) {
-				background: #2c3e50;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 16) {
+				background:#c0392b;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 11) {
-				background: #f1c40f;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 17) {
+				background:#ecf0f1;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 12) {
-				background: #f39c12;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 18) {
+				background:#bdc3c7;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 13) {
-				background: #e67e22;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 19) {
+				background:#95a5a6;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 14) {
-				background: #d35400;
+			.sapTilesContainerContent .sapGuilinTile:nth-child(20n + 20) {
+				background:#7f8c8d;
 			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 15) {
-				background: #e74c3c;
-			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 16) {
-				background: #c0392b;
-			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 17) {
-				background: #ecf0f1;
-			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 18) {
-				background: #bdc3c7;
-			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 19) {
-				background: #95a5a6;
-			}
-			#sapTilesContainerContent .sapGuilinTile:nth-child(20n + 20) {
-				background: #7f8c8d;
-			}
-
 		</style>
-
-
 
 		<style type="text/css" media="all">
-			#sapTilesContainer {
-				width: 100%;
-				height: 100%;
-				margin: 0 auto;
-				margin-top: 40px;
-				position: relative;
+			.sapTilesContainerContent {
+				position:relative;
+				width:5120px;
+				height:100%;
+				padding:0;
 			}
-
-			#sapTilesContainerViewPoint {
-				position: relative;	/* On older OS versions "position" and "z-index" must be defined, */
-				/*z-index: 1;*//* it seems that recent webkit is less picky and works anyway. */
-				overflow: hidden;
-				background: #aaa;
-				background: #e3e3e3;
-			}
-
-			#sapTilesContainerContent {
-				width: 5120px;
-				height: 100%;
-				float: left;
-				padding: 0;
-			}
-
-		</style>
-		<style type="text/css">
-			.sapGuilinGridly, .sapGuilinGridly > :not(.dragging) {
-				-webkit-transition: all 0.4s ease-in-out;
-				-moz-transition: all 0.4s ease-in-out;
-				transition: all 0.4s ease-in-out;
-			}
-			.sapGuilinGridly .dragging {
-				z-index: 800;
-			}
-			.sapGuilinGridly {
-				position: relative;
-				width: 960px;
-				margin: 57px;
+			.sapGuilinTile {
+				opacity:1;
+				cursor:pointer;
+				position:relative;
 			}
 			.sapGuilinTile.small {
-				width: 220px;
-				height: 220px;
+				width:220px;
+				height:220px;
 			}
 			.sapGuilinTile.large {
-				width: 450px;
-				height: 220px;
+				width:450px;
+				height:220px;
 			}
-			.sapGuilinGridly.sapGuilinEditable .sapGuilinTile .sapGuilinTileRemove {
-				position: absolute;
-				background-color: #4c4c4c;
-				display: block;
-				height: 24px;
-				width: 25px;
-				border-radius: 50%;
-				/*font-family: "SAP-icons";*/
-				font-size: 20px;
-				color: #ffffff;
-				padding-top: 2px;
-				padding-left: 6px;
-				box-sizing: border-box;
-				margin-top: -0.3em;
-				margin-left: -0.2em;
-				box-shadow: 0 1px 3px #4c4c4c;
-				z-index: 2;
-				cursor: default;
+			.sapGuilinTile.dragging {
+				opacity:0.8;
 			}
-			.sapGuilinGridly.sapGuilinEditable .sapGuilinTileRemove:before {
-				content: "×";
+			#sapTilesContainer {
+				width:100%;
+				height:100%;
+				margin:0 auto;
+				margin-top:40px;
+				position:relative;
 			}
-			.sapGuilinGridly .sapGuilinTileContent{
-				position: absolute;
-				height: 100%;
-				width: 100%;
+			.sapTilesContainerViewPoint {
+				position:relative;	/* On older OS versions "position" and "z-index" must be defined, */
+				/*z-index: 1;*//* it seems that recent webkit is less picky and works anyway. */
+				overflow:hidden;
+				background:#aaa;
+				background:#e3e3e3;
 			}
-			.sapGuilinGridly:not(.sapGuilinEditable) .sapGuilinTileMask{
-				display: none;
+			.sapGuilinGridly, .sapGuilinGridly> :not(.dragging) {
+				-webkit-transition:all 0.4s ease-in-out;
+				-moz-transition:all 0.4s ease-in-out;
+				transition:all 0.4s ease-in-out;
+				position:relative;
+				margin:30px;
 			}
-			.sapGuilinGridly.sapGuilinEditable .sapGuilinTileMask{
-				position: absolute;
-				height: 100%;
-				width: 100%;
-				box-shadow: 1px 2px 4px #000000;
-				z-index: 1;
-				opacity: 0.2;
+			.sapGuilinGridly .dragging {
+				z-index:800;
 			}
-		</style>
-
-		<style type="text/css">
-
-			.sapGuilinPager {
-				padding: 5px;
-				text-align: center;
-				height: 30px;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
-				position: absolute;
-				width: 100%;
+			@-webkit-keyframes sapGuilinBreathe {
+			0% {
+			/*opacity: 0.9;*/
+			-webkit-transform: scale(0.98);
+			/*box-shadow:0 1px 10px rgba(59,255,255,1);*/
+			}
+			100% {
+			/*opacity: 1;*/
+			-webkit-transform: scale(1);
+			/*border:1px solid rgba(59,235,235,1); */
+			/*box-shadow:0 1px 10px rgba(59,255,255,1);*/
+			}
 			}
 
-			.sapGuilinPager SPAN.sapGuilinActive {
-				background-color: #007cc0;
-				box-shadow: 0 0 2px 2px #ffffff;
-			}
-			.sapGuilinPager SPAN {
-				display: inline-block;
-				background-color: #999999;
-				border-radius: 4px;
-				height: 8px;
-				width: 8px;
-				margin-right: 8px;
-				margin-bottom: 1px;
-				cursor: default;
-				box-shadow: 0 0 1px 1px #ffffff;
-			}
 
+			.sapGuilinEditable .sapGuilinTile.sapGuilinBreatheAble {
+				/*border:1px solid #2b92d4;*/
+				/*border-radius:5px;*/
+				/*box-shadow:0 1px 10px rgba(59,255,255,1); */
+				-webkit-animation-timing-function:ease-in-out;
+				-webkit-animation-name:sapGuilinBreathe;
+				-webkit-animation-duration:500ms;
+				-webkit-animation-iteration-count:infinite;
+				-webkit-animation-direction:alternate;
+			}
+			.sapGuilinEditable .sapGuilinTile .sapGuilinTileRemove {
+				position:absolute;
+				cursor:pointer;
+				background-color:#4c4c4c;
+				display:block;
+				height:24px;
+				width:25px;
+				border-radius:50%;
+				font-size:20px;
+				color:#ffffff;
+				padding-top:2px;
+				padding-left:6px;
+				box-sizing:border-box;
+				margin-top:-0.3em;
+				margin-left:-0.2em;
+				box-shadow:0 1px 3px #4c4c4c;
+				z-index:2;
+			}
+			.sapGuilinEditable .sapGuilinTileRemove:before {
+				content:"×";
+			}
+			.sapGuilinTileContent {
+				position:absolute;
+				height:100%;
+				width:100%;
+			}
+			.sapTilesContainer:not(.sapGuilinEditable)
+			.sapGuilinTileMask {
+				display:none;
+			}
+			.sapGuilinEditable .sapGuilinTileMask {
+				position:absolute;
+				height:100%;
+				width:100%;
+				box-shadow:1px 2px 4px #000000;
+				z-index:1;
+				opacity:0.2;
+			}
+			.sapTilesContainerPager {
+				padding:5px;
+				text-align:center;
+				height:30px;
+				-moz-box-sizing:border-box;
+				box-sizing:border-box;
+				position:absolute;
+				width:100%;
+			}
+			.sapTilesContainerPager SPAN.sapGuilinActive {
+				background-color:#007cc0;
+				box-shadow:0 0 2px 2px #ffffff;
+			}
+			.sapTilesContainerPager SPAN {
+				display:inline-block;
+				background-color:#999999;
+				border-radius:4px;
+				height:8px;
+				width:8px;
+				margin-right:8px;
+				margin-bottom:1px;
+				cursor:default;
+				box-shadow:0 0 1px 1px #ffffff;
+			}
 			#sapTilesSwitcherLeft {
-				width: 60px;
-				left: 0px;
-				top: 0px;
-				padding-bottom: 0px;
-				background-position: initial initial;
-				background-repeat: initial initial;
+				width:60px;
+				left:0px;
+				top:0px;
+				padding-bottom:0px;
+				background-position:initial initial;
+				background-repeat:initial initial;
 			}
-
 			#sapTilesSwitcherRight {
-				width: 177px;
-				right: 0px;
-				top: 0px;
-				padding-bottom: 0px;
+				width:177px;
+				right:0px;
+				top:0px;
+				padding-bottom:0px;
 			}
-
 			.sapPageSwitcher {
-				-webkit-transition: width 150ms, right 150ms, background-color 150ms;
-				color: rgba(0,0,0, 0.5);
-				background-color: transparent;
-				border: none;
-				bottom: 0;
-				font-size: 40px;
-				margin: 0;
-				max-width: 80px;
-				min-width: 40px;
-				outline: none;
-				padding: 0;
-				position: absolute;
-				top: 0;
-				z-index: 5;
+				-webkit-transition:width 150ms,right 150ms,background-color 150ms;
+				color:rgba(0,0,0, 0.5);
+				background-color:transparent;
+				border:none;
+				bottom:0;
+				font-size:40px;
+				margin:0;
+				max-width:80px;
+				min-width:40px;
+				outline:none;
+				padding:0;
+				position:absolute;
+				top:0;
+				z-index:5;
+				height:100%;
 			}
-
 		</style>
 	</head>
 
@@ -271,75 +254,165 @@
 		<input type="button" id="reducePage" value="reduce page" class="btn"/>
 		<input type="button" id="toggleEditable" value="toggle editable" class="btn"/>
 
-		<div id="sapTilesContainer">
-			<div id="sapTilesContainerViewPoint">
-				<div id="sapTilesContainerContent" class="sapGuilinGridly sapGuilinEditable">
-						<div class="sapGuilinTile small">
-							<div class="sapGuilinTileRemove">
-							</div>
+		<style>
+			.sapPageSidebar {
+				position:absolute;
+				height:100%;
+				width:150px;
+				overflow:visible;
+				background-color:#3d3d3d;
+				-webkit-transition:height .35s ease;
+				-moz-transition:height .35s ease;
+				-o-transition:height .35s ease;
+				transition:height .35s ease;
+			}
+			ul.sapPageSidebarKeepContainer {
+				list-style:none;
+				margin:0;
+				padding:0;
+				margin:0;
+				padding:0;
+			}
+			ul.sapPageSidebarKeepContainer> li {
+				display:block;
+				margin:0;
+				padding:0;
+				border:0px;
+			}
+			.sapPageSidebarTile {
+				transform:scale(0.5);
+				-ms-transform:scale(0.5); /* IE 9 */
+				-webkit-transform:scale(0.5); /* Safari and Chrome */
+			}
+			.sapGuilinEditable .sapTilesContainerViewPoint {
+				margin-left:150px !important;
+			}
+			
+			.sapPageSidebar .sapGuilinTile{
+				margin-left: -35px;
+				margin-bottom: -50px;
+				background-color:white;
+			}
+		</style>
+		<div class="sapTilesContainer">
+			<div class="sapPageSidebar">
+				<!-- BEGIN SIDEBAR MENU -->
+				<ul class="sapPageSidebarKeepContainer">
+					<li>
+						<div class="sapGuilinTile small sapGuilinBreatheAble sapPageSidebarTile">
+							<div class="sapGuilinTileRemove"></div>
 							<div class="sapGuilinTileContent">
 								<div style="height:75%;">
-									<div style="font-size: 40px;font-weight: 800;color: #0099CB;text-align:center;padding-top: 80px;">8888.880</div>
+									<div style="font-size: 40px;font-weight: 800;color: #0099CB;text-align:center;padding-top: 80px;">
+										8888.880
+									</div>
 								</div>
 								<div style="height:25%;background-color:#0099CB;">
-									<div style="font-size: 25px;font-weight: 800;color: white;padding: 3px;">Opportunity</div>
-									<div style="font-size: 16px;font-weight: 300;color: white;padding: 3px;">My open Opportunity</div>
+									<div style="font-size: 25px;font-weight: 800;color: white;padding: 3px;">
+										Opportunity
+									</div>
+									<div style="font-size: 16px;font-weight: 300;color: white;padding: 3px;">
+										My open Opportunity
+									</div>
 								</div>
 							</div>
-							<div class="sapGuilinTileMask">
-							</div>
+							<div class="sapGuilinTileMask"></div>
 						</div>
-						<div class="sapGuilinTile small">
-							<div class="sapGuilinTileRemove">
-							</div>
+					</li>
+					<li>
+						<div class="sapGuilinTile small sapGuilinBreatheAble sapPageSidebarTile">
+							<div class="sapGuilinTileRemove"></div>
 							<div class="sapGuilinTileContent">
+								<div style="margin: 50px auto;width: 107px;">
+									<div style="font-size: 6.0rem;line-height: 107px;color: #ffffff;position: relative;text-align: center;-webkit-border-radius: 100%;-moz-border-radius: 100%;border-radius: 100%;background-color: #00DEE7;width: 107px;height: 107px;">
+										6
+									</div>
+								</div>
 							</div>
-							<div class="sapGuilinTileMask">
-							</div>
+							<div class="sapGuilinTileMask"></div>
 						</div>
-						<div class="sapGuilinTile small">
-							<div class="sapGuilinTileRemove">
-							</div>
+					</li>
+					<li>
+						<div class="sapGuilinTile small sapGuilinBreatheAble sapPageSidebarTile">
+							<div class="sapGuilinTileRemove"></div>
 							<div class="sapGuilinTileContent">
+								<!-- <canvas id="canvas" height="200" width="200" style="width: 200px; height: 200px;;margin-top:10px;margin-left:10px;"></canvas> -->
 							</div>
-							<div class="sapGuilinTileMask">
-							</div>
+							<div class="sapGuilinTileMask"></div>
 						</div>
-						<div class="sapGuilinTile large">
-							<div class="sapGuilinTileRemove">
-							</div>
+					</li>
+					<li>
+						<div class="sapPageSidebarTile"></div>
+					</li>
+				</ul>
+				<!-- END SIDEBAR MENU -->
+			</div>
+			<div id="sapTilesContainerViewPoint" class="sapTilesContainerViewPoint">
+				<div class="sapTilesContainerContent">
+					<div class="sapGuilinGridly">
+						<div class="sapGuilinTile small sapGuilinBreatheAble">
+							<div class="sapGuilinTileRemove"></div>
 							<div class="sapGuilinTileContent">
+								<div style="height:75%;">
+									<div style="font-size: 40px;font-weight: 800;color: #0099CB;text-align:center;padding-top: 80px;">
+										8888.880
+									</div>
+								</div>
+								<div style="height:25%;background-color:#0099CB;">
+									<div style="font-size: 25px;font-weight: 800;color: white;padding: 3px;">
+										Opportunity
+									</div>
+									<div style="font-size: 16px;font-weight: 300;color: white;padding: 3px;">
+										My open Opportunity
+									</div>
+								</div>
 							</div>
-							<div class="sapGuilinTileMask">
-							</div>
+							<div class="sapGuilinTileMask"></div>
 						</div>
-						<div class="sapGuilinTile small">
-							<div class="sapGuilinTileRemove">
-							</div>
+						<div class="sapGuilinTile small sapGuilinBreatheAble">
+							<div class="sapGuilinTileRemove"></div>
+							<div class="sapGuilinTileContent"></div>
+							<div class="sapGuilinTileMask"></div>
+						</div>
+						<div class="sapGuilinTile small sapGuilinBreatheAble">
+							<div class="sapGuilinTileRemove"></div>
 							<div class="sapGuilinTileContent">
+								<div style="margin: 50px auto;width: 107px;">
+									<div style="font-size: 6.0rem;line-height: 107px;color: #ffffff;position: relative;text-align: center;-webkit-border-radius: 100%;-moz-border-radius: 100%;border-radius: 100%;background-color: #00DEE7;width: 107px;height: 107px;">
+										6
+									</div>
+								</div>
 							</div>
-							<div class="sapGuilinTileMask">
-							</div>
+							<div class="sapGuilinTileMask"></div>
 						</div>
-						<div class="sapGuilinTile small">
-							<div class="sapGuilinTileRemove">
-							</div>
+						<div class="sapGuilinTile large sapGuilinBreatheAble">
+							<div class="sapGuilinTileRemove"></div>
 							<div class="sapGuilinTileContent">
+								<canvas id="canvas" height="200" width="200" style="width: 200px; height: 200px;;margin-top:10px;margin-left:10px;"></canvas>
 							</div>
-							<div class="sapGuilinTileMask">
-							</div>
+							<div class="sapGuilinTileMask"></div>
 						</div>
-						<div class="sapGuilinTile small">
-							<div class="sapGuilinTileRemove">
-							</div>
-							<div class="sapGuilinTileContent">
-							</div>
-							<div class="sapGuilinTileMask">
-							</div>
+						<div class="sapGuilinTile small sapGuilinBreatheAble">
+							<div class="sapGuilinTileRemove"></div>
+							<div class="sapGuilinTileContent"></div>
+							<div class="sapGuilinTileMask"></div>
 						</div>
-						<div class="sapGuilinTile small">
-							<div class="delete">×</div>
+						<div class="sapGuilinTile small sapGuilinBreatheAble">
+							<div class="sapGuilinTileRemove"></div>
+							<div class="sapGuilinTileContent"></div>
+							<div class="sapGuilinTileMask"></div>
 						</div>
+						<div class="sapGuilinTile small sapGuilinBreatheAble">
+							<div class="sapGuilinTileRemove"></div>
+							<div class="sapGuilinTileContent"></div>
+							<div class="sapGuilinTileMask"></div>
+						</div>
+						<div class="sapGuilinTile small sapGuilinBreatheAble">
+							<div class="sapGuilinTileRemove"></div>
+							<div class="sapGuilinTileContent"></div>
+							<div class="sapGuilinTileMask"></div>
+						</div>
+					</div>
 				</div>
 				<button id="sapTilesSwitcherLeft" class="sapPageSwitcher" tabindex="2" aria-label="Go to left">
 					‹
@@ -348,19 +421,17 @@
 					›
 				</button>
 			</div>
-		</div>
+			<div class="sapTilesContainerPager">
+				<span class="sapGuilinActive"></span>
+			</div>
 
-		<div id="sapTilesContainerPager" class="sapGuilinPager">
-			<span class="sapGuilinActive"></span>
-			<span></span>
-			<span></span>
-			<span></span>
 		</div>
 
 		<script src="../js/jquery-1.9.1.js"></script>
 		<script src="../js/bootstrap.js"></script>
 		<script src="../js/iscroll.js"></script>
 		<script src="../js/jquery.gridly.js"></script>
+		<script src="../js/Chart.js"></script>
 		<script type="text/javascript">
 			function log(l) {
 				console.log(l);
@@ -370,7 +441,7 @@
 			(function() {
 				$(function() {
 					var sapGuilinTile;
-					sapGuilinTile = "<div class='sapGuilinTile small'><div class='delete'>&times;</div></div>";
+					sapGuilinTile = "<div class='sapGuilinTile small'><div class='sapGuilinTileRemove'>&times;</div></div>";
 					$(document).on("click", ".sapGuilinGridly .sapGuilinTile", function(event) {
 						var $this, size;
 						event.preventDefault();
@@ -385,8 +456,8 @@
 						}, 500);
 
 					});
-					$(document).on("click", ".sapGuilinGridly .delete", function(event) {
-						return false;
+					$(document).on("click", ".sapGuilinGridly .sapGuilinTileRemove", function(event) {
+						// return false;
 						var $this;
 						event.preventDefault();
 						event.stopPropagation();
@@ -403,7 +474,6 @@
 				});
 
 			}).call(this);
-
 
 			$(function() {
 
@@ -467,8 +537,21 @@
 					});
 				}
 
-				var sapTilesContainerViewPoint = $('#sapTilesContainerViewPoint');
+				var sapTilesContainerViewPoint = $('.sapTilesContainerViewPoint');
 				sapTilesContainerViewPoint.on("mousedown", " div[draggable=true]", handleMousedown);
+
+				var pieData = [{
+					value : 30,
+					color : "#F38630"
+				}, {
+					value : 50,
+					color : "#E0E4CC"
+				}, {
+					value : 100,
+					color : "#69D2E7"
+				}];
+
+				var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Pie(pieData);
 			});
 
 			(function(a) {"use strict";
@@ -544,7 +627,7 @@
 							return function() {
 								(function resizeContainer(event) {
 									var currentInnerHeight = event.target.innerHeight;
-									$("#sapTilesContainerViewPoint").height(currentInnerHeight - marginOffset);
+									$(".sapTilesContainerViewPoint").height(currentInnerHeight - marginOffset);
 								})(event);
 							};
 						};
@@ -558,13 +641,13 @@
 					};
 
 					GuilinPager.prototype.initRender = function(pageCount, callback) {
-						this.sapTilesContainerContent=this.$el.children("#sapTilesContainerContent");
-						this.sapTilesContainerContent.width(window.innerWidth * pageCount);
+						this.sapTilesContainerContent = this.$el.find(".sapTilesContainerContent");
+						this.sapTilesContainerContent.width(this.sapTilesContainerContent.parent().width() * pageCount);
 						var pagerSpan = "<span class='sapGuilinActive'></span>";
 						for (var i = 0; i < pageCount - 1; i++) {
 							pagerSpan += "<span></span>";
 						};
-						this.$sapTilesContainerPager=$("#sapTilesContainerPager");
+						this.$sapTilesContainerPager = $(".sapTilesContainerPager");
 						this.$sapTilesContainerPager.empty().append(pagerSpan);
 						callback && ( typeof callback === "function") && callback();
 					};
@@ -579,33 +662,43 @@
 							lockDirection : true,
 							fixedScrollbar : false,
 							fadeScrollbar : false,
+							onScrollStart:function(){
+								log(event);
+								var currentClassName=event.target.className;
+									log("++++++++++++++++++++++++");
+								if(currentClassName==="sapGuilinTileMask"){
+									this.pause();
+								}
+
+							},
 							onScrollEnd : function() {
-								$('#sapTilesContainerPager > span.sapGuilinActive').removeClass('sapGuilinActive');
-								document.querySelector('#sapTilesContainerPager > span:nth-child(' + (this.currPageX + 1) + ')').className = 'sapGuilinActive';
+								log(this)
+								$('.sapTilesContainerPager > span.sapGuilinActive').removeClass('sapGuilinActive');
+								document.querySelector('.sapTilesContainerPager > span:nth-child(' + (this.currPageX + 1) + ')').className = 'sapGuilinActive';
 							}
 						});
-						this.__iScroll=__iScroll;
+						this.__iScroll = __iScroll;
 						return __iScroll;
 					};
 
 					GuilinPager.prototype.createPager = function() {
-						var self=this;
+						var self = this;
 						$("#sapTilesSwitcherLeft,#sapTilesSwitcherRight").on("mousedown", function(e) {
 							self.__iScroll._start(e);
 						});
 						$("#sapTilesSwitcherLeft").click(function(e) {
 							self.__iScroll.scrollToPage('prev', 0);
 							return false;
-						})
+						});
 						$("#sapTilesSwitcherRight").click(function(e) {
 							self.__iScroll.scrollToPage('next', 0);
 							return false;
-						})
+						});
 					};
 
 					GuilinPager.prototype.appendPage = function(pageCount, callback) {
-						if(this.sapTilesContainerContent){
-							var newWidth=this.sapTilesContainerContent.width()+window.innerWidth * pageCount;
+						if (this.sapTilesContainerContent) {
+							var newWidth = this.sapTilesContainerContent.width() + this.sapTilesContainerContent.parent().width() * pageCount;
 							this.sapTilesContainerContent.width(newWidth);
 						}
 						var pagerSpan = "";
@@ -617,21 +710,22 @@
 						callback && ( typeof callback === "function") && callback();
 					};
 
-					GuilinPager.prototype.reducePage = function(callback) {
-						if(this.sapTilesContainerContent){
-							var newWidth=this.sapTilesContainerContent.width()-window.innerWidth * pageCount;
+					GuilinPager.prototype.reducePage = function(pageCount,callback) {
+						if (this.sapTilesContainerContent) {
+							var newWidth = this.sapTilesContainerContent.width() - this.sapTilesContainerContent.parent().width() * pageCount;
 							this.sapTilesContainerContent.width(newWidth);
 						}
-						var pagerSpanNow=this.$sapTilesContainerPager.find("span");
-						this.$sapTilesContainerPager.empty().append(pagerSpan);
-						var slicePagerSpan=[].slice.apply(pagerSpanNow,[0,-2]);
+						var pagerSpanNow = this.$sapTilesContainerPager.find("span");
+						var slicePagerSpan = [].slice.apply(pagerSpanNow, [0, -pageCount]);
+						this.$sapTilesContainerPager.empty().append(slicePagerSpan);
 						this.createIscroll();
 						callback && ( typeof callback === "function") && callback();
 					};
 
-					GuilinPager.prototype.toggleEditable=function(){
-						var sapTilesContainerContent=this.$el.find("#sapTilesContainerContent");
-						sapTilesContainerContent.toggleClass('sapGuilinEditable');
+					GuilinPager.prototype.toggleEditable = function() {
+						// var sapTilesContainerContent = this.$el.find(".sapTilesContainerContent");
+						// sapTilesContainerContent.toggleClass('sapGuilinEditable');
+						this.$el.toggleClass("sapGuilinEditable");
 					};
 
 					GuilinPager.prototype.scrollToPrev = function(event, callback) {
@@ -682,16 +776,7 @@
 						if (!event) {
 							return;
 						}
-						var self=this,
-						isLeft = false,
-						isRight = false,
-						innerHeight = window.innerHeight,
-						innerWidth = window.innerWidth,
-						clientX = event.clientX,
-						clientY = event.clientY,
-						tilesSwitcherWidth = this.settings.tilesSwitcher.width,
-						leftInXMax = tilesSwitcherWidth,
-						rightXMin = innerWidth - tilesSwitcherWidth;
+						var self = this, isLeft = false, isRight = false, innerHeight = this.sapTilesContainerContent.parent().height(), innerWidth = this.sapTilesContainerContent.parent().width(), clientX = event.clientX, clientY = event.clientY, tilesSwitcherWidth = this.settings.tilesSwitcher.width, leftInXMax = tilesSwitcherWidth, rightXMin = innerWidth - tilesSwitcherWidth;
 
 						if (clientX > 0 && clientX < leftInXMax) {
 							isLeft = true;
@@ -736,15 +821,21 @@
 
 			}).call(this);
 
-			var guilinPager = $("#sapTilesContainerViewPoint").guilinPager({
+			var guilinPager = $(".sapTilesContainer").guilinPager({
 				marginOffset : 120,
 			});
 			var guilinPagerInstance = guilinPager.instance;
 
-			$(function(){
-				$("#appendPage").click(function(){guilinPagerInstance.appendPage(6)});
-				$("#reducePage").click(function(){guilinPagerInstance.reducePage(1)});
-				$("#toggleEditable").click(function(){guilinPagerInstance.toggleEditable()});
+			$(function() {
+				$("#appendPage").click(function() {
+					guilinPagerInstance.appendPage(6)
+				});
+				$("#reducePage").click(function() {
+					guilinPagerInstance.reducePage(1)
+				});
+				$("#toggleEditable").click(function() {
+					guilinPagerInstance.toggleEditable()
+				});
 			})
 
 		</script>
