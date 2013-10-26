@@ -39,8 +39,9 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 		return dtd;　　
 	};
 
-	$.when(wait(dtd)).done(function(dtd) {
-		log(dtd)
+	$.when(wait(dtd)).done(function(__dtd) {
+		log("....1")
+		log(__dtd)
 		log("---done1");
 	}).fail(function() {
 		log("---fail1");
@@ -49,8 +50,9 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 	});
 
 	//传入{}或不传都会执行done和alway.
-	$.when().done(function(dtd) {
-		log(dtd)
+	$.when().done(function(__dtd) {
+		log("....2")
+		log(__dtd)
 		log("---done2");
 	}).fail(function() {
 		log("---fail2");
@@ -60,37 +62,40 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 
 
 	var dtd3 = $.Deferred();
-	log($.when.call(this, dtd3).done(function(dtd) {
-		log(dtd)
+	$.when.call(this, dtd3).done(function(__dtd) {
+		log("....3")
+		log(__dtd)
 		log("---done3");
 	}).fail(function() {
 		log("---fail3");
 	}).always(function() {
 		log("---always3");
-	}))
+	})
 
 
 	var dtd4 = $.Deferred();
 	dtd4.reject();//when总是接受deferred对象.而deferred对象如果是原生为改变状态的是无法触发done fail执行的.必须有个地方去改变他的状态.
-	log($.when.call(this,dtd4).done(function(dtd) {
-		log(dtd)
+	$.when.call(this,dtd4).done(function(__dtd) {
+		log("....4")
+		log(__dtd)
 		log("---done4");
 	}).fail(function() {
 		log("---fail4");
 	}).always(function() {
 		log("---always4");
-	}))
+	})
 
 
 	var dtd5 = {};//如果传入普通非deferred对象就和传入空对象一样.会直接执行的.
-	log($.when.call(this, {}).done(function(dtd) {
-		log(dtd)
+	$.when.call(this, {}).done(function(__dtd) {
+		log("....5")
+		log(__dtd)
 		log("---done5");
 	}).fail(function() {
 		log("---fail5");
 	}).always(function() {
 		log("---always5");
-	}))	
+	})	
 
 
 	//让他延迟执行而且返回{},但是done和fail立即执行了
@@ -100,14 +105,15 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 		}, 2000);
 		return {};
 	}
-	log($.when.call(this, fun1()).done(function(dtd) {
-		log(dtd)
+	$.when.call(this, fun1()).done(function(__dtd) {
+		log("....6")
+		log(__dtd)
 		log("---done6");
 	}).fail(function() {
 		log("---fail6");
 	}).always(function() {
 		log("---always6");
-	}))	
+	})	
 
 	//让他延迟执行而且返回Deferred,但是done和fail不执行了
 	var fun7=function(){
@@ -118,14 +124,15 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 		}, 2000);
 		return dtd;
 	}
-	log($.when.call(this, fun7()).done(function(dtd) {
-		log(dtd)
+	$.when.call(this, fun7()).done(function(__dtd) {
+		log("....7")
+		log(__dtd)
 		log("---done7");
 	}).fail(function() {
 		log("---fail7");
 	}).always(function() {
 		log("---always7");
-	}))
+	})
 
 	//让他延迟执行而且返回Deferred,如果我改了dtd的状态 哈哈. done和fail执行了.但是马上执行. 
 	var fun8=function(){
@@ -136,14 +143,15 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 		dtd.resolve("==8=8=8=8=8=8=8=8=8=8=8=8=8=8=8=8=8");
 		return dtd;
 	}
-	log($.when.call(this, fun8()).done(function(dtd) {
-		log(dtd)
+	$.when.call(this, fun8()).done(function(__dtd) {
+		log("....8")
+		log(__dtd)
 		log("---done8");
 	}).fail(function() {
 		log("---fail8");
 	}).always(function() {
 		log("---always8");
-	}))
+	})
 
 
 	//让他延迟执行而且返回Deferred,如果我改了dtd的状态,而且放在延迟里面. 哈哈. done和fail执行了.而且也延迟了. 
@@ -156,14 +164,15 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 		}, 2000);
 		return dtd;
 	}
-	log($.when.call(this, fun9()).done(function(dtd) {
-		log(dtd)
+	$.when.call(this, fun9()).done(function(__dtd) {
+		log("....9")
+		log(__dtd)
 		log("---done9");
 	}).fail(function() {
 		log("---fail9");
 	}).always(function() {
 		log("---always9");
-	}));
+	});
 
 
 	$(function(){

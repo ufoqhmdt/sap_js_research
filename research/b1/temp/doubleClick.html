@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>doubleClick</title>
+		<meta name="description" content="">
+		<meta name="author" content="C5193511">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<div>
+			<input id="aa" data-sap-mode="1x1" data-sap-type="View" type="checkbox" name="sap.sbo.app.SalesOrder.SalesOrderTile" value="sbo.SalesOrderTile">
+			<label for="aa">销售订单</label>
+		</div>
+		<div style="height:20px;width:0px;background-color: red;"></div>
+		<script src="../../../lib/js/vendor/jquery.js"></script>
+		<script>
+			$(function() {
+				$("#aa").on("click", function(e) {
+					console.log(e.target);
+					console.log(e.target.checked)
+				});
+			});
+		</script>
+	</body>
+</html>

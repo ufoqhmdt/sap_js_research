@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>test</title>
+		<meta name="description" content="">
+		<meta name="author" content="C5193511">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<script src="../../../lib/js/vendor/jquery.js"></script>
+		<script>
+			var dropdownBoxWrap = $('<div class="sapPopover bottom"><div class="sapArrow"></div><h3 class="sapPopoverTitle">Tiles</h3><div class="sapPopoverContainer"><section class="sapPopoverContent"><div><ul class="sapGuilinCheckBoxContainer"></ul></div></section></div><button type="button" class="sapBtn sapBtn4CheckBoxClose">Close</button></div>');
+			var sapGuilinCheckBoxContainer=$("body").append(dropdownBoxWrap).find(".sapGuilinCheckBoxContainer");
+			
+			var li='<li><div><input id="check1" type="checkbox" name="check" value="check1"><label for="check1">动态</label></div></li>';
+			sapGuilinCheckBoxContainer.append(li);
+			sapGuilinCheckBoxContainer.append(li);
+			sapGuilinCheckBoxContainer.append(li);
+			sapGuilinCheckBoxContainer.append(li);
+			sapGuilinCheckBoxContainer.append(li);
+			sapGuilinCheckBoxContainer.append(li);
+			sapGuilinCheckBoxContainer.append(li);
+		</script>
+	</body>
+</html>

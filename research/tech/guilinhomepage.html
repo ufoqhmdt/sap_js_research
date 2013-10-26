@@ -1,0 +1,5799 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>SAP Business One Anywhere</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- META Tag for Bookmarked Sites -->
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+<!--startmarkforbuilder-->
+<link href="./css-resources/loading.css" rel="stylesheet">
+<style data-moduleid="css!sap.core">html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: normal 0.75rem tahoma, Helvetica;
+}
+.clear {
+  clear: both;
+}
+#_loader_container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10000;
+  display: none;
+}
+#_loader_container > .mask {
+  background: grey;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+#_loader_container > .loading {
+  display: none;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background-image: url(data:image/gif;base64,R0lGODlhJAAkALIFAFZ5ujFguHWOvyRl1JOjxL2/w7G5yQAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAHACwAAAAAJAAkAAADi3i63P4wykmrvTjr7YAH3PR9YTR65RGswXKCiiALF8sqbzzLlr26JN2u55PseBVfK3KkEX+TYWpKpQyuAw1hS4hgsRguF/K9hsXdRzl7Qacd67PYC87Mq/j8osAvUAyABhd9fRKBgRaEfIaHghWKfgqEC42OFJCSigqVg4WZk5uIJZh6pKWeeqmqqwkAIfkEBQoABwAsBAAFABwAGQAAA214uqzyosnZIKS42pgZ+MCycQdhEhMIOptynpL6iZf7oo0cYjfuyZleatV5dY7IZCfADCgXhqjh0Gw+pdIq84o1aJ3KrlfLxVKtz4M5zW5LBvDBsUAvTOLxTL3+xssxe3R9eHqBg3mAhodzfAsJACH5BAUKAAcALAQABQAcABwAAANyeLqs9KTJ2SCkuNqYmfjCsnGHYRoTCDqbcp6S+omX+6KNHGI37smZXmrVeXWOyGQHwAQoF4Vo4dBsPqXSKvOKLWidyq5Xy8VSrc+DOc1uSwLwgHsRj88Pdfg9L1cM/gNKfH6Af4J2hIV3hYZzjIGLgEcJACH5BAUKAAcALAQABQAZABwAAANzeLqs9qbJ6eCjuNqsiCeLdSlFWTDfp0GkWS6pF7KtC8eZ+3Y4pp83GcfGKRqPB4FSgGwsl83FUxlVTJnVa9UK3Xq/RoAYUByYB4zxOHM+L9RidhutgJMVgXxgMacf7Hh6eQp9aWuBgnxuHIKDVY17W4kUCQAh+QQFCgAHACwEAAUAHAAcAAADcni6rPWlydkgpLjamJn5xrJx3QGCzlYq5ydeq9nGVBvS04nvfD8RQAJvQBwcgkFcsYgEKpeDppAGjTafy2Nyl/V5e4KwoBQoByZiccZslqTDa/a58R4rAHjAQj5n1O95eAp8aGqAgXttMYGCXox6X4gdCQAh+QQFCgAHACwEAAgAHAAZAAADcXh61bUwjjmics5CSi1u2sJN3hcqYxV9z5lq2Cl2cm3fuKEbOBT8gcNu1zsAgUNd8fhL8nrMgHPJFBKLRiB2y9UQvgQbYAzwgr8yMtlyRp/UY3Z7IagLFvBypB0+2O0KeWZufn93gWs4hoddi110gDUJACH5BAUKAAcALAQABQAcABwAAANyeLqs86PJ2SCkuNqY++ZHIAYd8ynjWC7Wkoor9pLxNNdUiu98VvwFHmAIOACBOCLx+EsqAcxg7QllOpVG5A7b63oNYENJQBZMwuFMuSxBg9Vrc8MtVhDuhEVczqDb8XcKe2dpf4B6bDGAgV6LeV4Hhx0JACH5BAUKAAcALAcABQAZABwAAAN1eLobHizK+N68rDq8hh+NtgAkwHyfokFHWXYoqFqKS8IoZ5tKLF+7U4rTehGPyKTyImgKlgynE6qQNqkH65OqxWan3jCnQC4cCWgCo1zmpNMLNtn9VivkZoVhb1jU7Qd4enx7Cn9rbYOEfnBEhIVUj31Yi0QJADs=);
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 50%;
+  top: 50%;
+  margin-left: -16px;
+  margin-top: -16px;
+}
+#_loader_container.show {
+  display: block;
+}
+#_loader_container.show-mask {
+  display: block;
+}
+#_loader_container.show-mask > .mask {
+  opacity: 0.3;
+}
+#_loader_container.show-mask > .loading {
+  display: block;
+}
+.border-focus {
+  border: dotted 1px black;
+}
+:focus {
+  outline: none;
+}
+body {
+  font: normal 0.75rem tahoma, Helvetica;
+}
+#_loader_container > .loading {
+  width: 36px;
+  height: 36px;
+  background-image: url(data:image/gif;base64,R0lGODlhJAAkALIFAFZ5ujFguHWOvyRl1JOjxL2/w7G5yQAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAHACwAAAAAJAAkAAADi3i63P4wykmrvTjr7YAH3PR9YTR65RGswXKCiiALF8sqbzzLlr26JN2u55PseBVfK3KkEX+TYWpKpQyuAw1hS4hgsRguF/K9hsXdRzl7Qacd67PYC87Mq/j8osAvUAyABhd9fRKBgRaEfIaHghWKfgqEC42OFJCSigqVg4WZk5uIJZh6pKWeeqmqqwkAIfkEBQoABwAsBAAFABwAGQAAA214uqzyosnZIKS42pgZ+MCycQdhEhMIOptynpL6iZf7oo0cYjfuyZleatV5dY7IZCfADCgXhqjh0Gw+pdIq84o1aJ3KrlfLxVKtz4M5zW5LBvDBsUAvTOLxTL3+xssxe3R9eHqBg3mAhodzfAsJACH5BAUKAAcALAQABQAcABwAAANyeLqs9KTJ2SCkuNqYmfjCsnGHYRoTCDqbcp6S+omX+6KNHGI37smZXmrVeXWOyGQHwAQoF4Vo4dBsPqXSKvOKLWidyq5Xy8VSrc+DOc1uSwLwgHsRj88Pdfg9L1cM/gNKfH6Af4J2hIV3hYZzjIGLgEcJACH5BAUKAAcALAQABQAZABwAAANzeLqs9qbJ6eCjuNqsiCeLdSlFWTDfp0GkWS6pF7KtC8eZ+3Y4pp83GcfGKRqPB4FSgGwsl83FUxlVTJnVa9UK3Xq/RoAYUByYB4zxOHM+L9RidhutgJMVgXxgMacf7Hh6eQp9aWuBgnxuHIKDVY17W4kUCQAh+QQFCgAHACwEAAUAHAAcAAADcni6rPWlydkgpLjamJn5xrJx3QGCzlYq5ydeq9nGVBvS04nvfD8RQAJvQBwcgkFcsYgEKpeDppAGjTafy2Nyl/V5e4KwoBQoByZiccZslqTDa/a58R4rAHjAQj5n1O95eAp8aGqAgXttMYGCXox6X4gdCQAh+QQFCgAHACwEAAgAHAAZAAADcXh61bUwjjmics5CSi1u2sJN3hcqYxV9z5lq2Cl2cm3fuKEbOBT8gcNu1zsAgUNd8fhL8nrMgHPJFBKLRiB2y9UQvgQbYAzwgr8yMtlyRp/UY3Z7IagLFvBypB0+2O0KeWZufn93gWs4hoddi110gDUJACH5BAUKAAcALAQABQAcABwAAANyeLqs86PJ2SCkuNqY++ZHIAYd8ynjWC7Wkoor9pLxNNdUiu98VvwFHmAIOACBOCLx+EsqAcxg7QllOpVG5A7b63oNYENJQBZMwuFMuSxBg9Vrc8MtVhDuhEVczqDb8XcKe2dpf4B6bDGAgV6LeV4Hhx0JACH5BAUKAAcALAcABQAZABwAAAN1eLobHizK+N68rDq8hh+NtgAkwHyfokFHWXYoqFqKS8IoZ5tKLF+7U4rTehGPyKTyImgKlgynE6qQNqkH65OqxWan3jCnQC4cCWgCo1zmpNMLNtn9VivkZoVhb1jU7Qd4enx7Cn9rbYOEfnBEhIVUj31Yi0QJADs=);
+  margin-left: -18px;
+  margin-top: -18px;
+}
+</style><style data-moduleid="css!sap.ui.ErrorStateExt">.sap-error-box {
+  display: none;
+}
+.sap-error-state {
+  box-shadow: 0px 0px 0px 1px #F00;
+  border-color: transparent !important;
+}
+.sap-error-state > input {
+  box-shadow: 0px 0px 0px 1px #F00;
+  border: none !important;
+}
+.sap-error-state:after {
+  content: attr(data-error-msg);
+  display: block;
+  position: relative;
+}
+.sap-error-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 3px;
+  position: relative;
+  color: red;
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: normal;
+  white-space: normal;
+  border-radius: 5px;
+  display: block;
+}
+</style><style data-moduleid="css!sap.ui.common">.sap-ui-disabled {
+  background-color: #eeeeee;
+}
+.sap-ui-validation-failed {
+  box-shadow: 0 0 8px 1px red;
+}
+</style><style data-moduleid="css!sap.sbo.ui.widget.SearchInput">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sap-sbo-ui-widget-SearchInput .searchContainer {
+  position: relative;
+}
+.sap-sbo-ui-widget-SearchInput .search {
+  box-sizing: border-box;
+  padding-right: 35px;
+  padding-left: 5px;
+  border: 0px;
+  border-radius: 15px;
+  width: 100%;
+  height: 35px;
+  font-size: 1.4rem;
+  vertical-align: top;
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  -webkit-transition: width 300ms ease 0;
+  -moz-transition: width 300ms ease 0;
+  -ms-transition: width 300ms ease 0;
+  -o-transition: width 300ms ease 0;
+  transition: width 300ms ease 0;
+  background-size: contain;
+  right: 2px;
+}
+.sap-sbo-ui-widget-SearchInput .search:focus {
+  width: 100%;
+  -webkit-transition: width 400ms ease 0;
+  -moz-transition: width 400ms ease 0;
+  -ms-transition: width 400ms ease 0;
+  -o-transition: width 400ms ease 0;
+  transition: width 400ms ease 0;
+}
+.sap-sbo-ui-widget-SearchInput .close {
+  border-radius: 15px;
+  background-position: center;
+  background-image: url('./image/settings/disable_icon.png');
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background-size: cover;
+}
+.sap-sbo-ui-widget-SearchInput .hideClose {
+  background-image: url('./image/search/Search.png');
+}
+</style><style data-moduleid="css!sap.ui.widget.Button">.sap-ui-button {
+  font: inherit;
+  height: 38px;
+  line-height: 36px;
+  border: 1px solid #b7b7b7;
+  text-align: center;
+  background: #f0f0f0;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sap-ui-button:active {
+  background: #5590cc;
+}
+.sap-ui-button.sap-ui-disabled {
+  background: #eeeeee;
+  color: #666666;
+  cursor: default;
+}
+.sap-ui-button:focus {
+  border: dotted 1px black;
+}
+/* hana sap.ui.widget.Button */
+.sap-ui-button {
+  height: 38px;
+  line-height: 36px;
+  border: 1px solid #b7b7b7;
+  min-width: 3.0rem;
+  background: #f7f7f7;
+}
+.sap-ui-button:active {
+  border: 1px solid #919191;
+}
+.sap-ui-button.sap-ui-disabled {
+  border: 1px solid #d1d1d1;
+}
+</style><style data-moduleid="css!sap.ui.widget.MenuButton">.sap-ui-menu-button-has-menu {
+  background-position: right !important;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAM0lEQVR42mNgGAWDEKSlpf0HYWLFmfAZhI2NDhgJaUYGs2bNYiTKAGyGYNNMdniMAioDAPD9GY1yl/y6AAAAAElFTkSuQmCC) !important;
+  background-repeat: no-repeat !important;
+  padding-right: 15px !important;
+}
+.sap-ui-menu-button-menu-list {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: auto;
+  background-color: #f0f0f0;
+  color: #333333;
+  border: 1px solid #b7b7b7;
+  border-top-width: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: nowrap;
+  border-collapse: separate;
+  z-index: 1001;
+}
+.sap-ui-menu-button-menu-list > ul {
+  list-style-type: none;
+  display: table;
+  width: 100%;
+}
+.sap-ui-menu-button-menu-item {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  font-size: 12px;
+  white-space: nowrap;
+  padding-left: 7px;
+  border-top: 1px solid #b7b7b7;
+}
+.sap-ui-menu-button-menu-item:focus {
+  border: dotted 1px black;
+}
+.sap-ui-menu-button-menu-item.sap-ui-focus {
+  background-color: #f0f0f0;
+  color: #333333;
+}
+.sap-ui-menu-button-menu-item-0 {
+  border-top: none !important;
+}
+.sap-ui-button {
+  font: inherit;
+  height: 38px;
+  line-height: 36px;
+  border: 1px solid #b7b7b7;
+  text-align: center;
+  background: #f0f0f0;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sap-ui-button:active {
+  background: #5590cc;
+}
+.sap-ui-button.sap-ui-disabled {
+  background: #eeeeee;
+  color: #666666;
+  cursor: default;
+}
+.sap-ui-button:focus {
+  border: dotted 1px black;
+}
+/* hana sap.ui.widget.Button */
+.sap-ui-button {
+  height: 38px;
+  line-height: 36px;
+  border: 1px solid #b7b7b7;
+  min-width: 3.0rem;
+  background: #f7f7f7;
+}
+.sap-ui-button:active {
+  border: 1px solid #919191;
+}
+.sap-ui-button.sap-ui-disabled {
+  border: 1px solid #d1d1d1;
+}
+.sap-ui-menu-button {
+  font: inherit;
+  text-align: center;
+  background: #f0f0f0;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 38px;
+  line-height: 36px;
+  border: 1px solid #b7b7b7;
+  min-width: 3.0rem;
+  background: #f7f7f7;
+}
+.sap-ui-menu-button:active {
+  background: #5590cc;
+}
+.sap-ui-menu-button.sap-ui-disabled {
+  background: #eeeeee;
+  color: #666666;
+  cursor: default;
+}
+.sap-ui-menu-button:focus {
+  border: dotted 1px black;
+}
+.sap-ui-menu-button:active {
+  border: 1px solid #919191;
+}
+.sap-ui-menu-button.sap-ui-disabled {
+  border: 1px solid #d1d1d1;
+}
+</style><style data-moduleid="css!sap.sbo.ui.widget.MenuIconButton">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+body.phone .sap-ui-menu-icon-button-menu-list:after {
+  right: 6px;
+}
+body.phone .sap-ui-menu-icon-button-menu-list:before {
+  right: 6px;
+}
+body.phone .sap-ui-menu-icon-button-menu-list {
+  font-family: 'Helvetica Neue 45 Light', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 1.8rem;
+  line-height: 150%;
+  color: #878787;
+}
+body.pad .sap-ui-menu-icon-button-menu-list:after {
+  right: 7px;
+}
+body.pad .sap-ui-menu-icon-button-menu-list:before {
+  right: 7px;
+}
+body.desktop .sap-ui-menu-icon-button-menu-list > ul > li.sap-ui-focus {
+  color: #ffffff;
+  background-color: #11b5ff;
+}
+body.desktop .sap-ui-menu-icon-button-menu-list > ul > li.state-active {
+  background-color: #11b5ff;
+}
+.sap-ui-menu-icon-button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+}
+.sap-ui-menu-icon-button .moremenu {
+  width: 48px;
+  height: 44px;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  border-radius: 10%;
+}
+.sap-ui-menu-icon-button .moremenu .moremenu-icon {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.sap-ui-menu-icon-button-menu-list {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue 45 Light', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 2.4rem;
+  line-height: 150%;
+  color: #878787;
+  border-radius: 5px;
+  position: absolute;
+  top: 88px;
+  width: auto;
+  white-space: nowrap;
+  border-collapse: separate;
+  z-index: 1001;
+  overflow-x: initial;
+  overflow-y: initial;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+.sap-ui-menu-icon-button-menu-list > ul {
+  list-style-type: none;
+  display: table;
+  width: 100%;
+}
+.sap-ui-menu-icon-button-menu-list > ul > li:first-child {
+  border-top: none;
+  border-radius: 5px 5px 0 0;
+}
+.sap-ui-menu-icon-button-menu-list > ul > li:last-child {
+  border-radius: 0 0 5px 5px;
+}
+.sap-ui-menu-icon-button-menu-list > ul > li {
+  background-clip: padding-box;
+  height: 50px;
+  border-top: 1px solid #cccccc;
+  line-height: 50px;
+  padding: 0px 40px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  width: auto;
+  white-space: nowrap;
+}
+</style><style data-moduleid="css!sap.ui.Dialog">/*
+	sap.ui.Dialog begin
+*/
+.sap-ui-dialog {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #f0f0f0;
+  border: 1px solid #b7b7b7;
+  z-index: 10;
+  position: absolute;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+}
+.sap-ui-dialog.sap-ui-dialog-initialized {
+  visibility: visible;
+  -webkit-transition: all 500ms ease 0;
+  -moz-transition: all 500ms ease 0;
+  -ms-transition: all 500ms ease 0;
+  -o-transition: all 500ms ease 0;
+  transition: all 500ms ease 0;
+}
+.sap-ui-dialog-header {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  font: bold 1rem tahoma, Helvetica;
+  font-size: 1rem;
+  color: #999999;
+  position: absolute;
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px;
+}
+.sap-ui-dialog-header-close {
+  width: 12px;
+  height: 12px;
+  border: 1px solid black;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 10px;
+}
+.sap-ui-dialog-body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 10px;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  bottom: 40px;
+  left: 0px;
+}
+.sap-ui-dialog-footer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  overflow: hidden;
+  margin: 10px;
+  bottom: 0;
+  height: 30px;
+  left: 0;
+  right: 0;
+}
+.sap-ui-dialog-footer-buttons {
+  text-align: right;
+}
+.sap-ui-dialog-footer-buttons .splitTo1 {
+  width: 100%;
+}
+.sap-ui-dialog-footer-buttons .splitTo2 {
+  width: 50%;
+}
+.sap-ui-dialog-footer-buttons .splitTo3 {
+  width: 33.333%;
+}
+.sap-ui-dialog-footer-buttons .splitTo4 {
+  width: 25%;
+}
+.sap-ui-dialog-footer-buttons .splitTo5 {
+  width: 20%;
+}
+.sap-ui-dialog-footer-buttons > button {
+  margin-right: 10px;
+}
+.sap-ui-dialog-footer-defaultButton {
+  color: #009be3;
+}
+.sap-ui-dialog-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjbQg61aAAAAEklEQVQYV2N4+vhJJzJmIF0AANnWM1F8DWWLAAAAAElFTkSuQmCC);
+  visibility: visible;
+}
+/*
+	sap.ui.Dialog end
+*/
+/* hana sap.ui.Dialog begin */
+.sap-ui-dialog {
+  padding: 0px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.sap-ui-dialog-header {
+  /*border-bottom: 1px solid @borderColor;
+    .verticalBackground(@dialogHeaderBackgroundColor);
+    height: @title-height;
+    line-height: @title-height;
+    padding-left: @title-padding;
+    padding-right: @title-padding;
+    margin: 0px;
+*/
+
+  margin: 0px;
+  text-align: center;
+  font-size: 1.4rem;
+  height: 4rem;
+  line-height: 4rem;
+  background-color: #f2f2f2;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f7f7f7, endColorstr=#ededed, GradientType=0);
+  background: -ms-linear-gradient(top, #f7f7f7 0, #f2f2f2 33%, #f2f2f2 75%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f7f7f7), color-stop(0.33, #f2f2f2), color-stop(0.75, #f2f2f2), color-stop(1, #ededed));
+  background-image: -webkit-linear-gradient(top, #f7f7f7 0, #f2f2f2 33%, #f2f2f2 75%, #ededed 100%);
+  background: linear-gradient(top, #f7f7f7 0, #f2f2f2 33%, #f2f2f2 75%, #ededed 100%);
+}
+.sap-ui-dialog-header-close {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAhBJREFUOE9VU8mOGjEQ9Y+y/gW9kTszWZSfQNyjOXAOzb4vQi0kQjc02wQEHUhyefGrkdHkULKr7PfqVbmsAKjS00c4jodCoQDbtvXegeu6/xlj7+3p+ZOGQiluqtUqTq8/8euaILlc8ff3H9zvd1yvV1lvt5vskyTB5XLB+XzGy8s3MLFy3CLiOBaLogi73Q6r1UpW+pvNBvv9HtvtFmEYSuxwOOjzGLZWrYrFogYssdtuMJ/PMRgMMJ5OZH88HoV4Op1iOBxiNBohCAIhCcMfsGwXijUzwItBMEcmk0E2m8VsNhOS5XIp+1QqhXQ6jcVi8VDreJqAzaI0yo7jNXK5nJDQmHkymUgsn88Lwel0epRsuw4UO0/ZtChaiRpDQgDVGML1ei0KeLfb7UIILMtCu92WoKmRlwgigSFhKVTJO1TV7/dRsK23HtAhAQ+40mdmk52KeNbr9aQvzE7jXAhBq9USUKfTQa1We2QlgVHBlUqbzaaoIEYIPM+TIMHMTummBxwaNu19Y0lCMDEsXxRQDsGUZ7Kap317nVhITCkshwR8QcVpajQaosAMDweIQPosjd3nJNI4SARTiWXxFfQ0Eez737WStqjh1FERmzYej2UlEc8I9n1fkgpBqfSMcrksgXq9LodsJFfWyr3xDZB+pVLB5y9foeQ7axL2gjXxW3veB1lptlZo9sZnjD+R2H9BCBMiG1oXCwAAAABJRU5ErkJggg==);
+  width: 16px;
+  height: 16px;
+  border: none;
+  margin-top: 8px;
+}
+.sap-ui-dialog-body {
+  overflow: hidden;
+  top: 4rem;
+  margin: 0px;
+  bottom: 50px;
+}
+.sap-ui-dialog-footer {
+  margin: 0px;
+  height: 50px;
+}
+.sap-ui-dialog-messageTitle {
+  height: 20%;
+  width: 100%;
+  border-bottom: 1px inset;
+}
+.sap-ui-dialog-splitter {
+  border: 0;
+  border-top: 1px solid #333;
+  border-bottom: 2px solid #fff;
+  opacity: 0.3;
+}
+.sap-ui-dialog-messageContent {
+  height: 50%;
+  width: 100%;
+}
+.sap-ui-dialog-messageFoot {
+  height: 30%;
+  width: 100%;
+}
+/* hana sap.ui.Dialog end */
+</style><style data-moduleid="css!sap.ui.MessageBox">.sap-ui-messagebox-icon {
+  height: 100%;
+  width: 15%;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left;
+}
+.sap-ui-messagebox-icon-information {
+  background-image: url(data:image/gif;base64,R0lGODlhIAAgAKIAAP8A/zAwR6Wxv8vb6mSHn+b09P///wAAACH5BAEAAAAALAAAAAAgACAAAAOnCBrc/vCpGYy9OGssAjVFKI5kSRJeVQxs677wK6BqbN/szID44PS62g2CC/KGD8HNuEI6lDZm7wmNSYGCbJF27HkH11ckAOQ2xePt7uwaB6qwsKyTXJpxELjs7mzoXXIweXZreHVRfDaDiIV9DH8tgWhPhEKTblaJbW6PcZotnJ17jXFZpqdao5ZfahWQrKMAAQSotba3KBQEu7y9vr++HhOyocUMEwkAOw==);
+}
+.sap-ui-messagebox-icon-warning {
+  background-image: url(data:image/gif;base64,R0lGODlhIAAgAKIAAP8A/zAwR93eaPn6pPX2aLy8cv//ztjIvyH5BAEAAAAALAAAAAAgACAAAAO3CLrM8aHJSUEw+MTK2x0EIRRb111hSJqnAaZjyUpoqsrz8tlhnHsGXmr1U+wgEBHxV0M+CoTlbEdwBqC+XK3qhEZxHCoX6c2atmOI98sSp58wKQX9vtrkNBfPulaCHUF7XTx4OnqCZDxmQEJ1fTcTbjaJQotGgY2ZhDiSmpmLdIgBnkudKXyfRKGTg5krpqetjTEBAp4hZI+btba3Bb+6ihG8AsXGx8jJyCVXwM7P0NGcVtTVSAsJADs=);
+}
+.sap-ui-messagebox-icon-success {
+  background-image: url(data:image/gif;base64,R0lGODlhIAAgAKIAAP8A/zAwR1GAaJDTY87/rnyfZP///wAAACH5BAEAAAAALAAAAAAgACAAAAOuCBrc/vCpGYy9OGtcAjVEKI5kSQpeRQxs677wW6BqbN/szIB4L9M8ny3g0tWEMEahZQwiW41lDrh6shzSQbP6fGS3VsiX2hUzyS5iLFIY77hXdVqc1aKhjLm3bn+/HHF7MGB6EUp8U36FbIiJR3iGbTeEi1GNZ4p/gjiUmoc+nZqSoHcxo6SZVqalqj+prUU0BXCwmAABAm26u7y9vSgUAsLDxMXGxR4Tt4bMhhMJADs=);
+}
+.sap-ui-messagebox-icon-error {
+  background-image: url(data:image/gif;base64,R0lGODlhIAAgAKIAAP8A/zAwR/+moYEBAbACAtYzM/9LS////yH5BAEAAAAALAAAAAAgACAAAAOvCLob/hCySVUQOGsdqr9GKI5k5zFgoa5sa5hn2s4uTMl0rr4Vzh7AYI6HEhhywSBhCPO1ksAlExA46grQgzRHcFh12S2tW71ioeIZ+YtEX9fm8Nsbd+vgV/mdnrdz+WB+Y4CBUWkteGYEi4eIhGaQBYmFB5CTNFlvAx0BjSt6apsNnmdJjQSiKKSmh6g2o3eMoa+qkSyuJxaks7mjjL/Ai6m9FgPGx8jItL0RzQ8nCQA7);
+}
+.sap-ui-messagebox-icon-question {
+  background-image: url(data:image/gif;base64,R0lGODlhIAAgANUAAP8A/zAwR/7+/3mBjVthar/H0c/b6MvY5czZ5tPf6+Pt9/T5/vv9//r8/s7b583a5tTg69Pf6r7J09jk79bi7dXh7N/q9N3o8uHs9uDr9ejy++bw+dPg693p89zo8trm8Nnl79jk7uXw+eTv+OLt9uHs9eDr9PD3/fP5/uv1/er0/Onz++32/fD4/vf7/un0/Ofy+uz2/fT6/vn8/vz+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAgACAAAAb/QIBwECgaj8ikcSBsBmo0hnRKrVoZM1TAKaC5ZOCweEyWLU6v7WDWQMVS8Lh8TofHYBYiyl2HE5d9cCITRS0ngUoBgSMUhYd1iQEDfYyOfZISmX9FBnWVAYaBBhlxRxKejaCPgaVFA6d0n6GscKadsamzrKawuJasm5mLuauXRcLDv4iYtLLFfZm3yaq0RJPNxLRG0pTZwMysnywstCkGEtx0KhkckiIiGuW0KgoVD0wBHh0mGf0ZGCJW1FGxgUQJfxkuRDiwRUiABA4QSERggEKJeHLoUTAwUeIBhk2GJCHwgQTGFPQqHCBAAAmTkDCbFMhnEmU9hgVi6twJgKaGJw0hQPIcCpMmiXZEk4bM1wFCQ6VKA4CI8BRq0odVrRKVpNVq1p1BAAA7);
+}
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+  }
+  70% {
+    -webkit-transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-moz-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.05);
+  }
+  70% {
+    -moz-transform: scale(0.9);
+  }
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@-o-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -o-transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.05);
+  }
+  70% {
+    -o-transform: scale(0.9);
+  }
+  100% {
+    -o-transform: scale(1);
+  }
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.sap-ui-messagebox-outerContainer {
+  position: relative;
+  width: 430px;
+  height: auto;
+  z-index: 110;
+  word-wrap: break-word;
+  /*  for circle angle  */
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  /*  for border shadow  */
+
+  border: 1px solid #dddddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  -webkit-animation-duration: 700ms;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 700ms;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 700ms;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+.sap-ui-messagebox-outerContainer.bounceIn {
+  -webkit-animation-name: bounceIn;
+  -moz-animation-name: bounceIn;
+  -o-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+.sap-ui-messagebox-innerContainer {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: inline-block;
+  /*  for circle angle  */
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  /*  for inner shadow  */
+
+  -webkit-box-shadow: inset 0px 0px 2px 1px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: inset 0px 0px 2px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0px 0px 2px 1px rgba(255, 255, 255, 0.5);
+  /*  for gradient background  */
+
+  background: #ffffff;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 61%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(61%, #e5e5e5));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #ffffff 0%, #e5e5e5 61%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 61%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #ffffff 0%, #e5e5e5 61%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 61%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0);
+  /* IE6-9 */
+
+}
+.sap-ui-messagebox-content {
+  line-height: 150%;
+  color: #666666;
+  position: relative;
+  padding-top: 28px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 90px;
+  font: bold 1.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #333333;
+  font-weight: normal;
+}
+.sap-ui-messagebox-content .fontIcon-success {
+  position: relative;
+  top: 0;
+  left: 28px;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+  display: inline-block;
+  color: #333333;
+  font-weight: normal;
+  color: #00b606;
+}
+.sap-ui-messagebox-content .fontIcon-error {
+  position: relative;
+  top: 0;
+  left: 28px;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+  display: inline-block;
+  color: #333333;
+  font-weight: normal;
+  color: #d90000;
+}
+.sap-ui-messagebox-content .fontIcon-warning {
+  position: relative;
+  top: 0;
+  left: 28px;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+  display: inline-block;
+  color: #333333;
+  font-weight: normal;
+  color: #ffc000;
+}
+.sap-ui-messagebox-content > span {
+  position: relative;
+  left: 50px;
+  height: auto;
+  width: 332px;
+  display: inline-block;
+  font: bold 1.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #333333;
+  font-weight: normal;
+  white-space: pre-wrap;
+  /* css-3 */
+
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+
+}
+.phone .sap-ui-messagebox-outerContainer {
+  position: relative;
+  width: 292px;
+  height: auto;
+  z-index: 110;
+  word-wrap: break-word;
+  /*  for circle angle  */
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  /*  for border shadow  */
+
+  border: 1px solid #dddddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  -webkit-animation-duration: 700ms;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 700ms;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 700ms;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+.phone .sap-ui-messagebox-content {
+  line-height: 150%;
+  color: #666666;
+  position: relative;
+  padding-top: 28px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 70px;
+  font: bold 1.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #333333;
+  font-weight: normal;
+}
+.phone .sap-ui-messagebox-content .fontIcon-success {
+  position: relative;
+  top: 0;
+  left: 28px;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+  display: inline-block;
+  color: #333333;
+  font-weight: normal;
+  color: #00b606;
+}
+.phone .sap-ui-messagebox-content .fontIcon-error {
+  position: relative;
+  top: 0;
+  left: 28px;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+  display: inline-block;
+  color: #333333;
+  font-weight: normal;
+  color: #d90000;
+}
+.phone .sap-ui-messagebox-content .fontIcon-warning {
+  position: relative;
+  top: 0;
+  left: 28px;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+  display: inline-block;
+  color: #333333;
+  font-weight: normal;
+  color: #ffc000;
+}
+.phone .sap-ui-messagebox-content > span {
+  position: relative;
+  left: 50px;
+  height: auto;
+  width: 194px;
+  display: inline-block;
+  font: bold 1.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #333333;
+  font-weight: normal;
+  white-space: pre-wrap;
+  /* css-3 */
+
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+
+}
+</style><style data-moduleid="css!sap.sbo.ui.widget.PreviewBox">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sap-sbo-ui-widget-previewbox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.sap-sbo-ui-widget-previewbox-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.sap-sbo-ui-widget-previewbox-mask .bg {
+  position: absolute;
+  z-index: 10001;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #0e1011;
+  opacity: 0.6;
+}
+.sap-sbo-ui-widget-previewbox-mask .close-box {
+  position: absolute;
+  z-index: 10003;
+  right: 0;
+  top: 0;
+  width: 58px;
+  height: 58px;
+  cursor: pointer;
+  background-color: #393939;
+  -webkit-border-radius: 0px 0px 0px 138px;
+  -moz-border-radius: 0px 0px 0px 138px;
+  border-radius: 0px 0px 0px 138px;
+}
+.sap-sbo-ui-widget-previewbox-mask .close-box div {
+  color: #ffffff;
+  font-size: 1.8rem;
+  float: right;
+  margin: 10px 14px 0px 0px;
+}
+.sap-sbo-ui-widget-previewbox-mask .bottom-bar {
+  position: absolute;
+  z-index: 10003;
+  bottom: 40px;
+  width: 100%;
+}
+.sap-sbo-ui-widget-previewbox-mask .bottom-bar .zooming-bar {
+  width: 130px;
+  background: #333;
+  margin: 0 auto;
+  border-radius: 40px;
+  box-shadow: 0 1px 2px #000;
+  padding: 0 0px 0px 20px;
+}
+.sap-sbo-ui-widget-previewbox-mask .bottom-bar .zooming-bar .zoom-in,
+.sap-sbo-ui-widget-previewbox-mask .bottom-bar .zooming-bar .zoom-out {
+  display: inline-block;
+  background: #000000;
+  padding: 5px;
+  width: 36px;
+  height: 36px;
+  -webkit-border-radius: 20%;
+  -moz-border-radius: 20%;
+  border-radius: 20%;
+  color: white;
+  font-size: 2.2rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 36px;
+}
+.sap-sbo-ui-widget-previewbox-mask .bottom-bar .zooming-bar .zoom-out {
+  float: right;
+  margin-right: 20px;
+}
+.sap-sbo-ui-widget-previewbox .previewbox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  padding: 20px;
+  z-index: 10002;
+  outline: none;
+  display: none;
+}
+.sap-sbo-ui-widget-previewbox .previewbox-wrap.show {
+  display: block;
+}
+.sap-sbo-ui-widget-previewbox .previewbox-wrap .previewbox-outer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.sap-sbo-ui-widget-previewbox .previewbox-wrap .previewbox-outer .previewbox-content {
+  padding: 0;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1102;
+  border: 0px solid #fff;
+}
+.sap-sbo-ui-widget-previewbox .previewbox-wrap .previewbox-outer .previewbox-content .previewbox-img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  line-height: 0;
+  vertical-align: top;
+}
+</style><style data-moduleid="css!sap.sbo.ui.Page">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+body.phone .sbo-frame-dialog .sap-sbo-page > .header {
+  font: normal 1.6rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #666666;
+  line-height: 40px;
+}
+body.phone .sbo-frame-dialog .sap-sbo-page > .header .sap-sbo-ui-widget-Bar .sap-sbo-ui-widget-Bar-label {
+  font: normal 1.6rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #666666;
+  line-height: 40px;
+}
+.sbo-frame-dialog .sap-sbo-page > .header {
+  font: normal 1.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #666666;
+  line-height: 48px;
+}
+.sbo-frame-dialog .sap-sbo-page > .header .sap-sbo-ui-widget-Bar {
+  -webkit-box-shadow: inset 0 0 #dddddd;
+  -moz-box-shadow: inset 0 0 #dddddd;
+  box-shadow: inset 0 0 #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+.sbo-frame-dialog .sap-sbo-page > .header .sap-sbo-ui-widget-Bar .sap-sbo-ui-widget-Bar-label {
+  font: normal 1.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #666666;
+  line-height: inherit;
+}
+.sap-sbo-page {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.sap-sbo-page > .panel {
+  width: 100%;
+}
+.sap-sbo-page > .header {
+  font: normal 2.4rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #999999;
+  height: 48px;
+  line-height: 48px;
+  background-color: #f2f2f2;
+}
+.sap-sbo-page > .header .sap-sbo-ui-widget-Bar {
+  line-height: inherit;
+}
+.sap-sbo-page > .header .sap-sbo-ui-widget-Bar .sap-sbo-ui-widget-button {
+  color: #666666;
+  min-width: 10px;
+  border: 0px;
+  padding: 0 6px;
+}
+.sap-sbo-page > .header .sap-sbo-ui-widget-Bar .sap-sbo-ui-widget-button .sap-sbo-ui-widget-button-icon {
+  font-size: 3rem;
+}
+.sap-sbo-page > .header .sap-sbo-ui-widget-Bar-label {
+  font: normal 2.4rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #999999;
+  line-height: inherit;
+  box-sizing: border-box;
+}
+.sap-sbo-page > .footer {
+  font-size: 1.4rem;
+  position: absolute;
+  height: 48px;
+  line-height: 48px;
+  bottom: 0px;
+  width: 100%;
+  color: #ffffff;
+  text-shadow: 0 0.0625em 0 rgba(0, 0, 0, 0.5);
+  background-color: rgba(51, 51, 51, 0.9);
+  background-image: none;
+  -webkit-box-shadow: inset 0 0.0625em 0 rgba(229, 229, 229, 0.2);
+  box-shadow: inset 0 0.0625em 0 rgba(229, 229, 229, 0.2);
+}
+.sap-sbo-page > .content {
+  position: absolute;
+  top: 49px;
+  bottom: 44px;
+  width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+</style><style data-moduleid="css!sap.sbo.ui.PageRegion">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sap-sbo-ui-page-region {
+  height: 100%;
+}
+.sap-sbo-ui-page-region .transitionfn {
+  transition-property: -webkit-transform, -moz-transform, opacity, -webkit-filter, -moz-filter;
+  -webkit-transition-property: -webkit-transform, -moz-transform, opacity, -webkit-filter, -moz-filter;
+  -moz-transition-property: -webkit-transform, -moz-transform, opacity, -webkit-filter, -moz-filter;
+  -ms-transition-property: -webkit-transform, -moz-transform, opacity, -webkit-filter, -moz-filter;
+  transition-duration: 150ms;
+  -webkit-transition-duration: 150ms;
+  -moz-transition-duration: 150ms;
+  -ms-transition-duration: 150ms;
+}
+.sap-sbo-ui-page-region .navAnimation {
+  transition-property: -webkit-transform, -moz-transform, opacity, -webkit-filter, -moz-filter;
+  -webkit-transition-property: -webkit-transform, -moz-transform, opacity, -webkit-filter, -moz-filter;
+  -moz-transition-property: -webkit-transform, -moz-transform, opacity, -webkit-filter, -moz-filter;
+  -ms-transition-property: -webkit-transform, -moz-transform, opacity, -webkit-filter, -moz-filter;
+  transition-duration: 150ms;
+  -webkit-transition-duration: 150ms;
+  -moz-transition-duration: 150ms;
+  -ms-transition-duration: 150ms;
+}
+.sap-sbo-ui-page-region .viewsection {
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0px, 0px) scale(1);
+  -moz-transform: translate3d(0%, 0px, 0px) scale(1);
+  -ms-transform: translate3d(0%, 0px, 0px) scale(1);
+  transform: translate3d(0%, 0px, 0px) scale(1);
+  opacity: 1;
+}
+.sap-sbo-ui-page-region .leftPosition {
+  -webkit-transform: translate3d(-100%, 0px, 0px);
+  -moz-transform: translate3d(-100%, 0px, 0px);
+  -ms-transform: translate3d(-100%, 0px, 0px);
+  transform: translate3d(-100%, 0px, 0px);
+}
+.sap-sbo-ui-page-region .rightPosition {
+  -webkit-transform: translate3d(100%, 0px, 0px);
+  -moz-transform: translate3d(100%, 0px, 0px);
+  -ms-transform: translate3d(100%, 0px, 0px);
+  transform: translate3d(100%, 0px, 0px);
+}
+.sap-sbo-ui-page-region .flyOut {
+  -webkit-transform: translate3d(0%, 0px, 0px) scale(2);
+  -moz-transform: translate3d(0%, 0px, 0px) scale(2);
+  -ms-transform: translate3d(0%, 0px, 0px) scale(2);
+  transform: translate3d(0%, 0px, 0px) scale(2);
+  opacity: 0;
+}
+</style><style data-moduleid="css!sap.sbo.ui.widget.Button">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sap-sbo-ui-widget-button {
+  font: inherit;
+  height: 22px;
+  line-height: 20px;
+  border: 1px solid #666666;
+  text-align: center;
+  background: transparent;
+  cursor: pointer;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: white;
+}
+.sap-sbo-ui-widget-button-text {
+  display: inline-block;
+  font-size: inherit;
+  vertical-align: top;
+  text-align: center;
+  padding: 0 6px;
+}
+.sap-sbo-ui-widget-button-icon {
+  display: inline-block;
+  font-size: 1.4rem;
+  padding: 0 6px;
+}
+.sap-sbo-ui-widget-button:active {
+  background: #7a7a7a;
+}
+.sap-sbo-ui-widget-button.sap-ui-disabled {
+  background: #e8e8e8;
+  color: #808080;
+  cursor: default;
+}
+.sap-sbo-ui-widget-button:focus {
+  background: rgba(234, 234, 234, 0.098);
+}
+</style><style data-moduleid="css!sap.sbo.ui.widget.Bar">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sap-sbo-ui-widget-Bar {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+  -webkit-box-shadow: inset 0 -1px #dddddd;
+  -moz-box-shadow: inset 0 -1px #dddddd;
+  box-shadow: inset 0 -1px #dddddd;
+}
+.sap-sbo-ui-widget-Bar-container-left {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  line-height: inherit;
+  left: 0;
+}
+.sap-sbo-ui-widget-Bar-container-left .sap-sbo-ui-widget-button {
+  height: 100%;
+  vertical-align: top;
+  margin: 0;
+  border: none;
+  line-height: inherit;
+}
+.sap-sbo-ui-widget-Bar-container-middle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  line-height: inherit;
+  text-align: center;
+}
+.sap-sbo-ui-widget-Bar-container-middle-inner {
+  width: auto;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 100%;
+}
+.sap-sbo-ui-widget-Bar-container-middle-inner .sap-sbo-ui-widget-button {
+  height: 100%;
+  vertical-align: top;
+  margin: 0;
+  line-height: inherit;
+}
+.sap-sbo-ui-widget-Bar-container-middle-inner .sap-sbo-ui-widget-Bar-label {
+  height: 100%;
+  font: normal 2.4rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #999999;
+  line-height: inherit;
+  padding: 0 10px;
+}
+.sap-sbo-ui-widget-Bar-container-right {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  white-space: nowrap;
+  line-height: inherit;
+}
+.sap-sbo-ui-widget-Bar-container-right .sap-sbo-ui-widget-button {
+  vertical-align: top;
+  height: 100%;
+  margin: 0;
+  border: none;
+  line-height: inherit;
+}
+.sap-sbo-ui-widget-Bar-container-right .sap-sbo-ui-widget-Bar-menu {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  line-height: inherit;
+  padding: 1px 8px;
+  height: 100%;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: top;
+}
+.sap-sbo-ui-widget-Bar-container-right .sap-sbo-ui-widget-Bar-menu:active {
+  background: #7a7a7a;
+}
+.sap-sbo-ui-widget-Bar-container-right .sap-sbo-ui-widget-Bar-menu span {
+  font-size: 1.4rem;
+  padding: 0 8px;
+}
+.sap-sbo-ui-widget-Bar-static-menu {
+  font: normal 1.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #333333;
+  position: absolute;
+  display: none;
+  background: rgba(51, 51, 51, 0.98);
+  z-index: 20001;
+  border: 1px #f0f0f0 solid;
+}
+.sap-sbo-ui-widget-Bar-static-menu-arrow {
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(45deg);
+  background: rgba(51, 51, 51, 0.98);
+  background-color: white;
+  z-index: -1;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  border: 1px #f0f0f0 solid;
+  border-top: none;
+  border-left: none;
+}
+.sap-sbo-ui-widget-Bar-static-menu ul li {
+  background-color: white;
+  list-style-type: none;
+  position: relative;
+  border-top: 1px #f0f0f0 solid;
+}
+.sap-sbo-ui-widget-Bar-static-menu ul li button {
+  position: relative;
+  left: -8px;
+  border: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 10px;
+  color: #999999;
+}
+</style><style data-moduleid="css!sap.ui.widget.Icon">.sap-ui-icon {
+  height: auto;
+  width: auto;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid transparent;
+}
+.sap-ui-icon:active {
+  background: #5590cc;
+}
+.sap-ui-icon-text {
+  margin-left: 5px;
+  display: inline;
+}
+.sap-ui-icon-vertical div {
+  margin-left: 0;
+  display: block;
+}
+.sap-ui-icon.sap-ui-disabled {
+  background: #eeeeee;
+  color: #666666;
+  cursor: default;
+}
+.sap-ui-icon:focus {
+  border: dotted 1px black;
+}
+/* hana sap.ui.widget.Icon */
+.sap-ui-icon {
+  border: 1px solid transparent;
+}
+.sap-ui-icon:active {
+  border: 1px solid #919191;
+}
+.sap-ui-icon.sap-ui-disabled {
+  border: 1px solid #d1d1d1;
+}
+</style><style data-moduleid="css!sap.sbo.ui.widget.WindowStub">div [data-sap-widget="sap.sbo.ui.widget.WindowStub"] {
+  overflow: hidden;
+}
+div [data-sap-widget="sap.sbo.ui.widget.WindowStub"] > iframe {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+</style><style data-moduleid="css!sap.sbo.shell.PadHtmlShell">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+@font-face {
+  font-family: 'SAP-icons';
+  src: url('http://127.0.0.1:8079/sfa-anw/./css/../fonts/SAP-icons.ttf'), url('http://127.0.0.1:8079/sfa-anw/./css/../fonts/SAP-icons.eot');
+  font-weight: normal;
+  font-style: normal;/* IE9+ */
+}
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'SAP-icons';
+  content: attr(data-icon);
+  speak: none;
+}
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'SAP-icons';
+  font-style: normal;
+  speak: none;
+}
+.icon-home:before {
+  content: "\e070";
+}
+.icon-settings:before {
+  content: "\e00c";
+}
+.icon-search:before {
+  content: "\e00d";
+}
+.icon-accidental-leave:before {
+  content: "\e000";
+}
+.icon-account:before {
+  content: "\e001";
+}
+.icon-wrench:before {
+  content: "\e002";
+}
+.icon-windows-doors:before {
+  content: "\e003";
+}
+.icon-washing-machine:before {
+  content: "\e004";
+}
+.icon-visits:before {
+  content: "\e005";
+}
+.icon-video:before {
+  content: "\e006";
+}
+.icon-travel-expense:before {
+  content: "\e007";
+}
+.icon-temperature:before {
+  content: "\e008";
+}
+.icon-task:before {
+  content: "\e009";
+}
+.icon-synchronize:before {
+  content: "\e00a";
+}
+.icon-survey:before {
+  content: "\e00b";
+}
+.icon-settings:before {
+  content: "\e00c";
+}
+.icon-search:before {
+  content: "\e00d";
+}
+.icon-sales-document:before {
+  content: "\e00e";
+}
+.icon-retail-store:before {
+  content: "\e00f";
+}
+.icon-refresh:before {
+  content: "\e010";
+}
+.icon-product:before {
+  content: "\e011";
+}
+.icon-present:before {
+  content: "\e012";
+}
+.icon-ppt-attachment:before {
+  content: "\e013";
+}
+.icon-pool:before {
+  content: "\e014";
+}
+.icon-pie-chart:before {
+  content: "\e015";
+}
+.icon-picture:before {
+  content: "\e016";
+}
+.icon-photo-voltaic:before {
+  content: "\e017";
+}
+.icon-phone:before {
+  content: "\e018";
+}
+.icon-pending:before {
+  content: "\e019";
+}
+.icon-pdf-attachment:before {
+  content: "\e01a";
+}
+.icon-past:before {
+  content: "\e01b";
+}
+.icon-outgoing-call:before {
+  content: "\e01c";
+}
+.icon-opportunity:before {
+  content: "\e01d";
+}
+.icon-opportunities:before {
+  content: "\e01e";
+}
+.icon-notes:before {
+  content: "\e01f";
+}
+.icon-money-bills:before {
+  content: "\e020";
+}
+.icon-map:before {
+  content: "\e021";
+}
+.icon-log:before {
+  content: "\e022";
+}
+.icon-line-charts:before {
+  content: "\e023";
+}
+.icon-lightbulb:before {
+  content: "\e024";
+}
+.icon-leads:before {
+  content: "\e025";
+}
+.icon-lead:before {
+  content: "\e026";
+}
+.icon-laptop:before {
+  content: "\e027";
+}
+.icon-kpi-managing-my-area:before {
+  content: "\e028";
+}
+.icon-kpi-corporate-performance:before {
+  content: "\e029";
+}
+.icon-incoming-call:before {
+  content: "\e02a";
+}
+.icon-inbox:before {
+  content: "\e02b";
+}
+.icon-horizontal-bar-chart:before {
+  content: "\e02c";
+}
+.icon-history:before {
+  content: "\e02d";
+}
+.icon-heating-cooling:before {
+  content: "\e02e";
+}
+.icon-gantt-bars:before {
+  content: "\e02f";
+}
+.icon-future:before {
+  content: "\e030";
+}
+.icon-fridge:before {
+  content: "\e031";
+}
+.icon-fallback:before {
+  content: "\e032";
+}
+.icon-expense-report:before {
+  content: "\e033";
+}
+.icon-excel-attachment:before {
+  content: "\e034";
+}
+.icon-energy-saving-lightbulb:before {
+  content: "\e035";
+}
+.icon-employee:before {
+  content: "\e036";
+}
+.icon-email:before {
+  content: "\e037";
+}
+.icon-edit:before {
+  content: "\e038";
+}
+.icon-duplicate:before {
+  content: "\e039";
+}
+.icon-download:before {
+  content: "\e03a";
+}
+.icon-doc-attachment:before {
+  content: "\e03b";
+}
+.icon-dishwasher:before {
+  content: "\e03c";
+}
+.icon-delete:before {
+  content: "\e03d";
+}
+.icon-decline:before {
+  content: "\e03e";
+}
+.icon-complete:before {
+  content: "\e03f";
+}
+.icon-competitor:before {
+  content: "\e040";
+}
+.icon-collections-management:before {
+  content: "\e041";
+}
+.icon-chalkboard:before {
+  content: "\e042";
+}
+.icon-cart:before {
+  content: "\e043";
+}
+.icon-card:before {
+  content: "\e044";
+}
+.icon-camera:before {
+  content: "\e045";
+}
+.icon-calendar:before {
+  content: "\e046";
+}
+.icon-begin:before {
+  content: "\e047";
+}
+.icon-basket:before {
+  content: "\e048";
+}
+.icon-bar-chart:before {
+  content: "\e049";
+}
+.icon-attachment:before {
+  content: "\e04a";
+}
+.icon-arrow-top:before {
+  content: "\e04b";
+}
+.icon-arrow-right:before {
+  content: "\e04c";
+}
+.icon-arrow-left:before {
+  content: "\e04d";
+}
+.icon-arrow-bottom:before {
+  content: "\e04e";
+}
+.icon-approvals:before {
+  content: "\e04f";
+}
+.icon-appointment:before {
+  content: "\e050";
+}
+.icon-alphabetical-order:before {
+  content: "\e051";
+}
+.icon-along-stacked-chart:before {
+  content: "\e052";
+}
+.icon-alert:before {
+  content: "\e053";
+}
+.icon-addresses:before {
+  content: "\e054";
+}
+.icon-address-book:before {
+  content: "\e055";
+}
+.icon-add-filter:before {
+  content: "\e056";
+}
+.icon-add-favorite:before {
+  content: "\e057";
+}
+.icon-add:before {
+  content: "\e058";
+}
+.icon-activities:before {
+  content: "\e059";
+}
+.icon-action:before {
+  content: "\e05a";
+}
+.icon-accept:before {
+  content: "\e05b";
+}
+.icon-hint:before {
+  content: "\e05c";
+}
+.icon-group:before {
+  content: "\e05d";
+}
+.icon-check-availability:before {
+  content: "\e05e";
+}
+.icon-weather-proofing:before {
+  content: "\e05f";
+}
+.icon-payment-approval:before {
+  content: "\e060";
+}
+.icon-batch-payments:before {
+  content: "\e061";
+}
+.icon-bed:before {
+  content: "\e062";
+}
+.icon-arobase:before {
+  content: "\e063";
+}
+.icon-family-care:before {
+  content: "\e064";
+}
+.icon-favorite:before {
+  content: "\e065";
+}
+.icon-navigation-right-arrow:before {
+  content: "\e066";
+}
+.icon-navigation-left-arrow:before {
+  content: "\e067";
+}
+.icon-e-care:before {
+  content: "\e068";
+}
+.icon-less:before {
+  content: "\e069";
+}
+.icon-lateness:before {
+  content: "\e06a";
+}
+.icon-lab:before {
+  content: "\e06b";
+}
+.icon-internet-browser:before {
+  content: "\e06c";
+}
+.icon-instance:before {
+  content: "\e06d";
+}
+.icon-inspection:before {
+  content: "\e06e";
+}
+.icon-image-viewer:before {
+  content: "\e06f";
+}
+.icon-home:before {
+  content: "\e070";
+}
+.icon-grid:before {
+  content: "\e071";
+}
+.icon-goalseek:before {
+  content: "\e072";
+}
+.icon-general-leave-request:before {
+  content: "\e073";
+}
+.icon-create-leave-request:before {
+  content: "\e074";
+}
+.icon-flight:before {
+  content: "\e075";
+}
+.icon-filter:before {
+  content: "\e076";
+}
+.icon-favorite-list:before {
+  content: "\e077";
+}
+.icon-factory:before {
+  content: "\e078";
+}
+.icon-endoscopy:before {
+  content: "\e079";
+}
+.icon-employee-pane:before {
+  content: "\e07a";
+}
+.icon-employee-approvals:before {
+  content: "\e07b";
+}
+.icon-email-read:before {
+  content: "\e07c";
+}
+.icon-electrocardiogram:before {
+  content: "\e07d";
+}
+.icon-documents:before {
+  content: "\e07e";
+}
+.icon-decision:before {
+  content: "\e07f";
+}
+.icon-database:before {
+  content: "\e080";
+}
+.icon-customer-history:before {
+  content: "\e081";
+}
+.icon-customer:before {
+  content: "\e082";
+}
+.icon-credit-card:before {
+  content: "\e083";
+}
+.icon-create-entry-time:before {
+  content: "\e084";
+}
+.icon-contacts:before {
+  content: "\e085";
+}
+.icon-compare:before {
+  content: "\e086";
+}
+.icon-clinical-order:before {
+  content: "\e087";
+}
+.icon-chain-link:before {
+  content: "\e088";
+}
+.icon-pull-down:before {
+  content: "\e089";
+}
+.icon-cargo-train:before {
+  content: "\e08a";
+}
+.icon-car-rental:before {
+  content: "\e08b";
+}
+.icon-business-card:before {
+  content: "\e08c";
+}
+.icon-bar-code:before {
+  content: "\e08d";
+}
+.folder-blank:before {
+  content: "\e08e";
+}
+.icon-passenger-train:before {
+  content: "\e08f";
+}
+.icon-question-mark:before {
+  content: "\e090";
+}
+.icon-world:before {
+  content: "\e091";
+}
+.icon-iphone:before {
+  content: "\e092";
+}
+.icon-ipad:before {
+  content: "\e093";
+}
+.icon-warning:before {
+  content: "\e094";
+}
+.icon-sort:before {
+  content: "\e095";
+}
+.icon-course-book:before {
+  content: "\e096";
+}
+.icon-course-program:before {
+  content: "\e097";
+}
+.icon-add-coursebook:before {
+  content: "\e098";
+}
+.icon-print:before {
+  content: "\e099";
+}
+.icon-save:before {
+  content: "\e09a";
+}
+.icon-play:before {
+  content: "\e09b";
+}
+.icon-pause:before {
+  content: "\e09c";
+}
+.icon-record:before {
+  content: "\e09d";
+}
+.icon-response:before {
+  content: "\e09e";
+}
+.icon-pushpin-on:before {
+  content: "\e09f";
+}
+.icon-pushpin-off:before {
+  content: "\e0a0";
+}
+.icon-unfavorite:before {
+  content: "\e0a1";
+}
+.icon-learning-assistant:before {
+  content: "\e0a2";
+}
+.icon-timesheet:before {
+  content: "\e0a3";
+}
+.icon-time-entry-request:before {
+  content: "\e0a4";
+}
+.icon-list:before {
+  content: "\e0a5";
+}
+.icon-action-settings:before {
+  content: "\e0a6";
+}
+.icon-share:before {
+  content: "\e0a7";
+}
+.icon-feed:before {
+  content: "\e0a8";
+}
+.icon-role:before {
+  content: "\e0a9";
+}
+.icon-flag:before {
+  content: "\e0aa";
+}
+.icon-post:before {
+  content: "\e0ab";
+}
+.icon-inspect:before {
+  content: "\e0ac";
+}
+.icon-inspect-down:before {
+  content: "\e0ad";
+}
+.icon-appointment-2:before {
+  content: "\e0ae";
+}
+.icon-target-group:before {
+  content: "\e0af";
+}
+.icon-marketing-campaign:before {
+  content: "\e0b0";
+}
+.icon-notification:before {
+  content: "\e0b1";
+}
+.icon-comment:before {
+  content: "\e0b2";
+}
+.icon-shipping-status:before {
+  content: "\e0b3";
+}
+.icon-collaborate:before {
+  content: "\e0b4";
+}
+.icon-shortcut:before {
+  content: "\e0b5";
+}
+.icon-lead-outdated:before {
+  content: "\e0b6";
+}
+.icon-tools-opportunity:before {
+  content: "\e0b7";
+}
+.icon-permission:before {
+  content: "\e0b8";
+}
+.icon-supplier:before {
+  content: "\e0b9";
+}
+.icon-table-view:before {
+  content: "\e0ba";
+}
+.icon-table-chart:before {
+  content: "\e0bb";
+}
+.icon-switch-views:before {
+  content: "\e0bc";
+}
+.icon-e-learning:before {
+  content: "\e0bd";
+}
+.icon-manager:before {
+  content: "\e0be";
+}
+.icon-switch-classes:before {
+  content: "\e0bf";
+}
+.icon-simple-payment:before {
+  content: "\e0c0";
+}
+.icon-signature:before {
+  content: "\e0c1";
+}
+.icon-sales-order-item:before {
+  content: "\e0c2";
+}
+.icon-sales-order:before {
+  content: "\e0c3";
+}
+.icon-request:before {
+  content: "\e0c4";
+}
+.icon-receipt:before {
+  content: "\e0c5";
+}
+.icon-puzzle:before {
+  content: "\e0c6";
+}
+.icon-process:before {
+  content: "\e0c7";
+}
+.icon-private:before {
+  content: "\e0c8";
+}
+.icon-popup-window:before {
+  content: "\e0c9";
+}
+.icon-person-placeholder:before {
+  content: "\e0ca";
+}
+.icon-per-diem:before {
+  content: "\e0cb";
+}
+.icon-paper-plane:before {
+  content: "\e0cc";
+}
+.icon-paid-leave:before {
+  content: "\e0cd";
+}
+.icon-pdf-reader:before {
+  content: "\e0ce";
+}
+.icon-overview-chart:before {
+  content: "\e0cf";
+}
+.icon-overlay:before {
+  content: "\e0d0";
+}
+.icon-org-chart:before {
+  content: "\e0d1";
+}
+.icon-number-sign:before {
+  content: "\e0d2";
+}
+.icon-notification-2:before {
+  content: "\e0d3";
+}
+.icon-my-sales-order:before {
+  content: "\e0d4";
+}
+.icon-meal:before {
+  content: "\e0d5";
+}
+.icon-loan:before {
+  content: "\e0d6";
+}
+.icon-order-status:before {
+  content: "\e0d7";
+}
+.icon-customer-order-entry:before {
+  content: "\e0d8";
+}
+.icon-performance:before {
+  content: "\e0d9";
+}
+.icon-menu:before {
+  content: "\e0da";
+}
+.icon-employee-lookup:before {
+  content: "\e0db";
+}
+.icon-education:before {
+  content: "\e0dc";
+}
+.icon-customer-briefing:before {
+  content: "\e0dd";
+}
+.icon-customer-and-contacts:before {
+  content: "\e0de";
+}
+.icon-my-view:before {
+  content: "\e0df";
+}
+.icon-accelerated:before {
+  content: "\e0e0";
+}
+.icon-to-be-reviewed:before {
+  content: "\e0e1";
+}
+.icon-warning2:before {
+  content: "\e0e2";
+}
+.icon-feeder-arrow:before {
+  content: "\e0e3";
+}
+.icon-quality-issue:before {
+  content: "\e0e4";
+}
+.icon-workflow-tasks:before {
+  content: "\e0e5";
+}
+.icon-create:before {
+  content: "\e0e6";
+}
+.icon-home-share:before {
+  content: "\e0e7";
+}
+.icon-globe:before {
+  content: "\e0e8";
+}
+.icon-tags:before {
+  content: "\e0e9";
+}
+.icon-work-history:before {
+  content: "\e0ea";
+}
+.icon-x-ray:before {
+  content: "\e0eb";
+}
+.icon-wounds-doc:before {
+  content: "\e0ec";
+}
+.icon-web-cam:before {
+  content: "\e0ed";
+}
+.icon-waiver:before {
+  content: "\e0ee";
+}
+.icon-vertical-bar-chart:before {
+  content: "\e0ef";
+}
+.icon-upstacked-chart:before {
+  content: "\e0f0";
+}
+.icon-trip-report:before {
+  content: "\e0f1";
+}
+.icon-microphone:before {
+  content: "\e0f2";
+}
+.icon-unpaid-leave:before {
+  content: "\e0f3";
+}
+.icon-tree:before {
+  content: "\e0f4";
+}
+.icon-toaster-up:before {
+  content: "\e0f5";
+}
+.icon-toaster-top:before {
+  content: "\e0f6";
+}
+.icon-toaster-down:before {
+  content: "\e0f7";
+}
+.icon-time-account:before {
+  content: "\e0f8";
+}
+.icon-theater:before {
+  content: "\e0f9";
+}
+.icon-taxi:before {
+  content: "\e0fa";
+}
+.icon-subway-train:before {
+  content: "\e0fb";
+}
+.icon-study-leave:before {
+  content: "\e0fc";
+}
+.icon-stethoscope:before {
+  content: "\e0fd";
+}
+.icon-step:before {
+  content: "\e0fe";
+}
+.icon-sonography:before {
+  content: "\e0ff";
+}
+.icon-soccor:before {
+  content: "\e100";
+}
+.icon-physical-activity:before {
+  content: "\e101";
+}
+.icon-pharmacy:before {
+  content: "\e102";
+}
+.icon-official-service:before {
+  content: "\e103";
+}
+.icon-offsite-work:before {
+  content: "\e104";
+}
+.icon-nutrition-activity:before {
+  content: "\e105";
+}
+.icon-newspaper:before {
+  content: "\e106";
+}
+.icon-monitor-payments:before {
+  content: "\e107";
+}
+.icon-map-2:before {
+  content: "\e108";
+}
+.icon-machine:before {
+  content: "\e109";
+}
+.icon-mri-scan:before {
+  content: "\e10a";
+}
+.icon-end-user-experience-monitoring:before {
+  content: "\e10b";
+}
+.icon-unwired:before {
+  content: "\e10c";
+}
+.icon-customer-financial-fact-sheet:before {
+  content: "\e10d";
+}
+.icon-retail-store-manager:before {
+  content: "\e10e";
+}
+.icon-Netweaver-business-client:before {
+  content: "\e10f";
+}
+.icon-electronic-medical-record:before {
+  content: "\e110";
+}
+.icon-eam-work-order:before {
+  content: "\e111";
+}
+.icon-customer-view:before {
+  content: "\e112";
+}
+.icon-crm-service-manager:before {
+  content: "\e113";
+}
+.icon-crm-sales:before {
+  content: "\e114";
+}
+.icon-widgets:before {
+  content: "\e115";
+}
+.icon-commission-check:before {
+  content: "\e116";
+}
+.icon-collections-insight:before {
+  content: "\e117";
+}
+.icon-clinical-tast-tracker:before {
+  content: "\e118";
+}
+.icon-citizen-connect:before {
+  content: "\e119";
+}
+.icon-cart-approval:before {
+  content: "\e11a";
+}
+.icon-capital-projects:before {
+  content: "\e11b";
+}
+.icon-bo-strategy-management:before {
+  content: "\e11c";
+}
+.icon-business-objects-mobile:before {
+  content: "\e11d";
+}
+.icon-business-objects-explorer:before {
+  content: "\e11e";
+}
+.icon-business-objects-experience:before {
+  content: "\e11f";
+}
+.icon-bbyd-dashboard:before {
+  content: "\e120";
+}
+.icon-bbyd-active-sales:before {
+  content: "\e121";
+}
+.icon-business-by-design:before {
+  content: "\e122";
+}
+.icon-business-one:before {
+  content: "\e123";
+}
+.icon-sap-box:before {
+  content: "\e124";
+}
+.icon-manager-insight:before {
+  content: "\e125";
+}
+.icon-accounting-document-verification:before {
+  content: "\e126";
+}
+.icon-hr-approval:before {
+  content: "\e127";
+}
+.icon-idea-wall:before {
+  content: "\e128";
+}
+.icon-Chart-Tree-Map:before {
+  content: "\e129";
+}
+.icon-cart-5:before {
+  content: "\e12a";
+}
+.icon-cart-4:before {
+  content: "\e12b";
+}
+.icon-wallet:before {
+  content: "\e12c";
+}
+.icon-vehicle-repair:before {
+  content: "\e12d";
+}
+.icon-upload:before {
+  content: "\e12e";
+}
+.icon-unlocked:before {
+  content: "\e12f";
+}
+.icon-umbrella:before {
+  content: "\e130";
+}
+.icon-travel-request:before {
+  content: "\e131";
+}
+.icon-travel-expense-report:before {
+  content: "\e132";
+}
+.icon-travel-itinerary:before {
+  content: "\e133";
+}
+.icon-time-overtime:before {
+  content: "\e134";
+}
+.icon-thing-type:before {
+  content: "\e135";
+}
+.icon-technical-object:before {
+  content: "\e136";
+}
+.icon-tag:before {
+  content: "\e137";
+}
+.icon-syringe:before {
+  content: "\e138";
+}
+.icon-syntax:before {
+  content: "\e139";
+}
+.icon-suitcase:before {
+  content: "\e13a";
+}
+.icon-simulate:before {
+  content: "\e13b";
+}
+.icon-shield:before {
+  content: "\e13c";
+}
+.icon-share-2:before {
+  content: "\e13d";
+}
+.icon-sales-quote:before {
+  content: "\e13e";
+}
+.icon-repost:before {
+  content: "\e13f";
+}
+.icon-provision:before {
+  content: "\e140";
+}
+.icon-projector:before {
+  content: "\e141";
+}
+.icon-add-product:before {
+  content: "\e142";
+}
+.icon-pipeline-analysis:before {
+  content: "\e143";
+}
+.icon-add-photo:before {
+  content: "\e144";
+}
+.icon-palette:before {
+  content: "\e145";
+}
+.icon-nurse:before {
+  content: "\e146";
+}
+.icon-sales-notification:before {
+  content: "\e147";
+}
+.icon-mileage:before {
+  content: "\e148";
+}
+.icon-meeting-room:before {
+  content: "\e149";
+}
+.icon-media-forward:before {
+  content: "\e14a";
+}
+.icon-media-play:before {
+  content: "\e14b";
+}
+.icon-media-pause:before {
+  content: "\e14c";
+}
+.icon-media-reverse:before {
+  content: "\e14d";
+}
+.icon-media-rewind:before {
+  content: "\e14e";
+}
+.icon-measurement-document:before {
+  content: "\e14f";
+}
+.icon-measuring-point:before {
+  content: "\e150";
+}
+.icon-measure:before {
+  content: "\e151";
+}
+.icon-map-3:before {
+  content: "\e152";
+}
+.icon-locked:before {
+  content: "\e153";
+}
+.icon-letter:before {
+  content: "\e154";
+}
+.icon-journey-arrive:before {
+  content: "\e155";
+}
+.icon-journey-change:before {
+  content: "\e156";
+}
+.icon-journey-depart:before {
+  content: "\e157";
+}
+.icon-it-system:before {
+  content: "\e158";
+}
+.icon-it-instance:before {
+  content: "\e159";
+}
+.icon-it-host:before {
+  content: "\e15a";
+}
+.icon-iphone-2:before {
+  content: "\e15b";
+}
+.icon-ipad-2:before {
+  content: "\e15c";
+}
+.icon-inventory:before {
+  content: "\e15d";
+}
+.icon-insurance-house:before {
+  content: "\e15e";
+}
+.icon-insurance-life:before {
+  content: "\e15f";
+}
+.icon-insurance-car:before {
+  content: "\e160";
+}
+.icon-initiative:before {
+  content: "\e161";
+}
+.icon-incident:before {
+  content: "\e162";
+}
+.icon-group-2:before {
+  content: "\e163";
+}
+.icon-goal:before {
+  content: "\e164";
+}
+.icon-functional-location:before {
+  content: "\e165";
+}
+.icon-full-screen:before {
+  content: "\e166";
+}
+.icon-form:before {
+  content: "\e167";
+}
+.icon-fob-watch:before {
+  content: "\e168";
+}
+.icon-blank-tag:before {
+  content: "\e169";
+}
+.icon-family-protection:before {
+  content: "\e16a";
+}
+.icon-folder:before {
+  content: "\e16b";
+}
+.icon-fax-machine:before {
+  content: "\e16c";
+}
+.icon-example:before {
+  content: "\e16d";
+}
+.icon-eraser:before {
+  content: "\e16e";
+}
+.icon-employee-rejections:before {
+  content: "\e16f";
+}
+.icon-drop-down-list:before {
+  content: "\e170";
+}
+.icon-draw-rectangle:before {
+  content: "\e171";
+}
+.icon-document:before {
+  content: "\e172";
+}
+.icon-doctor:before {
+  content: "\e173";
+}
+.icon-discussion-2:before {
+  content: "\e174";
+}
+.icon-discussion:before {
+  content: "\e175";
+}
+.icon-dimension:before {
+  content: "\e176";
+}
+.icon-customer-and-supplier:before {
+  content: "\e177";
+}
+.icon-crop:before {
+  content: "\e178";
+}
+.icon-add-contact:before {
+  content: "\e179";
+}
+.icon-compare-2:before {
+  content: "\e17a";
+}
+.icon-color-fill:before {
+  content: "\e17b";
+}
+.icon-collision:before {
+  content: "\e17c";
+}
+.icon-curriculum:before {
+  content: "\e17d";
+}
+.icon-chart-axis:before {
+  content: "\e17e";
+}
+.icon-full-stacked-chart:before {
+  content: "\e17f";
+}
+.icon-full-stacked-column-chart:before {
+  content: "\e180";
+}
+.icon-vertical-bar-chart-2:before {
+  content: "\e181";
+}
+.icon-horizontal-bar-chart-2:before {
+  content: "\e182";
+}
+.icon-horizontal-stacked-chart:before {
+  content: "\e183";
+}
+.icon-vertical-stacked-chart:before {
+  content: "\e184";
+}
+.icon-choropleth-chart:before {
+  content: "\e185";
+}
+.icon-geographic-bubble-chart:before {
+  content: "\e186";
+}
+.icon-multiple-radar-chart:before {
+  content: "\e187";
+}
+.icon-radar-chart:before {
+  content: "\e188";
+}
+.icon-crossed-line-chart:before {
+  content: "\e189";
+}
+.icon-multiple-line-chart:before {
+  content: "\e18a";
+}
+.icon-multiple-bar-chart:before {
+  content: "\e18b";
+}
+.icon-line-chart:before {
+  content: "\e18c";
+}
+.icon-line-chart-dual-axis:before {
+  content: "\e18d";
+}
+.icon-bubble-chart:before {
+  content: "\e18e";
+}
+.icon-scatter-chart:before {
+  content: "\e18f";
+}
+.icon-multiple-pie-chart:before {
+  content: "\e190";
+}
+.icon-column-chart-dual-axis:before {
+  content: "\e191";
+}
+.icon-tag-cloud-chart:before {
+  content: "\e192";
+}
+.icon-area-chart:before {
+  content: "\e193";
+}
+.icon-cause:before {
+  content: "\e194";
+}
+.icon-cart-3:before {
+  content: "\e195";
+}
+.icon-cart-2:before {
+  content: "\e196";
+}
+.icon-bus-public-transport:before {
+  content: "\e197";
+}
+.icon-burglary:before {
+  content: "\e198";
+}
+.icon-building:before {
+  content: "\e199";
+}
+.icon-border:before {
+  content: "\e19a";
+}
+.icon-bookmark:before {
+  content: "\e19b";
+}
+.icon-badge:before {
+  content: "\e19c";
+}
+.icon-attachment-audio:before {
+  content: "\e19d";
+}
+.icon-attachment-video:before {
+  content: "\e19e";
+}
+.icon-attachment-html:before {
+  content: "\e19f";
+}
+.icon-attachment-photo:before {
+  content: "\e1a0";
+}
+.icon-attachment-e-pub:before {
+  content: "\e1a1";
+}
+.icon-attachment-zip-file:before {
+  content: "\e1a2";
+}
+.icon-attachment-text-file:before {
+  content: "\e1a3";
+}
+.icon-add-equipment:before {
+  content: "\e1a4";
+}
+.icon-add-activity:before {
+  content: "\e1a5";
+}
+.icon-activity-individual:before {
+  content: "\e1a6";
+}
+.icon-activity-2:before {
+  content: "\e1a7";
+}
+.icon-add-activity-2:before {
+  content: "\e1a8";
+}
+.icon-activity-items:before {
+  content: "\e1a9";
+}
+.icon-activity-assigned-to-goal:before {
+  content: "\e1aa";
+}
+.icon-status-completed:before {
+  content: "\e1ab";
+}
+.icon-status-error:before {
+  content: "\e1ac";
+}
+.icon-status-inactive:before {
+  content: "\e1ad";
+}
+.icon-status-in-process:before {
+  content: "\e1ae";
+}
+.icon-blank-tag-2:before {
+  content: "\e1af";
+}
+.icon-cart-full:before {
+  content: "\e1b0";
+}
+.icon-locate-me:before {
+  content: "\e1b1";
+}
+.icon-paging:before {
+  content: "\e1b2";
+}
+.icon-company-view:before {
+  content: "\e1b3";
+}
+.icon-document-text:before {
+  content: "\e1b4";
+}
+.icon-explorer:before {
+  content: "\e1b5";
+}
+.icon-personnel-view:before {
+  content: "\e1b6";
+}
+.icon-sorting-ranking:before {
+  content: "\e1b7";
+}
+.icon-drill-down:before {
+  content: "\e1b8";
+}
+.icon-drill-up:before {
+  content: "\e1b9";
+}
+.icon-vds-file:before {
+  content: "\e1ba";
+}
+.icon-sap-logo-shape:before {
+  content: "\e1bb";
+}
+.icon-folder-full:before {
+  content: "\e1bc";
+}
+.icon-system-exit:before {
+  content: "\e1bd";
+}
+.icon-system-exit-2:before {
+  content: "\e1be";
+}
+.icon-close-command-field:before {
+  content: "\e1bf";
+}
+.icon-open-command-field:before {
+  content: "\e1c0";
+}
+.icon-sys-enter-2:before {
+  content: "\e1c1";
+}
+.icon-sys-enter:before {
+  content: "\e1c2";
+}
+.icon-sys-help-2:before {
+  content: "\e1c3";
+}
+.icon-sys-help:before {
+  content: "\e1c4";
+}
+.icon-sys-back:before {
+  content: "\e1c5";
+}
+.icon-sys-back-2:before {
+  content: "\e1c6";
+}
+.icon-sys-cancel:before {
+  content: "\e1c7";
+}
+.icon-sys-cancel-2:before {
+  content: "\e1c8";
+}
+.icon-open-folder:before {
+  content: "\e1c9";
+}
+.icon-sys-find-next:before {
+  content: "\e1ca";
+}
+.icon-sys-find:before {
+  content: "\e1cb";
+}
+.icon-sys-monitor:before {
+  content: "\e1cc";
+}
+.icon-sys-prev-page:before {
+  content: "\e1cd";
+}
+.icon-sys-first-page:before {
+  content: "\e1ce";
+}
+.icon-sys-next-page:before {
+  content: "\e1cf";
+}
+.icon-sys-last-page:before {
+  content: "\e1d0";
+}
+.icon-generate-shortcut:before {
+  content: "\e1d1";
+}
+.icon-create-session:before {
+  content: "\e1d2";
+}
+.icon-display-more:before {
+  content: "\e1d3";
+}
+.icon-enter-more:before {
+  content: "\e1d4";
+}
+.icon-zoom-in:before {
+  content: "\e1d5";
+}
+.icon-zoom-out:before {
+  content: "\e1d6";
+}
+.icon-header:before {
+  content: "\e1d7";
+}
+.icon-detail-view:before {
+  content: "\e1d8";
+}
+.icon-collapse:before {
+  content: "\e1d9";
+}
+.icon-expand:before {
+  content: "\e1da";
+}
+.icon-positive:before {
+  content: "\e1db";
+}
+.icon-negative:before {
+  content: "\e1dc";
+}
+.icon-display:before {
+  content: "\e1dd";
+}
+.icon-menu2:before {
+  content: "\e1de";
+}
+.icon-redo:before {
+  content: "\e1df";
+}
+.icon-undo:before {
+  content: "\e1e0";
+}
+.icon-navigation-up-arrow:before {
+  content: "\e1e1";
+}
+.icon-navigation-down-arrow:before {
+  content: "\e1e2";
+}
+.icon-down:before {
+  content: "\e1e3";
+}
+.icon-up:before {
+  content: "\e1e4";
+}
+.icon-shelf:before {
+  content: "\e1e5";
+}
+.icon-background:before {
+  content: "\e1e6";
+}
+.icon-resize:before {
+  content: "\e1e7";
+}
+.icon-move:before {
+  content: "\e1e8";
+}
+.icon-show:before {
+  content: "\e1e9";
+}
+.icon-hide:before {
+  content: "\e1ea";
+}
+.icon-nav-back:before {
+  content: "\e1eb";
+}
+.icon-error:before {
+  content: "\e1ec";
+}
+.icon-slim-arrow-right:before {
+  content: "\e1ed";
+}
+.icon-slim-arrow-left:before {
+  content: "\e1ee";
+}
+.icon-slim-arrow-down:before {
+  content: "\e1ef";
+}
+.icon-slim-arrow-up:before {
+  content: "\e1f0";
+}
+.icon-slim-forward:before {
+  content: "\e1f1";
+}
+.icon-overflow:before {
+  content: "\e1f2";
+}
+html,
+body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Helvetica Neue 55 Roman', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 62.5%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 1.8rem;
+}
+::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+}
+body {
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(0, 124, 192, 0.2));
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0.3)), to(rgba(0, 124, 192, 0.2)));
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(0, 124, 192, 0.2));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(0, 124, 192, 0.2));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(0, 124, 192, 0.2));
+}
+body .inline-block {
+  display: inline-block;
+}
+body .hidden {
+  display: none;
+}
+body .sap-sbo-background {
+  width: 100%;
+  height: 100%;
+  background-image: url(image/shell/bg_white_transparent.png);
+  opacity: 1;
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: auto;
+}
+body #branding-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1;
+  background-color: #11b5ff;
+}
+#_loader_container > .loading {
+  background: none;
+  border: 5px solid #33b7ff;
+  opacity: .9;
+  border-top: 5px solid rgba(0, 0, 0, 0);
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+  -moz-animation: spin 1s infinite linear;
+  -webkit-animation: spin 1s infinite linear;
+  -ms-animation: spin 1s infinite linear;
+  -o-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+#_loader_container.show-mask > .mask {
+  opacity: 0;
+}
+.sap-ui-menu-button-menu-list > ul > li {
+  font-size: 1.8rem;
+  height: 34px;
+  line-height: 32px;
+  padding: 2px 6px 3px;
+  min-width: 60px;
+  border-top: 1px solid #999999 !important;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+button.sap-ui-button,
+button.sap-sbo-pad-html-shell-action-button,
+button {
+  font-size: 1.8rem;
+  height: 34px;
+  line-height: 32px;
+  padding: 2px 6px 3px;
+  margin-left: 8px;
+  min-width: 60px;
+  border: 1px solid #999999;
+  background-color: #ebebeb;
+  background-image: -webkit-linear-gradient(#ffffff, #f0f0f0 61.8%, #d7d7d7);
+  background-image: -moz-linear-gradient(top, #ffffff, #f0f0f0 61.8%, #d7d7d7);
+  background-image: linear-gradient(#ffffff, #f0f0f0 61.8%, #d7d7d7);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffd7d7d7', GradientType=0);
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+input.sap-ui-textfield {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+body.desktop [data-touchable='true']:hover {
+  background: #11b5ff !important;
+  color: #ffffff !important;
+}
+body.desktop [data-touchable='true']:hover * {
+  color: #ffffff !important;
+}
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+}
+body.desktop [data-touchable='true'],
+body.phone [data-touchable='true'],
+body.pad [data-touchable='true'] {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+body.desktop [data-touchable='true'].state-active,
+body.phone [data-touchable='true'].state-active,
+body.pad [data-touchable='true'].state-active {
+  background: #009be3 !important;
+  color: #ffffff !important;
+}
+body.desktop [data-touchable='true'].state-active *,
+body.phone [data-touchable='true'].state-active *,
+body.pad [data-touchable='true'].state-active * {
+  color: #ffffff !important;
+}
+.highlight {
+  z-index: 1050;
+}
+.sbo-frame {
+  position: absolute;
+  z-index: 1000;
+  background: #404040;
+  -webkit-transition: all 500ms ease 0;
+  -moz-transition: all 500ms ease 0;
+  -ms-transition: all 500ms ease 0;
+  -o-transition: all 500ms ease 0;
+  transition: all 500ms ease 0;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.sbo-frame iframe {
+  width: 100%;
+  height: 100%;
+}
+.sbo-frame-left,
+.sbo-frame-right {
+  height: 100%;
+  top: 0;
+  opacity: 0.1;
+}
+.sap-ui-dialog {
+  font-size: 1.4rem;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: #ffffff;
+}
+.sap-ui-dialog.sbo-frame-dialog {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: 0;
+  -moz-box-shadow: 0;
+  box-shadow: 0;
+}
+.sap-ui-dialog .sap-ui-messagebox-innerContainer {
+  background: transparent;
+}
+.sap-ui-dialog .sap-ui-messagebox-icon {
+  margin-left: 10px;
+}
+.sap-ui-dialog .sap-ui-messagebox-content {
+  font-family: 'Helvetica Neue 55 Roman', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+}
+.sap-ui-dialog .sap-ui-messagebox-content > pre {
+  font: inherit;
+}
+.sap-ui-dialog-splitter {
+  display: none;
+}
+.sap-ui-dialog-footer {
+  border-top: 1px #cccccc solid;
+  margin: 0px;
+  font-size: 2rem;
+  position: absolute;
+  height: 62px;
+  line-height: 62px;
+  bottom: 0px;
+  width: 100%;
+  color: #ffffff;
+  text-shadow: 0 0.0625em 0 rgba(0, 0, 0, 0.5);
+  background-color: rgba(51, 51, 51, 0.9);
+  background-image: none;
+  -webkit-box-shadow: inset 0 0.0625em 0 rgba(229, 229, 229, 0.2);
+  box-shadow: inset 0 0.0625em 0 rgba(229, 229, 229, 0.2);
+}
+.sap-ui-dialog-footer button {
+  height: 62px;
+  color: white;
+  font-size: 1.8rem;
+  line-height: 62px;
+  background-image: none;
+  background-color: transparent;
+  border-width: 0;
+  margin: 0;
+  padding-right: 0 10px;
+  position: relative;
+}
+.sap-ui-dialog-footer button.state-active {
+  background-color: #26b6ff;
+  color: white;
+  background-image: none;
+}
+.sap-ui-dialog-footer button:after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  border-right: 1px solid lightgrey;
+}
+.sap-ui-dialog-footer button:last-of-type:after {
+  border-right-width: 0;
+}
+.sap-ui-dialog-footer .sap-ui-dialog-footer-defaultButton {
+  color: #009be3;
+}
+.phone .sap-ui-dialog-footer {
+  height: 44px;
+  line-height: 44px;
+}
+.phone .sap-ui-dialog-footer button {
+  height: 44px;
+  line-height: 44px;
+}
+.sap-sbo-pad-html-shell {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  margin: 0 auto;
+  opacity: 1;
+  /* global mask layer */
+
+}
+.sap-sbo-pad-html-shell.pad {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+.sap-sbo-pad-html-shell-mask,
+.sap-sbo-pad-html-shell-frame-mask,
+.sap-sbo-pad-html-shell-highlightmask {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  display: none;
+  opacity: 0;
+}
+.sap-sbo-pad-html-shell-highlightmask {
+  z-index: 1001;
+}
+.sap-sbo-pad-html-shell-feed-icon {
+  position: absolute;
+  right: 50px;
+  top: 1em;
+  border: 0px !important;
+}
+.sap-sbo-pad-html-shell-chooselist {
+  z-index: 1100;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  right: -300px;
+  opacity: 0.1;
+  height: 100%;
+  -webkit-transition: all 400ms ease-out 0;
+  -moz-transition: all 400ms ease-out 0;
+  -ms-transition: all 400ms ease-out 0;
+  -o-transition: all 400ms ease-out 0;
+  transition: all 400ms ease-out 0;
+}
+.sap-sbo-pad-html-shell-chooselist.show {
+  opacity: 1;
+  right: 0px;
+}
+.sap-sbo-pad-html-shell-imagepreview {
+  margin-left: 10%;
+  margin-top: 10%;
+  width: 80%;
+  height: 80%;
+  z-index: 1014;
+  position: absolute;
+}
+.sap-sbo-pad-html-shell-content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.15);
+}
+.sap-sbo-pad-html-shell-content.blur:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.sap-sbo-pad-html-shell-company-icon {
+  position: absolute;
+  right: 20px;
+  bottom: 17px;
+  top: 19px;
+  width: 46px;
+  height: 46px;
+  background-color: white;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.sap-sbo-pad-html-shell-company-icon .moremenu {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+.sap-sbo-pad-html-shell-company-icon .moremenu .moremenu-icon {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  background-position: center;
+  background-image: url('./image/common/no-pic-avatar.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 90%;
+  height: 90%;
+}
+.sap-sbo-pad-html-shell-navigation-menu-expander {
+  display: inline-block;
+  position: relative;
+  width: 83px;
+  height: 83px;
+  background-color: #33b7ff;
+  cursor: pointer;
+}
+.sap-sbo-pad-html-shell-navigation-menu-expander-icon {
+  position: absolute;
+  left: 15px;
+  top: 19px;
+  background: url('./image/shell/cloud.png') no-repeat top left;
+  width: 54px;
+  height: 38px;
+  cursor: pointer;
+}
+.sap-sbo-pad-html-shell-head {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 83px;
+  color: white;
+  background-color: #343434;
+  background-image: -webkit-linear-gradient(#414141, #373737 44%, #282828);
+  background-image: -moz-linear-gradient(top, #414141, #373737 44%, #282828);
+  background-image: linear-gradient(#414141, #373737 44%, #282828);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff414141', endColorstr='#ff282828', GradientType=0);
+  -webkit-transition: all 500ms ease 0;
+  -moz-transition: all 500ms ease 0;
+  -ms-transition: all 500ms ease 0;
+  -o-transition: all 500ms ease 0;
+  transition: all 500ms ease 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sap-sbo-pad-html-shell-head-quick-button-container {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  display: inline-block;
+}
+.sap-sbo-pad-html-shell-head-quick-button-container li {
+  font-family: 'Helvetica Neue 45 Light', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 2.8rem;
+  line-height: 150%;
+  color: #ffffff;
+  list-style-type: none;
+  height: 51px;
+  line-height: 60px;
+  padding-left: 35px;
+  padding-right: 35px;
+  border-right: 1px solid #999999;
+}
+.sap-sbo-pad-html-shell-head-navi-menu-bar {
+  width: 342px;
+  position: absolute;
+  top: 83px;
+  background: #ffffff;
+  border: 0px solid #33b7ff;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  overflow: hidden;
+  height: 0px;
+  z-index: 1000;
+  -webkit-transition: top 0.4s ease-out 0;
+  -moz-transition: top 0.4s ease-out 0;
+  -ms-transition: top 0.4s ease-out 0;
+  -o-transition: top 0.4s ease-out 0;
+  transition: top 0.4s ease-out 0;
+}
+.sap-sbo-pad-html-shell-head-showmenu .sap-sbo-pad-html-shell-head-navi-menu-bar {
+  border: 3px solid #33b7ff;
+}
+.sap-sbo-pad-html-shell-head-hextend {
+  height: 83px;
+  width: 1px;
+  display: inline-block;
+  position: relative;
+}
+.sap-sbo-pad-html-shell-head.hasBackButton .sap-sbo-pad-html-shell-back-button {
+  display: inline-block;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.sap-sbo-pad-html-shell-head.hasBackButton > div.sap-sbo-pad-html-shell-title {
+  left: 48px;
+}
+.sap-sbo-pad-html-shell-head > div.sap-sbo-pad-html-shell-title {
+  display: inline-block;
+  position: relative;
+  top: 0px;
+  left: 35px;
+  vertical-align: top;
+}
+.sap-sbo-pad-html-shell-head > div.sap-sbo-pad-html-shell-title > div.sap-sbo-pad-html-shell-sub-title {
+  display: block;
+  font-family: 'Helvetica Neue 45 Light', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 2.8rem;
+  line-height: 150%;
+  color: #999999;
+  -webkit-transition: all 500ms ease 0;
+  -moz-transition: all 500ms ease 0;
+  -ms-transition: all 500ms ease 0;
+  -o-transition: all 500ms ease 0;
+  transition: all 500ms ease 0;
+}
+.sap-sbo-pad-html-shell-head > div.sap-sbo-pad-html-shell-title > div.sap-sbo-pad-html-shell-main-title {
+  margin-top: -10px;
+  font-family: 'Helvetica Neue 45 Light', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 3.6rem;
+  line-height: 150%;
+  color: #ffffff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 480px;
+}
+.sap-sbo-pad-html-shell-head > div.sap-sbo-pad-html-shell-title > div.sap-sbo-pad-html-shell-main-title.list-view {
+  background-image: url("./image/list/arrow16.png");
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-right: 30px;
+}
+.sap-sbo-pad-html-shell-head > div.sap-sbo-pad-html-shell-title > div.sap-sbo-pad-html-shell-main-title.list-view.active {
+  background-image: url("./image/list/arrow16_blue.png");
+}
+.sap-sbo-pad-html-shell-head > div.sap-sbo-pad-html-shell-title.no-sub-title {
+  top: 23px;
+}
+.sap-sbo-pad-html-shell-head .sap-sbo-pad-html-shell-action-bar {
+  position: absolute;
+  right: 90px;
+  bottom: 16px;
+  height: 51px;
+}
+.sap-sbo-pad-html-shell-head .sap-sbo-pad-html-shell-action-bar .sap-sbo-pad-html-shell-button-container {
+  top: 4px;
+  left: 10px;
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+}
+.sap-sbo-pad-html-shell-head div[data-sap-widget="sap.ui.widget.Icon"] {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  bottom: 24px;
+}
+.sap-sbo-pad-html-shell-head div[data-sap-widget="sap.ui.widget.Icon"] > span {
+  height: 100%;
+  width: 100%;
+}
+.sap-sbo-pad-html-shell-head div[data-sap-widget="sap.ui.widget.Icon"] > span > img {
+  height: 100%;
+  width: 100%;
+}
+.sap-sbo-pad-html-shell-head div[data-sap-widget="sap.ui.widget.Icon"].hidden {
+  display: none;
+}
+.sap-sbo-pad-html-shell-back-button {
+  display: none;
+  position: relative;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  left: 35px;
+  bottom: 25.5px;
+  -webkit-transition: margin-left 500ms ease 0;
+  -moz-transition: margin-left 500ms ease 0;
+  -ms-transition: margin-left 500ms ease 0;
+  -o-transition: margin-left 500ms ease 0;
+  transition: margin-left 500ms ease 0;
+}
+.sap-sbo-pad-html-shell-back-button-icon {
+  width: 32px;
+  height: 32px;
+  background: url('./image/shell/back32.png');
+}
+.sap-sbo-pad-html-shell-footer-message {
+  position: absolute;
+  z-index: 10001;
+  font-size: 2.2rem;
+  -webkit-box-shadow: 0 0 3rem 0.75rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3rem 0.75rem rgba(0, 0, 0, 0.3);
+  background: black;
+  opacity: 0.8;
+  border-radius: 2px;
+  padding: 15px 42px;
+  display: none;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: all 100ms ease 0;
+  -moz-transition: all 100ms ease 0;
+  -ms-transition: all 100ms ease 0;
+  -o-transition: all 100ms ease 0;
+  transition: all 100ms ease 0;
+}
+.sap-sbo-pad-html-shell-footer-message-icon {
+  color: #00b606;
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+}
+.sap-sbo-pad-html-shell-footer-message-line {
+  padding-left: 20px;
+  max-width: 196px;
+  display: inline-block;
+  border-radius: 2px;
+  word-break: break-word;
+  overflow: hidden;
+  color: white;
+  position: relative;
+  opacity: 0.8;
+  line-height: 2.2rem;
+}
+.sap-sbo-pad-html-shell-footer-message-line.showLine {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  opacity: 0.8;
+  -webkit-transition: all 100ms ease 0;
+  -moz-transition: all 100ms ease 0;
+  -ms-transition: all 100ms ease 0;
+  -o-transition: all 100ms ease 0;
+  transition: all 100ms ease 0;
+}
+.sap-sbo-pad-html-shell-footer-message.sap-sbo-pad-html-shell-showMessage {
+  display: block;
+  opacity: 0.8;
+}
+body.mac .sap-sbo-pad-html-shell-head > div.sap-sbo-pad-html-shell-title {
+  top: 5px;
+}
+body.mac .sap-sbo-pad-html-shell-head > div.sap-sbo-pad-html-shell-title.no-sub-title {
+  top: 28px;
+}
+[data-icon]:before {
+  font-family: 'SAP-icons';
+  content: attr(data-icon);
+  speak: none;
+}
+</style><style data-moduleid="css!sap.ui.widget.BaseField">.sap-ui-basefield {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  font: inherit;
+  border: none;
+  height: 38px;
+  line-height: 38px;
+  background: #ffffff;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  display: inline-block;
+}
+.sap-ui-basefield > input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font: inherit;
+  color: inherit;
+  border: 1px solid #b7b7b7;
+  padding-left: 3px;
+  padding-right: 3px;
+  -webkit-appearance: none;
+}
+.sap-ui-basefield > input:focus {
+  border-color: #009be3;
+  -webkit-box-shadow: 0px 0px 1px 1px #009be3;
+  box-shadow: 0px 0px 1px 1px #009be3;
+}
+.sap-ui-basefield.sap-ui-disabled {
+  background: #eeeeee;
+}
+/* hana sap.ui.widget.BaseField */
+</style><style data-moduleid="css!sap.sbo.index">.sap-sbo-index > .mainViewRegion > .viewsection {
+  position: absolute;
+  top: 4px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+</style><style data-moduleid="css!sap.sbo.layout.TileContainer">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+body.iOS .sapTilesContainer .sap-guilin-tilecontainer-mask {
+  cursor: pointer;
+}
+.sapTilesContainer {
+  position: absolute;
+  overflow: hidden;
+}
+.sapTilesContainer .sapTilesContainerContent {
+  position: absolute;
+  width: 5120px;
+  height: 100%;
+  margin: 0;
+}
+.sapTilesContainer .sapGuilinTileContent {
+  background: #ffffff;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.sapTilesContainer .sapGuilinTile {
+  opacity: 1;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.sapTilesContainer .sapGuilinTile.small {
+  width: 220px;
+  height: 220px;
+}
+.sapTilesContainer .sapGuilinTile.large {
+  width: 450px;
+  height: 220px;
+}
+.sapTilesContainer .sapGuilinTile.dragging {
+  opacity: 0.8;
+}
+.sapTilesContainer .sap-guilin-tilecontainer-mask {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 100;
+  opacity: 0.6;
+  position: absolute;
+}
+.sapTilesContainer .sapTilesContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapGuilinTile {
+  position: absolute;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapGuilinTile.sapGuilinBreatheAble {
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: sapGuilinBreathe;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapGuilinTile .sapGuilinTileRemove {
+  position: absolute;
+  background-color: #009be3;
+  display: block;
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+  font-size: 20px;
+  color: #ffffff;
+  padding-top: 0px;
+  box-sizing: border-box;
+  margin-top: -0.3em;
+  margin-left: -0.2em;
+  box-shadow: 0 1px 3px #4c4c4c;
+  z-index: 2;
+  text-align: center;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .tile-container-view.sapGuilinTileRemove:before {
+  content: "-";
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .tile-container-dashboard.sapGuilinTileRemove:before {
+  content: "×";
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapTilesContainerButtonsGroup {
+  float: right;
+  margin-right: 30px;
+  padding: 20px;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapTilesContainerButtonsGroup .sapTilesCustomize {
+  display: none;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapTilesContainerButtonsGroup button {
+  background: #999999;
+  color: white;
+  border: 0px;
+  z-index: 10;
+  display: inline;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapGuilinTileMask {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-shadow: 1px 2px 4px #000000;
+  z-index: 1;
+  opacity: 0.2;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover {
+  width: 300px;
+  height: 500px;
+  z-index: 1050;
+  margin: auto;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transform: translate(0, 25%);
+  -ms-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapPopoverHeader {
+  background-color: #f3f3f3;
+  height: 48px;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapPopoverHeader button.close {
+  padding: 0;
+  min-width: 48px;
+  cursor: pointer;
+  height: 48px;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapBtn4CheckBoxClose {
+  height: 48px;
+  line-height: 48px;
+  background-color: rgba(51, 51, 51, 0.9);
+  margin: 0px;
+  border: 0px;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapPopoverTitle {
+  padding: 13px 13px;
+  color: #999999;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapPopoverContainer {
+  padding: 0px 0px 0px 10px;
+  background-color: white;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapPopoverContent {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 404px;
+  clear: both;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapPopoverContent label {
+  display: inline-block;
+  position: relative;
+  padding-left: 60px;
+  margin-right: 6px;
+  font-size: 16px;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapGuilinCheckBoxContainer {
+  padding: 0px;
+  margin-top: 12px;
+  width: 100%;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .wrapper {
+  width: 500px;
+  margin: 50px auto;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapGuilinCheckBoxContainer input[type=radio],
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapGuilinCheckBoxContainer input[type=checkbox] {
+  display: none;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapGuilinCheckBoxContainer input[type=radio]:checked + label:before {
+  content: "\2022";
+  color: #f3f3f3;
+  font-size: 30px;
+  text-align: center;
+  line-height: 18px;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapGuilinCheckBoxContainer input[type=checkbox]:checked + label:before {
+  content: "\2713";
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  color: #f3f3f3;
+  text-align: center;
+  line-height: 18px;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapGuilinCheckBoxContainer label {
+  margin-bottom: 10px;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapGuilinCheckBoxContainer label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  background-color: #888;
+  border-radius: 1px;
+}
+.sapTilesContainer .sapTilesContainer.sapGuilinEditable .sapPopover .sapGuilinCheckBoxContainer .radio label:before {
+  border-radius: 8px;
+}
+.sapTilesContainer .sapTilesContainer:not(.sapGuilinEditable) .sapGuilinTileMask {
+  display: none;
+}
+.sapTilesContainer .sapTilesContainer:not(.sapGuilinEditable) .sapGuilinTile {
+  position: absolute;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+.sapTilesContainer .sapTilesContainer:not(.sapGuilinEditable) .sapPopover {
+  display: none;
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerButtons {
+  min-height: 60px;
+  height: 60px;
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerButtons button {
+  font-size: 1.8rem;
+  height: 30px;
+  line-height: 28px;
+  padding: 0px;
+  margin-left: 2px;
+  min-width: 68px;
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerButtonsGroup {
+  float: right;
+  margin-right: 30px;
+  padding: 20px;
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerButtonsGroup .sapTilesCustomize {
+  font-size: 20px;
+  color: #999999;
+  height: 30px;
+  padding: 0px 4px;
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerButtonsGroup .sapTilesCustomize span {
+  margin-left: 10px;
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerButtonsGroup button {
+  display: none;
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerViewPort {
+  overflow: hidden;
+  opacity: 1;
+  height: 88%;
+  position: relative;
+  clear: both;
+}
+.sapTilesContainer .sapTilesContainer #sapGuilinGridly {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.sapTilesContainer .sapTilesContainer .gridlyTransition,
+.sapTilesContainer .sapTilesContainer .gridlyTransition > :not(.dragging) {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.sapTilesContainer .sapTilesContainer #sapGuilinGridly .dragging {
+  z-index: 800;
+  transition: none;
+}
+@-webkit-keyframes sapGuilinBreathe {
+  0% {
+    -webkit-transform: scale(0.98);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerPager {
+  position: absolute;
+  text-align: center;
+  height: 36px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  bottom: 0;
+  pointer-events: none;
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerPager SPAN {
+  display: inline-block;
+  background-color: #999999;
+  border-radius: 4px;
+  height: 8px;
+  width: 8px;
+  margin-right: 8px;
+  margin-bottom: 1px;
+  box-shadow: 0 0 1px 1px #ffffff;
+}
+.sapTilesContainer .sapTilesContainer .sapTilesContainerPager SPAN.sapGuilinActive {
+  background-color: #007cc0;
+  box-shadow: 0 0 2px 2px #ffffff;
+}
+.sapTilesContainer .sapTilesContainer #sapTilesSwitcherLeft {
+  left: 1rem;
+}
+.sapTilesContainer .sapTilesContainer #sapTilesSwitcherRight {
+  right: 1rem;
+}
+.sapTilesContainer .sapTilesContainer .sapPageSwitcher {
+  position: absolute;
+  display: none;
+  top: 41%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  height: 48px;
+  width: 48px;
+  opacity: 0.1;
+  -webkit-transition-property: opacity,left,right;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-property: opacity,left,right;
+  -moz-transition-duration: 0.4s;
+  transition-property: opacity,left,right;
+  transition-duration: 0.4s;
+  box-shadow: 0 1px 4px #727272;
+  padding: 4px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sapTilesContainer .sapTilesContainer .sapPageSwitcher:hover {
+  opacity: 1;
+}
+.sapTilesContainer .sapTilesContainer .sapPageSwitcher .sapMTCInner {
+  background-color: #007cc0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  font-family: "SAP-icons";
+  font-size: 21px;
+  vertical-align: middle;
+  color: #ffffff;
+  padding-top: 8px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sapTilesContainer .sapTilesContainer #sapTilesSwitcherLeft .sapMTCInner:before {
+  content: "\e067";
+  padding-left: 13px;
+}
+.sapTilesContainer .sapTilesContainer #sapTilesSwitcherRight .sapMTCInner:before {
+  content: "\e066";
+  padding-left: 16px;
+}
+.sapBtn {
+  color: #ffffff;
+  background-color: rgba(51, 51, 51, 0.9);
+  background-image: none;
+  -webkit-box-shadow: inset 0 0.0625em 0 rgba(229, 229, 229, 0.2);
+  box-shadow: inset 0 0.0625em 0 rgba(229, 229, 229, 0.2);
+  border-color: #357ebd;
+  border: 1px solid #999999;
+  width: 100%;
+  margin: 0px;
+}
+</style><style data-moduleid="css!sap.ui.widget.Photo">@-webkit-keyframes topToBottom {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+@-webkit-keyframes leftToRight {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.sap-ui-widget-photo .widthFit {
+  background-size: 100% auto;
+  -webkit-animation: topToBottom 15s infinite alternate linear;
+}
+.sap-ui-widget-photo .heightFit {
+  background-size: auto 100%;
+  -webkit-animation: leftToRight 15s infinite alternate linear;
+}
+.sap-ui-widget-photo .both {
+  background-size: 100% 100%;
+}
+.sap-ui-widget-photo .widthFitHeightCenter {
+  background-size: 100% auto;
+}
+.sap-ui-widget-photo .heightFitWidthCenter {
+  background-size: auto 100%;
+}
+</style><style data-moduleid="css!sap.sbo.page.boTile">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sbo-bo-tile {
+  cursor: pointer;
+}
+.sbo-bo-tile > .title {
+  font: bold 2.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #009be3;
+  height: 58px;
+  background-color: #f5f5f5;
+  padding: 12px 0px 0px 20px;
+}
+.sbo-bo-tile > .sub-title {
+  font: normal 1.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #999999;
+  position: absolute;
+  top: 42px;
+  left: 20px;
+}
+.sbo-bo-tile > .number {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.sbo-bo-tile > .number > .value {
+  font: normal 4rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #999999;
+}
+.sbo-bo-tile > .big-icon {
+  font: normal 7.4rem 'SAP-icons';
+  color: #999999;
+  position: relative;
+  top: 30px;
+  left: 74px;
+}
+.sbo-bo-tile > .details-right,
+.sbo-bo-tile > .details-left {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 100px;
+  text-align: right;
+}
+.sbo-bo-tile > .details-right > .bo-field,
+.sbo-bo-tile > .details-left > .bo-field {
+  margin-top: 8px;
+}
+.sbo-bo-tile > .details-right > .bo-field > .bo-label,
+.sbo-bo-tile > .details-left > .bo-field > .bo-label {
+  font-size: 1.4rem;
+  color: #999999;
+}
+.sbo-bo-tile > .details-right > .bo-field > .bo-value,
+.sbo-bo-tile > .details-left > .bo-field > .bo-value {
+  font-size: 1.4rem;
+  color: #000000;
+}
+.sbo-bo-tile > .details-left {
+  text-align: left;
+  left: 20px;
+  right: inherit;
+}
+.sbo-bo-tile > .favorite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1;
+  background-color: #11b5ff;
+}
+.sbo-bo-tile > .chart-container {
+  height: 150px;
+}
+.sbo-bo-tile-0 > .sub-title {
+  display: none;
+}
+.sbo-bo-tile-0 > .number > .value {
+  display: none;
+}
+.phone .sbo-bo-tile > .title {
+  font: bold 2.4rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #009be3;
+  height: 48px;
+  padding: 12px 0px 0px 12px;
+  background-color: transparent;
+}
+.phone .sbo-bo-tile > .sub-title {
+  font: normal 1.6rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #999999;
+  left: 12px;
+  right: 12px;
+  top: 40px;
+}
+.phone .sbo-bo-tile > .number {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+.phone .sbo-bo-tile > .number > .value {
+  font: normal 5.4rem 'SAP-icons';
+  color: #999999;
+  text-align: center;
+}
+.phone .sbo-bo-tile > .big-icon {
+  display: none;
+  font: normal 5.4rem 'SAP-icons';
+  color: #999999;
+  position: absolute;
+  top: 60px;
+  left: 45px;
+}
+.phone .sbo-bo-tile > .chart-container {
+  height: 80px;
+}
+.phone .sbo-bo-tile-0 > .number {
+  display: none;
+}
+.phone .sbo-bo-tile-0 > .big-icon {
+  display: block;
+}
+body.desktop [data-touchable='true']:hover .sbo-bo-tile > .title {
+  background: #009be3;
+}
+body.desktop [data-touchable='true'].state-active .sbo-bo-tile > .title {
+  background: #009be3;
+}
+</style><style data-moduleid="css!sap.sbo.app.network.FeedTile">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+#tile_2_2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#tile_2_2 > .label {
+  position: absolute;
+  top: 148px;
+  left: 212px;
+  width: 60px;
+  height: 30px;
+  font-size: 1.8rem;
+  color: #999999;
+}
+#tile_2_4 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#tile_2_4 > .label {
+  position: absolute;
+  top: 148px;
+  left: 212px;
+  width: 60px;
+  height: 30px;
+  font-size: 1.8rem;
+  color: #999999;
+}
+#tile_2_4 > .latest_feed {
+  width: 100%;
+  padding-top: 20px;
+  font-family: 'Helvetica Neue 55 Roman', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+}
+#tile_2_4 > .latest_feed > .border {
+  margin-top: 14px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  width: 100%;
+  height: 4px;
+  content: ' ';
+}
+#tile_2_4 > .latest_feed > .portrait {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: 0;
+  left: 15px;
+}
+#tile_2_4 > .latest_feed > .portrait > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#tile_2_4 > .latest_feed > .portrait > div > .img {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+#tile_2_4 > .latest_feed > .portrait > div > img {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+#tile_2_4 > .latest_feed > .portrait > div > img {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+#tile_2_4 > .latest_feed > .cnt {
+  width: 70%;
+  min-height: 190px;
+  max-height: 200px;
+  position: relative;
+  left: 25%;
+  top: -60px;
+}
+#tile_2_4 > .latest_feed > .cnt > .feed_title {
+  width: 100%;
+  height: 20px;
+  font-size: 1.4rem;
+  color: #cecece;
+}
+#tile_2_4 > .latest_feed > .cnt > .feed_title > .author {
+  position: relative;
+  top: 0;
+  left: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#tile_2_4 > .latest_feed > .cnt > .feed_content {
+  width: 100%;
+  height: 78px;
+  padding: 5px 0 5px 0;
+  font-size: 1.8rem;
+  line-height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+#tile_2_4 > .latest_feed > .cnt > .feed_content > .content {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+#tile_2_4 > .latest_feed > .cnt > .feed_content > .content > a {
+  color: #3E9BC0;
+  text-decoration: none;
+}
+#tile_2_4 > .latest_feed > .cnt > .feed_content > .textEllipsis {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 22px;
+  background: linear-gradient(left, rgba(255, 255, 255, 0.2), #ffffff);
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.2), #ffffff);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.2), #ffffff);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.2), #ffffff);
+  text-align: right;
+  color: #cecece;
+}
+#tile_2_4 > .latest_feed > .cnt > #attachedPanel {
+  width: 100%;
+  height: 50px;
+}
+#tile_2_4 > .latest_feed > .cnt > .hidePanel {
+  visibility: hidden;
+}
+#tile_2_4 > .latest_feed > .cnt > .showImgPanel {
+  visibility: visible;
+}
+#tile_2_4 > .latest_feed > .cnt > .showImgPanel > .img {
+  height: 45px;
+  width: 45px;
+  float: left;
+}
+#tile_2_4 > .latest_feed > .cnt > .showImgPanel > div {
+  padding: 5px 0 5px 5px;
+  line-height: 28px;
+  color: #cecece;
+  width: 30px;
+  float: left;
+}
+#tile_2_4 > .latest_feed > .cnt > .showAthPanel {
+  visibility: visible;
+}
+#tile_2_4 > .latest_feed > .cnt > .showAthPanel > img {
+  height: 30px;
+  max-width: 30px;
+  float: left;
+}
+#tile_2_4 > .latest_feed > .cnt > .showAthPanel > div {
+  margin: 5px 0 5px 5px;
+  line-height: 28px;
+  color: #cecece;
+  width: 30px;
+  float: left;
+}
+#tile_2_4 > .latest_feed > .cnt > .comment {
+  width: 100%;
+  height: 30px;
+  line-height: 26px;
+  font-size: 1.8rem;
+  color: #cecece;
+}
+#tile_2_4 > .latest_feed > .cnt > .comment > .commentsCount {
+  text-align: right;
+  float: right;
+  padding-right: 10px;
+}
+#tile_2_4 > .latest_feed > .cnt > .comment > .createdBy {
+  float: left;
+}
+</style><style data-moduleid="css!sap.ui.widget.Checkbox">/* sap.ui.widget.checkbox */
+.sap-ui-checkbox {
+  background-repeat: no-repeat;
+  background-position: left center;
+  cursor: default;
+  padding-left: 15px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 38px;
+  line-height: 38px;
+  display: inline-block;
+  border: 1px solid transparent;
+}
+.sap-ui-checkbox:focus {
+  border: dotted 1px black;
+}
+.sap-ui-checkbox-checked.sap-ui-disabled {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI5JREFUeNp0UUEKwCAM0+JJf6Pv9hPq2S+5jEDWMVZYFpu01Bp77+ecGKPHEIInCV9rLfzH3juR5ZxJfDMGjsazECnJYwySpJR3w7rWkmQsBaoOfM7pZzXfCRoIEQ4MyhbPTLVW9gCng3mEadJSCvvDDU75dTv56KCmevN7Q5YOv7N7Bfhhpyr6vg/wEmAAtgpqstPXbMAAAAAASUVORK5CYII=);
+}
+.sap-ui-checkbox-uncheck.sap-ui-disabled {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADFJREFUeNpiXL9+PQMhwALERkZGeFScO3eOBcLi5ubGo46JgQgwqggc4sAwxa8IIMAAkVAHtqxNvb4AAAAASUVORK5CYII=);
+}
+.sap-ui-checkbox-checked {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAAAUElEQVQoU4XRSw4AEBAD0B7exsLxnIdKEWkwjZW8+QikXMIDivoNwUTtnQABYO0PUVyQrhQJ9vBOu/QUjsbsFfVQfCe5U9wXNxG8zseF39IB3A80d8jyRKsAAAAASUVORK5CYII=);
+}
+.sap-ui-checkbox-uncheck {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAAAI0lEQVQoU2No6ewliBiAKq7iBUAFUEX/cYNRRf9JCQKC0QIAGM9oAkCn2GAAAAAASUVORK5CYII=);
+}
+/* hana sap.ui.widget.checkbox */</style><style data-moduleid="css!sap.sbo.ui.pad.SearchArea">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sap-sbo-ui-pad-SearchArea-main-focus {
+  border: 1px solid #cccccc;
+  background-color: #f0f0f0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sap-sbo-ui-pad-SearchArea-main-longerHeight {
+  height: 500px !important;
+}
+.sap-sbo-ui-pad-SearchArea-main {
+  position: absolute;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-header {
+  display: inline;
+  width: 100%;
+  height: 42px;
+  padding-top: 5px;
+  position: absolute;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-searchBtn {
+  position: absolute;
+  display: inline !important;
+  float: right;
+  right: 15px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  padding: 7px 10px 5px 5px !important;
+  line-height: 18px !important;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-setting {
+  position: absolute;
+  float: left;
+  left: 8px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 2.2rem;
+  cursor: pointer;
+  display: none;
+  color: #999999;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-input {
+  position: absolute;
+  display: inline;
+  float: left;
+  left: 40px;
+  right: 12px;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 15px;
+  padding-right: 40px;
+  -webkit-appearance: none;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  color: #333333;
+  font-size: 2.2rem;
+  font-family: 'Helvetica Neue 45 Light', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  padding-top: 3px;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-details {
+  position: absolute;
+  height: 400px;
+  overflow: auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 9999999;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-details-body {
+  position: absolute;
+  z-index: 9999999;
+  width: 100%;
+  height: 450px;
+  margin-top: 50px;
+  background: #ffffff;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-cat-colorIndicate {
+  background: #00a1da;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-details-all {
+  color: #000000 !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-details-cat {
+  font-size: 1.8rem;
+  color: #000000;
+  cursor: pointer;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 12px;
+  border-bottom: 1px solid #cccccc;
+}
+.sap-sbo-ui-pad-SearchArea-main .sap-sbo-ui-pad-SearchArea-main-myNetwork {
+  position: absolute;
+  bottom: 5px;
+  font-size: 1.8rem;
+  margin-left: 12px;
+  z-index: 9999999;
+}
+</style><style data-moduleid="css!sap.sbo.ui.widget.CreationList">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+div.sap-sbo-creation-list {
+  -webkit-transition: opacity 500ms ease 0;
+  -moz-transition: opacity 500ms ease 0;
+  -ms-transition: opacity 500ms ease 0;
+  -o-transition: opacity 500ms ease 0;
+  transition: opacity 500ms ease 0;
+  position: absolute;
+  opacity: 1;
+  width: 400px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+div.sap-sbo-creation-list > div > div {
+  height: 40px;
+  border-bottom: 1px solid #cccccc;
+  position: relative;
+}
+div.sap-sbo-creation-list > div > div > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 49%;
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  top: 0;
+  position: absolute;
+  cursor: pointer;
+}
+div.sap-sbo-creation-list > div > div > div.left-item {
+  border-right: 1px solid #cccccc;
+}
+div.sap-sbo-creation-list > div > div > div.right-item {
+  left: 50%;
+}
+div.sap-sbo-creation-list > div > div:nth-child(even) {
+  background-color: #eeeeee;
+}
+div.sap-sbo-creation-list > div > div:last-child {
+  border-bottom: none;
+}
+div.sap-sbo-creation-list.hidden {
+  display: block;
+  opacity: 0;
+  left: -1000px !important;
+  z-index: -10;
+}
+</style><style data-moduleid="css!sap.sbo.page.pad.Home">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sbo-home .sbo-home-layout {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+body.iOS .on-boarding-mask {
+  cursor: pointer;
+}
+.sapHomeHeader {
+  top: 0;
+  z-index: 1030;
+  position: absolute;
+  right: 0;
+  left: 0;
+  min-height: 44px;
+  background-color: #f2f2f2;
+  -webkit-box-shadow: inset 0 -1px #dddddd;
+  -moz-box-shadow: inset 0 -1px #dddddd;
+  box-shadow: inset 0 -1px #dddddd;
+}
+.sapHomeHeader:after {
+  clear: both;
+}
+.sapHomeHeader .sapHomeHeaderNav {
+  list-style: none;
+}
+.sapHomeHeader .sapHomeHeaderNav li {
+  float: left;
+  margin: 0;
+  height: 46px;
+}
+.sapHomeHeader .sapHomeHeaderNav li a {
+  font: normal 2.8rem 'SAP-icons';
+  color: #999999;
+  display: block;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+.sapHomeHeader .sapHomeHeaderNav li .moremenu-icon {
+  display: block;
+  background-size: 43px 43px;
+  background-position: 2px 1px;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+.sapHomeHeader .sapHomeHeaderSearch {
+  float: right;
+}
+.sapHomeHeader .sapHomeHeaderSearch .icon-search {
+  font: normal 2.8rem 'SAP-icons';
+  color: #999999;
+  display: none;
+  padding: 5px 10px 5px 5px;
+  text-decoration: none;
+}
+.sapHomeHeader .sapHomeHeaderSearch .sapHomeHeaderBrand {
+  color: white;
+  margin-top: 7px;
+  margin-right: 50px;
+  background: no-repeat 10px 6px #444444;
+  border: 0 none;
+  color: #777;
+  width: 150px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+}
+.sapHomeHeader > div.home-creation-list {
+  font-family: 'Helvetica Neue 45 Light', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 0pt;
+  color: #0099cb;
+}
+.on-boarding-mask {
+  -webkit-transition: opacity 1s ease 500ms;
+  -moz-transition: opacity 1s ease 500ms;
+  -ms-transition: opacity 1s ease 500ms;
+  -o-transition: opacity 1s ease 500ms;
+  transition: opacity 1s ease 500ms;
+  background-color: #101010;
+  z-index: 2000;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.on-boarding-mask > div {
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.on-boarding-mask > div > div.help-tip-title {
+  font: normal 2.4rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.on-boarding-mask > div > div.help-tip-content {
+  font: normal 1.6rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #eeeeee;
+  max-width: 300px;
+  line-height: 22px;
+}
+.on-boarding-mask > div.settings-tip {
+  top: 40px;
+  left: 25px;
+  background-image: url("./image/common/arrow1.png");
+  background-position-x: 10px;
+  padding-top: 160px;
+}
+.on-boarding-mask > div.creation-tip {
+  top: 20px;
+  left: 135px;
+  background-image: url("./image/common/arrow2.png");
+  background-position-y: 5px;
+  padding-left: 144px;
+}
+.on-boarding-mask > div.layout-tip {
+  top: 58px;
+  right: 0;
+  background-image: url("./image/common/arrow3.png");
+  background-position-x: 130px;
+  background-position-y: 45px;
+  background-repeat: no-repeat;
+  padding-top: 136px;
+  width: 250px;
+}
+.on-boarding-mask > button {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+.on-boarding-mask.hidden-mask {
+  opacity: 0;
+  z-index: -10 !important;
+}
+.on-boarding-mask.phone .page-2 {
+  display: none;
+}
+.on-boarding-mask.phone > div > div.help-tip-title {
+  font: normal 1.8rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #ffffff;
+}
+.on-boarding-mask.phone > div > div.help-tip-content {
+  font: normal 1.4rem Arial, Helvetica, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  color: #eeeeee;
+}
+.on-boarding-mask.phone > div.settings-tip {
+  top: 16px;
+  left: 0px;
+  background-image: url("./image/common/arrow8.png");
+  padding-top: 30px;
+  max-width: 150px;
+}
+.on-boarding-mask.phone > div.creation-tip {
+  top: 25px;
+  left: 5px;
+  background-image: url("./image/common/arrow9.png");
+  background-position-y: 0;
+  background-position-x: 95%;
+  padding-left: 0px;
+  padding-top: 160px;
+  text-align: right;
+  max-width: 200px;
+}
+.sbo-home-layout {
+  margin-top: 44px;
+}
+.phone .sapHomeHeader .search-bar {
+  display: none;
+}
+.phone .sapHomeHeader .icon-search {
+  display: block;
+}
+</style><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.report.tile" src="./js/app/report/tile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.IncomingPayment.IncomingPaymentTile" src="./js/app/IncomingPayment/IncomingPaymentTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.CreditNote.CreditNoteTile" src="./js/app/CreditNote/CreditNoteTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.Invoice.InvoiceTile" src="./js/app/Invoice/InvoiceTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.Return.ReturnTile" src="./js/app/Return/ReturnTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.DeliveryNote.DeliveryNoteTile" src="./js/app/DeliveryNote/DeliveryNoteTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.SalesOrder.SalesOrderTile" src="./js/app/SalesOrder/SalesOrderTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.SalesQuotation.SalesQuotationTile" src="./js/app/SalesQuotation/SalesQuotationTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.Product.ProductTile" src="./js/app/Product/ProductTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.SalesOpportunity.Tile" src="./js/app/SalesOpportunity/Tile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.Leads.LeadsTile" src="./js/app/Leads/LeadsTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.Customer.CustomerTile" src="./js/app/Customer/CustomerTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.Contact.ContactTile" src="./js/app/Contact/ContactTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.notepage.NotePageTile" src="./js/app/notepage/NotePageTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.task.taskTile" src="./js/app/task/taskTile.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.ui.widget.ReportWidget" src="./js/ui/widget/ReportWidget.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.ui.widget.TextField" src="./resources/js/sap/ui/widget/TextField.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.IncomingPaymentsService" src="./js/services/IncomingPaymentsService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.CreditNotesService" src="./js/services/CreditNotesService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.InvoicesService" src="./js/services/InvoicesService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.ReturnsService" src="./js/services/ReturnsService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.DeliveryNotesService" src="./js/services/DeliveryNotesService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.OrdersService" src="./js/services/OrdersService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.QuotationsService" src="./js/services/QuotationsService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.ItemsService" src="./js/services/ItemsService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.SalesOpportunitiesService" src="./js/services/SalesOpportunitiesService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.LeadsService" src="./js/services/LeadsService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.BusinessPartnersService" src="./js/services/BusinessPartnersService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.ContactPersonsService" src="./js/services/ContactPersonsService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.NotePageService" src="./js/services/NotePageService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.formatter" src="./resources/js/sap/formatter.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.page.common.notepage.NotePageUtil" src="./js/page/common/notepage/NotePageUtil.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.app.task.taskUtil" src="./js/app/task/taskUtil.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.compoundservices.TasksService" src="./js/compoundservices/TasksService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.services.TasksService" src="./js/services/TasksService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.compoundservices.AnalyticService" src="./js/compoundservices/AnalyticService.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.ui.widget.ChartView" src="./js/ui/widget/ChartView.js?v0"></script><script type="text/javascript" charset="utf-8" data-context="base" data-modulename="sap.sbo.compoundservices.NotebookService" src="./js/compoundservices/NotebookService.js?v0"></script><style data-moduleid="css!sap.sbo.ui.widget.ChartView">[data-sap-widget="sap.sbo.ui.widget.ChartView"] .v-label {
+  font-family: inherit;
+}
+[data-sap-widget="sap.sbo.ui.widget.ChartView"] .v-title {
+  font-family: inherit;
+}
+</style><style data-moduleid="css!sap.ui.widget.TextField">/* hana sap.ui.widget.TextField */
+</style><style data-moduleid="css!sap.sbo.app.notepage.NotePageTile">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sbo-note-tile div[data-sbo-class="count"] {
+  -webkit-transition: color 1s ease;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: red;
+}
+.sbo-note-tile .label {
+  padding: 5px;
+}
+div[mode-class="PhoneMemoShowDetails"] {
+  position: absolute;
+  width: 100%;
+}
+div[class="notepage-empty-container22"] {
+  display: inline;
+  position: absolute;
+  top: 60px;
+  bottom: 10px;
+  left: 50%;
+  width: 49%;
+  border-left: 1px solid #f0f0f0;
+  text-align: center;
+  padding: 10px 10px;
+}
+div[class="notepage-empty-container22"] .notepage-add-icon {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px dashed grey;
+  display: inline-block;
+}
+div[class="notepage-empty-container22"] .notepage-empty-text {
+  padding-top: 5px;
+  font-family: 'Helvetica Neue 45 Light', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 1.4rem;
+  color: #333333;
+}
+div[data-sfa-class="notePagePhone22-list"] {
+  left: 50%;
+  width: 50%;
+}
+div[data-sfa-class="notePagePhone22-list"] > div {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+div[data-sfa-class="notePagePhone22-list"] > div[data-sfa-class="container"] {
+  display: inline;
+  position: absolute;
+  top: 60px;
+  bottom: 10px;
+  left: 50%;
+  width: 49%;
+  border-left: 1px solid #f0f0f0;
+}
+div[data-sfa-class="notePagePhone22-list"] div[data-sfa-class="tile"] {
+  opacity: 1 !important;
+  background: #ffffff;
+}
+div[data-sfa-class="notePagePhone22-list"] div[data-sfa-class="memocontent"] {
+  background: #ffffff;
+  height: 75px;
+  width: 99%;
+  font-size: 1.4rem;
+  color: #999999;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textimage'] {
+  diplay: block;
+  overflow: hidden;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textimage'] > div[data-sfa-class="thumbnails"] {
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  overflow: hidden;
+  top: 50px;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textimage'] > div[data-sfa-class="thumbnails"] img {
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textimage'] > div[data-sfa-class="fileicon"] {
+  display: none;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textimage'] > div[data-sfa-class="textcontent"] {
+  display: block;
+  left: 15px;
+  padding-right: 2%;
+  position: absolute;
+  border: none;
+  resize: none;
+  height: 75px;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='text'] {
+  diplay: none;
+  overflow: hidden;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='text'] > div[data-sfa-class="thumbnails"] {
+  display: none;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='text'] > div[data-sfa-class="fileicon"] {
+  display: none;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='text'] > div[data-sfa-class="textcontent"] {
+  display: block;
+  padding: 0px;
+  left: 15px;
+  position: relative;
+  border: none;
+  resize: none;
+  height: 75px;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textfile'] {
+  diplay: none;
+  overflow: hidden;
+  font-size: 1.4rem;
+  border: none;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textfile'] > div[data-sfa-class="thumbnails"] {
+  display: none;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textfile'] > div[data-sfa-class="fileicon"] {
+  display: block;
+  position: absolute;
+  width: 30px;
+  float: bottom;
+  top: 40px;
+  left: 15px;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textfile'] > div[data-sfa-class="fileicon"] > div[data-sfa-class="icon"] {
+  width: 100%;
+  height: 100%;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textfile'] > div[data-sfa-class="fileicon"] img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textfile'] > ul[class="fileinfo"] {
+  display: none;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='textfile'] > div[data-sfa-class="textcontent"] {
+  display: block;
+  left: 15px;
+  padding-right: 2%;
+  position: absolute;
+  border: none;
+  resize: none;
+  height: 75px;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  line-height: 15px;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='file'] {
+  diplay: none;
+  overflow: hidden;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='file'] > div[data-sfa-class="thumbnails"] {
+  display: none;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='file'] > div[data-sfa-class="fileicon"] {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  float: bottom;
+  top: 40px;
+  left: 15px;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='file'] > div[data-sfa-class="fileicon"] > div[data-sfa-class="icon"] {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='file'] > div[data-sfa-class="fileicon"] img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='file'] > ul[class="fileinfo"] {
+  position: absolute;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 95%;
+  height: 50px;
+  left: 15px;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='file'] > ul[class="fileinfo"] > li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div[data-sfa-class="notePagePhone22-list"] div[memotype='file'] > div[data-sfa-class="textcontent"] {
+  display: none;
+}
+div[mode-class='PadMemoShowDetails'] {
+  position: abosult;
+}
+div[mode-class='PadMemoShowDetails'] .sbo-bo-tile {
+  height: 211px;
+  width: 310px;
+  border-bottom: 1px solid #f0f0f0;
+}
+div[mode-class='PadMemoShowDetails'] .notepage-empty-container24 {
+  height: 219px;
+  width: 310px;
+  position: relative;
+  display: none;
+  width: 100%;
+  vertical-align: middle;
+  padding-top: 53px;
+}
+div[mode-class='PadMemoShowDetails'] .notepage-empty-container24 .notepage-add-icon {
+  width: 55px;
+  height: 55px;
+  display: inline-block;
+  position: relative;
+  background-image: url("./image/list/addoverview52.png");
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-left: 127px;
+}
+div[mode-class='PadMemoShowDetails'] .notepage-empty-container24 .notepage-empty-text {
+  text-align: center;
+  font-size: 2.0em;
+  line-height: 150%;
+  color: #999999;
+  margin-top: 10px;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] {
+  height: 219px;
+  width: 310px;
+  position: relative;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[data-sfa-class="tile"]:nth-child(even) {
+  border-top: 1px solid #f0f0f0;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[data-sfa-class="memocontent"] {
+  height: 109px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 310px;
+  font-size: 1.8rem;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='text'] {
+  diplay: none;
+  overflow: hidden;
+  font-size: 1.8rem;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='text'] > div[data-sfa-class="thumbnails"] {
+  display: none;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='text'] > div[data-sfa-class="fileicon"] {
+  display: none;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='text'] > div[data-sfa-class="textcontent"] {
+  display: block;
+  height: 75px;
+  width: 278px;
+  line-height: 20px;
+  position: relative;
+  border: none;
+  disable: true;
+  resize: none;
+  font-size: 1.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='textfile'] {
+  diplay: none;
+  overflow: hidden;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='textfile'] > div[data-sfa-class="thumbnails"] {
+  display: none;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='textfile'] > div[data-sfa-class="fileicon"] {
+  display: block;
+  position: absolute;
+  margin-top: 5px;
+  width: 50px;
+  left: 242px;
+  font-size: 1.8rem;
+  float: bottom;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='textfile'] > div[data-sfa-class="fileicon"] > div[data-sfa-class="icon"] {
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='textfile'] > div[data-sfa-class="fileicon"] img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='textfile'] > ul[class="fileinfo"] {
+  display: none;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='textfile'] > div[data-sfa-class="textcontent"] {
+  display: block;
+  position: absolute;
+  border: none;
+  line-height: 20px;
+  disable: true;
+  resize: none;
+  height: 75px;
+  width: 200px;
+  font-size: 1.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='file'] {
+  diplay: none;
+  overflow: hidden;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='file'] > div[data-sfa-class="thumbnails"] {
+  display: none;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='file'] > div[data-sfa-class="fileicon"] {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  float: bottom;
+  left: 242px;
+  margin-top: 5px;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='file'] > div[data-sfa-class="fileicon"] > div[data-sfa-class="icon"] {
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='file'] > div[data-sfa-class="fileicon"] img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='file'] > ul[class="fileinfo"] {
+  font-size: 1.8rem;
+  position: absolute;
+  left: 18px;
+  height: 60px;
+  width: 200px;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='file'] > ul[class="fileinfo"] > li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='file'] > div[data-sfa-class="textcontent"] {
+  display: none;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='image'] {
+  diplay: block;
+  overflow: hidden;
+  font-size: 1.8rem;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='image'] > div[data-sfa-class="thumbnails"] {
+  display: block;
+  height: 50px;
+  width: 50px;
+  left: 55%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='image'] > div[data-sfa-class="thumbnails"] img {
+  width: 100%;
+  height: 100%;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='image'] > div[data-sfa-class="fileicon"] {
+  display: none;
+}
+div[mode-class='PadMemoShowDetails'] div[data-sfa-class="notePagePad24-list"] div[memotype='image'] > div[data-sfa-class="textcontent"] {
+  display: none;
+}
+</style><style data-moduleid="css!sap.sbo.app.task.taskTile">/* =12px */
+/* =14px */
+/* =18px */
+/* =14px */
+/* =28px *//* =60px */
+.sap-sbo-task-MemoContent {
+  font-size: 1.4rem;
+  word-wrap: break-word;
+}
+.sap-sbo-task-show {
+  display: inline !important;
+}
+.sap-sbo-task-hide {
+  display: none !important;
+}
+.sap-sbo-app-task-taskContainer-Repeat {
+  position: absolute;
+  top: 209px;
+  width: 100%;
+  display: none;
+  border-top: 1px solid #f0f0f0;
+}
+.sap-sbo-app-task-empty-container {
+  display: none;
+  width: 100%;
+  border-top: 1px solid #cccccc;
+  vertical-align: middle;
+  position: absolute;
+  top: 209px;
+  padding-top: 53px;
+}
+.sap-sbo-app-task-layout-add-icon {
+  width: 55px;
+  height: 55px;
+  display: inline-block;
+  position: relative;
+  background-image: url("./image/list/addoverview52.png");
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-left: 127px;
+}
+.sap-sbo-app-task-empty-text {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 150%;
+  color: #999999;
+  margin-top: 10px;
+}
+.sap-sbo-task-taskTile-icon {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px dashed grey;
+  display: inline-block;
+}
+div[class='sap-sbo-app-taskTile-phone-repeat'] {
+  display: inline;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 50%;
+  border-left: 1px solid #cccccc;
+}
+div[class='sap-sbo-app-taskTile-phone-repeat'] div[data-sfa-class="MemoContentBlack"] {
+  padding-top: 5px !important;
+}
+div[class='sap-sbo-app-taskTile-phone-repeat'] div[data-sfa-class="MemoContentBlackHalf"] {
+  padding-top: 5px !important;
+}
+.sap-sbo-app-taskTile-phone-EmptyDiv {
+  display: inline;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 50%;
+  overflow: hidden;
+  border-left: 1px solid #f0f0f0;
+  padding-top: 0px;
+  height: 70px;
+  text-align: center;
+}
+div[data-sfa-class="taskTile"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"]:last-child {
+  border-bottom: 0px !important;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  overflow: hidden;
+  padding: 13px 18px 15px 18px;
+  border-bottom: 1px solid #cccccc;
+  height: 79px;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"] div[class="TileDate"] {
+  color: #999999;
+  font-size: 2.2rem;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"] div[class="taskTileHeader"] {
+  height: 22px;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"] div[class="taskTileHeader"] div[data-sfa-class="typeIcon"] {
+  display: inline;
+  float: right;
+  width: 22px;
+  height: 22px;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"] div[class="taskTileHeader"] div[data-sfa-class="typeIcon"] span > img {
+  width: 22px;
+  height: 22px;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"] div[class="taskTileHeader"] div[data-sfa-class="DueDate"] {
+  color: #999999;
+  display: inline;
+  line-height: 22px;
+  height: 22px;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"] div[class="taskTileHeader"] div[data-sfa-class="DueDateComplete"] {
+  color: #999999;
+  display: inline;
+  line-height: 22px;
+  height: 22px;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"] div[class="taskTileHeader"] div[data-sfa-class="DueTime"] {
+  color: #999999;
+  display: inline;
+  line-height: 22px;
+  height: 22px;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskAttach"] div[class="taskTileHeader"] div[data-sfa-class="DueTimeComplete"] {
+  color: #ff0000;
+  line-height: 22px;
+  height: 22px;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskheader"] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskheader"] > div[data-sfa-class="count"] {
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 2.8rem;
+  -webkit-transition: color 1s ease;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  color: #ffffff;
+  background-color: #99cc00;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskheader"] > div[data-sfa-class="count"] .title {
+  float: left;
+  line-height: 50px;
+}
+div[data-sfa-class="taskTile"] div[data-sfa-class="taskheader"] > div[data-sfa-class="count"] .number {
+  float: right;
+  line-height: 50px;
+}
+div[data-sfa-class="taskbFooter"] {
+  position: absolute;
+  margin-top: 15px;
+}
+div[data-sfa-class="taskbFooter"] > div[data-sfa-class="typeIcon"] {
+  position: relative;
+  bottom: 5px;
+  float: left;
+  display: inline;
+  border-right: 1px solid #cccccc;
+  padding-right: 10px;
+  width: 28px;
+  height: 18px;
+}
+div[data-sfa-class="taskbFooter"] > div[data-sfa-class="typeIcon"] > span > img {
+  height: 100%;
+  width: 100%;
+}
+div[data-sfa-class="taskbFooter"] > div[data-sfa-class="taskTileDateTime"] {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+}
+div[data-sfa-class="taskbFooter"] > div[data-sfa-class="taskTileDateTime"] > div[data-sfa-class="DueDate"] {
+  color: #000000;
+  font-size: 1.4rem;
+  display: inline-block;
+  top: 5px;
+  float: right;
+}
+div[data-sfa-class="taskbFooter"] > div[data-sfa-class="taskTileDateTime"] > div[data-sfa-class="DueDateComplete"] {
+  color: #ff0000;
+  font-size: 1.4rem;
+  display: inline-block;
+  top: 5px;
+  float: right;
+}
+div[data-sfa-class="taskbFooter"] > div[data-sfa-class="taskTileDateTime"] > div[data-sfa-class="DueTime"] {
+  color: #000000;
+  font-size: 1.4rem !important;
+  display: inline-block;
+  float: right;
+  top: 5px;
+  margin-left: 3px;
+}
+div[data-sfa-class="taskbFooter"] > div[data-sfa-class="taskTileDateTime"] > div[data-sfa-class="DueTimeComplete"] {
+  color: #ff0000;
+  font-size: 1.4rem !important;
+  display: inline-block;
+  float: right;
+  top: 5px;
+  margin-left: 3px;
+}
+div[data-sfa-class="TaskShowDetailsTitle"] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+div[data-sfa-class="taskTileContent"] {
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  font-size: 1.8rem;
+  color: #000000;
+  word-wrap: break-word;
+}
+div[data-sfa-class="taskTileContent"] > div[data-sfa-class="MemoContentBlack"] {
+  font-size: 1.4rem;
+  word-wrap: break-word;
+  padding-top: 15px;
+  color: #999999;
+}
+div[data-sfa-class="taskTileContent"] > div[data-sfa-class="MemoContentBlackHalf"] {
+  font-size: 1.4rem;
+  word-wrap: break-word;
+  color: #999999;
+  padding-top: 15px;
+  width: 200px;
+}
+div[data-sfa-class="taskTileContent"] > div[data-sfa-class="attachmentIcon"] {
+  position: absolute;
+  border: 0px;
+  right: 5px;
+  bottom: 15px;
+  width: 45px;
+  height: 45px;
+}
+div[data-sfa-class="taskTileContent"] > div[data-sfa-class="attachmentIcon"] > span > img {
+  width: 100%;
+  height: 100%;
+  float: right;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+</style></head>
+<body data-sap-domid="1" class="desktop">
+	<div id="guilin-static">
+		
+	<div class="sap-sbo-pad-html-shell-mask" style="opacity: 0; display: none;"></div><div class="sap-sbo-pad-html-shell-frame-mask"></div><div class="sap-sbo-pad-html-shell-footer-message"></div><div class="sap-sbo-pad-html-shell-highlightmask"></div><div id="_loader_container" class=""><div class="mask"></div><div class="loading"></div></div><div class="sap-sbo-ui-widget-Bar-menu-container" id="1382525979994"></div><div class="sap-sbo-ui-widget-Bar-menu-container" id="1382525979995"></div><div class="sap-ui-menu-icon-button-menu-list" style="display: none;"><ul><li class="sap-ui-menu-icon-button-menu-item sap-ui-menu-icon-button-menu-item-0" tabindex="-1" data-touchable="true">用户信息</li><li class="sap-ui-menu-icon-button-menu-item sap-ui-menu-icon-button-menu-item-1" tabindex="-1" data-touchable="true">意见反馈</li><li class="sap-ui-menu-icon-button-menu-item sap-ui-menu-icon-button-menu-item-2" tabindex="-1" data-touchable="true">注销</li></ul></div></div>
+	<div class="sap-sbo-background">
+		<div id="branding-bar"></div>
+		<div id="sbo-shell" data-sap-widget="sap.sbo.shell.PadHtmlShell" class="sap-sbo-pad-html-shell" data-sap-domid="2"><div class="sap-sbo-pad-html-shell-content" style="opacity: 1;"><div class="sap-sbo-index" data-sap-template="ViewContent" data-sap-domid="3">
+  <div class="mainViewRegion sap-sbo-ui-page-region" data-sap-widget="sap.sbo.ui.PageRegion" data-sap-option="region:'sfa-sbo-index',maxViewCount:2,isAppLevel:true" id="guilin_GUID_3" data-sap-domid="4"><div style="position: absolute; z-index: 10; left: 0px; right: 0px; top: 0px; bottom: 0px; background-color: rgba(128, 128, 128, 0.498039); display: none; background-position: initial initial; background-repeat: initial initial;"></div><div class="viewsection" data-region-view="sap.sbo.page.pad.Home" activeview="true"><div data-sap-widget="sap.sbo.ui.Page" data-sap-option="name:'sap.sbo.page.pad.Home'" style="height: 100%; opacity: 1;" data-sap-domid="5"><div class="sap-sbo-page">
+
+	<div class="header panel" style="display: none;">
+        <div data-sap-widget="sap.sbo.ui.widget.Bar" data-sap-option="contentsLeft:{{header@left}},contentsRight:{{header@right}},contentsMiddle:{{header@middle}}" id="guilin_GUID_5" class="sap-sbo-ui-widget-Bar" data-sap-domid="6"><div class="sap-sbo-ui-widget-Bar"><div class="sap-sbo-ui-widget-Bar-container-middle"><div class="sap-sbo-ui-widget-Bar-container-middle-inner"><div class="sap-sbo-ui-widget-Bar-label">SAP Business One Anywhere</div></div></div><div class="sap-sbo-ui-widget-Bar-container-left"></div><div class="sap-sbo-ui-widget-Bar-container-right"></div></div></div>
+	</div>
+
+
+    <div class="content panel" style="top: 0px; bottom: 0px;">
+        <div class="scrollContent" style="display:inline-block; min-width:100%; min-height:99%;"><div class="sbo-home">
+	<div class="sapHomeHeader  sapHomeHeaderFixedTop" data-sap-domid="9">
+		<div class="sapHomeHeaderContainer">
+			<ul class="sapHomeHeaderNav">
+				<!--<li class="logo">
+				</li>-->
+				<li data-touchable="true">
+					<div data-sap-widget="sap.sbo.ui.widget.MenuIconButton" data-sap-command="headerModel@GuilinControlEvent.click:profileIconClicked" data-sap-option="iconURL: {{headerModel@profileIcon}} , menu: {{headerModel@buttons, two-way}}" id="guilin_GUID_11" class="sap-ui-menu-icon-button sap-ui-menu-icon-button-has-menu" role="button" data-sap-domid="15" aria-disabled="false" tabindex="0"><div class="moremenu"><div class="moremenu-icon" style="background-image: url(http://127.0.0.1:8079/sfa-anw/image/common/no-portrait.png);"></div></div></div>
+				</li>
+				<li data-touchable="true" class="key-user-only">
+					<a href="javascript:void(0)" class="icon-action-settings"></a>
+				</li>
+				<li data-touchable="true">
+					<a href="javascript:void(0)" class="icon-add" data-sap-command="headerModel@vclick:openCreationList"></a>
+				</li>
+			</ul>
+			<div class="sapHomeHeaderSearch">
+				<div class="search-bar sap.sbo.ui.pad.SearchArea" data-sap-widget="sap.sbo.ui.pad.SearchArea" style="width:350px;height:35px" id="guilin_GUID_10" data-sap-domid="14"><div class="sap-sbo-ui-pad-SearchArea-main sap-sbo-ui-pad-SearchArea-main-focus" style="width: 350px; height: 41px;"><div class="sap-sbo-ui-pad-SearchArea-main-header"><div class="sap-sbo-ui-pad-SearchArea-main-setting icon-settings" style="display: block;"></div><input type="text" class="sap-sbo-ui-pad-SearchArea-main-input" placeholder="搜索..."><div class="sap-sbo-ui-pad-SearchArea-main-searchBtn icon-search"></div></div></div></div>
+				<a href="javascript:void(0)" class="icon-search"></a>
+			</div>
+		</div>
+		<div class="home-creation-list hidden sap-sbo-creation-list" data-sap-widget="sap.sbo.ui.widget.CreationList" data-sap-command="headerModel@GuilinControlEvent.click:toCreate" id="guilin_GUID_8" data-sap-domid="12"><div class="sap-sbo-creation-list-loop" data-sap-widget="sap.sbo.ui.Loop" data-sap-option="modelName: '', data: {{data}}" id="guilin_GUID_9" data-sap-domid="13">
+	
+<div data-sap-template="Content" data-sap-domid="18">
+		<div class="bo-item left-item" data-key="Feeds" data-sap-domid="19">动态</div>
+		<div class="bo-item right-item" data-key="Leads" data-sap-domid="20">销售线索</div>
+	</div><div data-sap-template="Content" data-sap-domid="21">
+		<div class="bo-item left-item" data-key="Page" data-sap-domid="22">备忘录</div>
+		<div class="bo-item right-item" data-key="SalesOpportunity" data-sap-domid="23">销售机会</div>
+	</div><div data-sap-template="Content" data-sap-domid="24">
+		<div class="bo-item left-item" data-key="Task" data-sap-domid="25">任务</div>
+		<div class="bo-item right-item" data-key="Quotation" data-sap-domid="26">报价单</div>
+	</div><div data-sap-template="Content" data-sap-domid="27">
+		<div class="bo-item left-item" data-key="BusinessPartner" data-sap-domid="28">客户</div>
+		<div class="bo-item right-item" data-key="Order" data-sap-domid="29">订单</div>
+	</div><div data-sap-template="Content" data-sap-domid="30">
+		<div class="bo-item left-item" data-key="ContactPerson" data-sap-domid="31">联系人</div>
+		<div class="bo-item right-item" data-key="Invoice" data-sap-domid="32">发票</div>
+	</div><div data-sap-template="Content" data-sap-domid="33">
+		<div class="bo-item left-item" data-key="Item" data-sap-domid="34">产品</div>
+		<div class="bo-item right-item" data-key="CreditNote" data-sap-domid="35">红字发票</div>
+	</div><div data-sap-template="Content" data-sap-domid="36">
+		<div class="bo-item left-item" data-key="DeliveryNote" data-sap-domid="37">发货单</div>
+		<div class="bo-item right-item" data-key="IncomingPayment" data-sap-domid="38">收款单</div>
+	</div><div data-sap-template="Content" data-sap-domid="39">
+		<div class="bo-item left-item" data-key="Return" data-sap-domid="40">退货单</div>
+		<div class="bo-item right-item" data-key="" data-sap-domid="41"></div>
+	</div></div></div>
+	</div>
+
+
+	
+
+	<div ctrl="layout" class="sbo-home-layout sapTilesContainer" data-sap-widget="sap.sbo.layout.TileContainer" data-sap-option="" id="guilin_GUID_7" data-sap-domid="11">
+		
+		
+		
+		
+		
+		<!--<div class="sapGuilinTile small sapGuilinBreatheDiv" data-sap-template="View" data-sap-bo-title="钀ラ攢娲诲姩" mode="1x1" uuid="CampaignTile" name="sap.sbo.app.Campaign.CampaignTile" ></div>-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<div class="sap-guilin-tilecontainer-mask" style="display: none;" data-sap-command="vclick:hideMask" data-sap-domid="10"></div>
+<div class="sapTilesContainer">
+	<div class="sapTilesContainerButtons">
+		<div class="sapTilesContainerButtonsGroup">
+			<div class="sapTilesCustomize" data-touchable="true"><div class="fs4" aria-hidden="true" data-icon=""><span></span></div></div>
+			<button data-touchable="true" class="sapTilesAddBtn">添加</button>
+			<button data-touchable="true" class="sapTilesCancelBtn">取消</button>
+			<button data-touchable="true" class="sapTilesOKBtn">完成</button>
+		</div>
+	</div>
+	<div id="sapTilesContainerViewPort" class="sapTilesContainerViewPort" style="overflow: hidden; height: 171px; width: 1600px;">
+		<div class="sapTilesContainerContent" style="width: 4800px; -webkit-transition: -webkit-transform 0ms; transition: -webkit-transform 0ms; -webkit-transform-origin: 0px 0px; -webkit-transform: translate(0px, 0px) scale(1) translateZ(0px);">
+			<div id="sapGuilinGridly" class="gridlyTransition"><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.ReportTile" style="width: 220px; height: 220px; top: 0px; left: 115px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.report.tile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="42"><div class="sbo-bo-tile sbo-bo-tile-9 sbo-app-opportunity-tile opportunity" data-sap-template="ViewContent" data-sap-domid="72">
+    <div class="title" data-sap-domid="73">报表</div>
+    <div class="number"><div class="value" data-sap-domid="74">9</div></div>
+    <div class="big-icon icon-pie-chart"></div>
+</div>
+</div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.IncomingPaymentTile" style="width: 220px; height: 220px; top: 0px; left: 345px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.IncomingPayment.IncomingPaymentTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="43"><div class="sbo-bo-tile sbo-bo-tile-0 sbo-IncomingPayment-tile incomingpayment" data-sap-template="ViewContent" data-sap-domid="75">
+    <div class="title" data-sap-domid="76">收款单</div>
+    <div class="sub-title" data-sap-domid="77">我的已结算收款单</div>
+    <div class="number"><div class="value" data-sap-domid="78">0</div></div>
+    <div class="big-icon icon-simple-payment"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.CreditNoteTile" style="width: 220px; height: 220px; top: 0px; left: 575px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.CreditNote.CreditNoteTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="44"><div class="sbo-bo-tile sbo-bo-tile-0 sbo-CreditNote-tile creditnote" data-sap-template="ViewContent" data-sap-domid="79">
+    <div class="title" data-sap-domid="80">红字发票</div>
+    <div class="sub-title" data-sap-domid="81">我的未清红字发票</div>
+    <div class="number"><div class="value" data-sap-domid="82">0</div></div>
+    <div class="big-icon icon-sales-document"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.InvoiceTile" style="width: 220px; height: 220px; top: 0px; left: 805px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.Invoice.InvoiceTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="45"><div class="sbo-bo-tile sbo-bo-tile-2 sbo-Invoice-tile invoice" data-sap-template="ViewContent" data-sap-domid="83">
+    <div class="title" data-sap-domid="84">发票</div>
+    <div class="sub-title" data-sap-domid="85">我的未清发票</div>
+    <div class="number"><div class="value" data-sap-domid="86">2</div></div>
+    <div class="big-icon icon-sales-document"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.ReturnTile" style="width: 220px; height: 220px; top: 0px; left: 1035px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.Return.ReturnTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="46"><div class="sbo-bo-tile sbo-bo-tile-0 sbo-SalesOrder-tile order" data-sap-template="ViewContent" data-sap-domid="87">
+    <div class="title" data-sap-domid="88">退货单</div>
+    <div class="sub-title" data-sap-domid="89">我的未清退货单</div>
+    <div class="number"><div class="value" data-sap-domid="90">0</div></div>
+    <div class="big-icon icon-past"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.DeliveryNoteTile" style="width: 220px; height: 220px; top: 0px; left: 1265px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.DeliveryNote.DeliveryNoteTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="47"><div class="sbo-bo-tile sbo-bo-tile-1 sbo-SalesOrder-tile order" data-sap-template="ViewContent" data-sap-domid="91">
+    <div class="title" data-sap-domid="92">发货单</div>
+    <div class="sub-title" data-sap-domid="93">我的未清发货单</div>
+    <div class="number"><div class="value" data-sap-domid="94">1</div></div>
+    <div class="big-icon icon-shipping-status"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.SalesOrderTile" style="width: 220px; height: 220px; top: 0px; left: 1715px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.SalesOrder.SalesOrderTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="48"><div class="sbo-bo-tile sbo-bo-tile-2 sbo-SalesOrder-tile order" data-sap-template="ViewContent" data-sap-domid="95">
+    <div class="title" data-sap-domid="96">订单</div>
+    <div class="sub-title" data-sap-domid="97">我的未清订单</div>
+    <div class="number"><div class="value" data-sap-domid="98">2</div></div>
+    <div class="big-icon icon-sales-order"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.SalesQuotationTile" style="width: 220px; height: 220px; top: 0px; left: 1945px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.SalesQuotation.SalesQuotationTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="49"><div class="sbo-bo-tile sbo-bo-tile-1 sbo-SalesQuotation-tile on quotation" data-sap-template="ViewContent" data-sap-domid="99">
+    <div class="title" data-sap-domid="100">报价单</div>
+    <div class="sub-title" data-sap-domid="101">我的未清报价单</div>
+    <div class="number"><div class="value" data-sap-domid="102">1</div></div>
+    <div class="big-icon icon-sales-quote"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.ProductTile" style="width: 220px; height: 220px; top: 0px; left: 2175px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.Product.ProductTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="50"><div class="sbo-bo-tile sbo-bo-tile-3 sbo-product-tile product" data-sap-template="ViewContent" data-sap-domid="103">
+    <div class="title" data-sap-domid="104">产品</div>
+    <div class="sub-title" data-sap-domid="105">可用产品</div>
+    <div class="number"><div class="value" data-sap-domid="106">3</div></div>
+    <div class="big-icon icon-product"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.SalesOppsTile" style="width: 220px; height: 220px; top: 0px; left: 2405px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.SalesOpportunity.Tile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="51"><div class="sbo-bo-tile sbo-bo-tile-11 sbo-app-opportunity-tile opportunity" data-sap-template="ViewContent" data-sap-domid="60">
+    <div class="title" data-sap-domid="61">销售机会</div>
+    <div class="sub-title" data-sap-domid="62">我的未清销售机会</div>
+    <div class="number"><div class="value" data-sap-domid="63">11</div></div>
+    <div class="big-icon icon-opportunities"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.LeadsTile" style="width: 220px; height: 220px; top: 0px; left: 2635px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.Leads.LeadsTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="52"><div class="sbo-bo-tile sbo-bo-tile-5 sbo-Leads-tile lead" data-sap-template="ViewContent" data-sap-domid="107">
+    <div class="title" data-sap-domid="108">销售线索</div>
+    <div class="sub-title" data-sap-domid="109">我的未处理销售线索</div>
+    <div class="number"><div class="value" data-sap-domid="110">5</div></div>
+    <div class="big-icon icon-leads"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.CustomerTile" style="width: 220px; height: 220px; top: 0px; left: 2865px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.Customer.CustomerTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="53"><div class="sbo-bo-tile sbo-bo-tile-4 sbo-customer-tile customer" data-sap-template="ViewContent" data-sap-domid="64">
+    <div class="title" data-sap-domid="65">客户</div>
+    <div class="sub-title" data-sap-domid="66">我的可用客户</div>
+    <div class="number"><div class="value" data-sap-domid="67">4</div></div>
+    <div class="big-icon icon-customer"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.ContactTile" style="width: 220px; height: 220px; top: 0px; left: 3315px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.Contact.ContactTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="54"><div class="sbo-bo-tile sbo-bo-tile-5 sbo-Contact-tile contact" data-sap-template="ViewContent" data-sap-domid="68">
+    <div class="title" data-sap-domid="69">联系人</div>
+    <div class="sub-title" data-sap-domid="70">我的可用联系人</div>
+    <div class="number"><div class="value" data-sap-domid="71">5</div></div>
+    <div class="big-icon icon-contacts"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.FeedTile" style="width: 220px; height: 220px; top: 0px; left: 3545px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.network.FeedTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="55"><div id="tile_2_4" class="sbo-bo-tile sbo-bo-tile-0 sbo-Contact-tile feed" data-sap-template="ViewContent" data-sap-domid="58">
+    <div class="title" data-sap-domid="59">动态</div>
+    <!--<div class="sub-title">{{i18n@feed/hot/setAsHot}}</div>
+    <div class="number"><div class="value">{{count}}</div></div>-->
+    <div class="big-icon icon-feed"></div>
+</div></div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.NotePageTile" style="width: 220px; height: 220px; top: 0px; left: 3775px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.notepage.NotePageTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="56"><div data-sap-template="ViewContent" data-sap-domid="111">
+	<div class="sbo-bo-tile sbo-bo-tile-0 sbo-note-tile memo" mode-class="PadMemoSmall" style="display: block;" data-sap-domid="112">
+		<div class="title" data-sap-domid="116">备忘录</div>
+		<div class="sub-title"></div>
+		<div class="number"><div class="value" data-sap-domid="120">0</div></div>
+		<div class="big-icon icon-notes"></div>
+		<!--
+		  <div data-sbo-class="count" >
+			  <div class="label">{{i18n@app/memo/LASTUPDATE}}</div>
+			  <div class="label">{{dateLastEdit,sap.sbo.page.common.notepage.NotePageUtil.showLocalDateTime}}</div> 
+		  </div>
+		-->
+	</div>
+	<div class="sbo-bo-tile sbo-bo-tile-0 sbo-note-tile memo" mode-class="PhoneMemoSmall" style="display: none;" data-sap-domid="113">
+		<div class="title" data-sap-domid="117">备忘录</div>
+		<div class="number"><div class="value" data-sap-domid="121">0</div></div>
+	</div>
+	
+	<div class="sbo-bo-tile sbo-bo-tile-0 memo" mode-class="PhoneMemoShowDetails" style="display: none;" data-sap-domid="114">
+
+		<div class="title" data-sap-domid="118">备忘录</div>
+		<div class="number" style="margin:10px 20px;width:70px;"><div class="value" style="left:20px;" data-sap-domid="122">0</div></div>
+			<div data-sfa-class="notePagePhone22-list">
+			  <div data-sfa-class="container" ctrl="listView" data-sap-widget="sap.ui.Repeat" data-sap-option="data:{{details,two-way}}" id="guilin_GUID_30" data-sap-domid="123">	
+					
+			 </div>
+		  </div>
+		  <div class="notepage-empty-container22" style="display:none"><div class="notepage-add-icon">+</div><div class="notepage-empty-text des" data-sap-domid="124">目前还没有备忘录。</div></div> 
+	      </div>
+	
+	   <div class="sbo-bo-tile sbo-bo-tile-0 memo" mode-class="PadMemoShowDetails" style="display: none;" data-sap-domid="115">
+            <div class="sbo-bo-tile sbo-bo-tile-0 sbo-note-tile memo" data-sap-domid="119">
+			        <div class="title" data-sap-domid="125">备忘录</div>
+			        <div class="number"><div class="value" data-sap-domid="128">0</div></div>
+            </div>
+            <div data-sfa-class="notePagePad24-list">
+              <div data-sfa-class="container" ctrl="listView" data-sap-widget="sap.ui.Repeat" data-sap-option="data:{{details,two-way}}" id="guilin_GUID_31" data-sap-domid="126">   
+                    
+             </div>
+          </div>
+          <div class="notepage-empty-container24" style="display:none"><a class="notepage-add-icon"></a><div class="notepage-empty-text" data-sap-domid="127">目前还没有备忘录。</div></div> 
+          </div>
+ </div>
+	
+</div></div><div class="sapGuilinTileMask"></div></div><div class="sapGuilinTile small sapGuilinBreatheDiv" uuid="sbo.taskTile" style="width: 220px; height: 220px; top: 0px; left: 4005px;"><div class="sapGuilinTileRemove tile-container-view"></div><div class="sapGuilinTileContent" data-touchable="true"><div data-sap-widget="sap.sbo.layout.TileView" data-sap-option="name: 'sap.sbo.app.task.taskTile', mode: '1x1'" style="height: 100%; opacity: 1;" data-sap-domid="57"><div data-sap-template="ViewContent" data-sap-domid="129">
+<div data-sfa-class="taskTile" class="taskTile" style="display: none;">
+	<div data-sfa-class="taskheader">
+	 
+	<div class="sbo-bo-tile sbo-bo-tile-0 task" data-sap-domid="136">
+	   		  <div class="title" data-sap-domid="141">任务</div>
+    		  <div class="number"><div class="value" data-sap-domid="143">0</div></div>
+	  </div>
+	  
+	   <div data-sfa-class="taskContainer" class="sap-sbo-app-task-taskContainer-Repeat" data-sap-widget="sap.ui.Repeat" data-sap-option="data:{{details/value,two-way}}" id="guilin_GUID_33" data-sap-domid="137"> 	
+	  		
+	  </div>
+	  <div class="sap-sbo-app-task-empty-container"><a class="sap-sbo-app-task-layout-add-icon"></a><div class="sap-sbo-app-task-empty-text" data-sap-domid="142">目前没有未完成的任务。</div></div> 
+	</div>
+</div>
+<div class="sbo-bo-tile sbo-bo-tile-0 task taskTileSmall" id="taskTileSmall" style="display: block;" data-sap-domid="130">
+    <div class="title" data-sap-domid="132">任务</div>
+    <div class="sub-title" data-sap-domid="133">未处理</div>
+    <div class="number"><div class="value" data-sap-domid="138">0</div></div>
+    <div class="big-icon icon-task"></div>
+</div>
+<div class="taskTileShowDetails sbo-bo-tile sbo-bo-tile-0 task" style="display: none;" data-sap-domid="131">
+	<div class="title" data-sfa-class="TaskShowDetailsTitle" data-sap-domid="134">任务</div>
+	 <div class="number" style="margin:10px 20px;width:70px;"><div class="value" style="left:20px;" data-sap-domid="139">0</div></div>
+	 <div data-sap-widget="sap.ui.Repeat" class="sap-sbo-app-taskTile-phone-repeat" data-sap-option="data:{{details/value,two-way}}" id="guilin_GUID_32" data-sap-domid="135"> 	
+	  		
+	</div>
+	<div class="sap-sbo-app-taskTile-phone-EmptyDiv"><div class="sap-sbo-task-taskTile-icon">+</div><div class="sap-sbo-app-task-empty-text" data-sap-domid="140">目前没有未完成的任务。</div></div> 
+</div>
+</div></div></div><div class="sapGuilinTileMask"></div></div></div>
+		</div>
+		<div id="sapTilesSwitcherLeft" class="sapPageSwitcher" data-touchable="true" style="display: none;"><div class="sapMTCInner"></div></div>
+		<div id="sapTilesSwitcherRight" class="sapPageSwitcher" data-touchable="true" style="display: block;"><div class="sapMTCInner"></div></div> 
+		<div class="sapTilesContainerPager"><span class="sapGuilinActive"></span><span></span><span></span></div>
+	</div>
+</div>
+
+</div>
+</div></div>
+    </div>
+
+
+	<div class="footer panel" style="display: none;">
+        <div data-sap-widget="sap.sbo.ui.widget.Bar" data-sap-option="contentsLeft:{{footer@left}},contentsRight:{{footer@right}},contentsMiddle:{{footer@middle}}" id="guilin_GUID_6" class="sap-sbo-ui-widget-Bar" data-sap-domid="7"><div class="sap-sbo-ui-widget-Bar"><div class="sap-sbo-ui-widget-Bar-container-middle"><div class="sap-sbo-ui-widget-Bar-container-middle-inner"></div></div><div class="sap-sbo-ui-widget-Bar-container-left"></div><div class="sap-sbo-ui-widget-Bar-container-right"></div></div></div>
+	</div>
+
+</div>
+</div></div></div>
+</div>
+</div></div>
+	</div>
+	<div class="sap-sbo-error"></div>
+
+
+
+</html>

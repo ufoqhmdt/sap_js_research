@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>demo1</title>
+		<meta name="description" content="">
+		<meta name="author" content="C5193511">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>demo1</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Home</a>
+				</p>
+				<p>
+					<a href="/contact">Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by C5193511
+				</p>
+			</footer>
+		</div>
+		<script>
+			var start = new Date().valueOf();
+			var kk = 0;
+			var ufo=function() {
+				var end = new Date().valueOf();
+				console.log(++kk);
+				console.log(end - start);
+				if ((end - start)>=1000) {
+					console.log("clear");
+					clearTimeout(flag);
+				}else{
+					flag=setImmediate(ufo);
+				}
+			};
+			var flag = setImmediate(ufo, 0);
+		</script>
+	</body>
+</html>

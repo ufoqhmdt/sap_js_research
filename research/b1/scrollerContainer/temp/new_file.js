@@ -1,0 +1,125 @@
+define("sap.sbo.layout.TileContainerDropBox", [
+		"sap.ui.Controller",
+		"sap.sbo.ui.FrameViewController",
+		"sap.sbo.action.Base",
+		"sap.sbo.localization.Helper",
+		"sap.ui.widget.Checkbox",
+		// "css!sap.sbo.layout.TileContainerDropBox"
+	],
+	function() {
+		"use strict";
+		var ns = this.getNS(),
+			sap = ns.sap;
+
+		return sap.ui.Controller.declare({
+			Name: this.getModuleInfo().moduleName,
+			ControllerBase: sap.sbo.ui.FrameViewController,
+
+			Public: {
+				init: function() {
+					sap.sbo.ui.FrameViewController.prototype.init.apply(this, arguments);
+					this.declareMember({
+						tileContainer: null,
+					});
+				},
+				initView: function() {
+					var that = this;
+					var dtd = $.Deferred();
+					that.setTitle(sap.sbo.localization.Helper.get('app/FEEDBACK/TITLE'));
+					var _$myWrapDom = this.$();
+					// _$myWrapDom.append("UFOUFOUFOF");
+					dtd.resolve();
+					this._createDropdownBoxDOM(_$myWrapDom);
+					return dtd.promise();
+				},
+				destroyView: function() {},
+				getFrameFooterActionButtons: function() {
+					return [
+						new sap.sbo.action.Base(this, 'btnDone', sap.sbo.localization.Helper.get("common/CANCEL"), function(sKey) {
+							this.closeFrame();
+						})
+					];
+				}
+			},
+
+			Protected: {
+				_createDropdownBoxDOM: function(_$myWrapDom) {
+					var that = this;
+
+					// var dropdownBox = tileContainer._dropdownBox;
+					var dropdownBox = [];
+					dropdownBox["sbo.CreditNoteTile"] = {
+						"data": {
+							"boTitle": "红字发票",
+							"checked": false,
+							"mode": "1x1",
+							"option": null,
+							"tileName": "sap.sbo.app.CreditNote.CreditNoteTile",
+							"type": "View",
+							"uuid": "sbo.CreditNoteTile"
+						},
+						"type": "checkbox"
+					};
+					dropdownBox["sbo.DeliveryNoteTile"] = {
+						"data": {
+							"boTitle": "红字发票",
+							"checked": false,
+							"mode": "1x1",
+							"option": null,
+							"tileName": "sap.sbo.app.CreditNote.CreditNoteTile",
+							"type": "View",
+							"uuid": "sbo.CreditNoteTile"
+						},
+						"type": "checkbox"
+					};
+					dropdownBox["sbo.IncomingPaymentTile"] = {
+						"data": {
+							"boTitle": "红字发票",
+							"checked": false,
+							"mode": "1x1",
+							"option": null,
+							"tileName": "sap.sbo.app.CreditNote.CreditNoteTile",
+							"type": "View",
+							"uuid": "sbo.CreditNoteTile"
+						},
+						"type": "checkbox"
+					};
+
+					var keys = Object.keys(dropdownBox);
+					for (var i = 0; i < keys.length; i++) {
+						var key = keys[i];
+						var dropdownObj = dropdownBox[key];
+						var data = dropdownObj.data;
+
+						var li = $("<li></li>");
+						var _uuid=data.uuid.replace(".", "_");
+						li.append('<div uuid="' + _uuid + '" data-sap-widget="sap.ui.widget.Checkbox" data-sap-option="text:"aaaa", checked:true, disabled: false"></div>');
+						li.find("div").prop("checked", dropdownObj.checked);
+
+						$.data(li[0], "configure", data);
+
+						(function(li) {
+							li.on("vclick", function(event) {
+								var $checkbox = this;
+								var uuid = $checkbox.attr("uuid");
+								var checked = !! !$checkbox[0].checked;
+								var configure = li.data("configure");
+								if (checked) {
+									tileContainer.doAddTile(configure);
+								} else {
+									tileContainer.doRemoveTile(configure.uuid);
+								}
+							});
+
+							li.process(ns).done(function() {
+								that.fireEvent("afterProcess");
+							});
+						})(li);
+
+						_$myWrapDom.find(".sap-popover-content-wrap").append(li);
+					};
+				}
+			}
+
+		});
+	});
