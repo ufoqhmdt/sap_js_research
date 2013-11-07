@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<body>
+		<button id="createNodes">
+			createNodes
+		</button>
+		<button id="destoryBtn">
+			destoryBtn
+		</button>
+		<script>
+			'use strict';
+
+			var leakedNodes = [];
+
+			function createNode(text) {
+				var div = document.createElement("div"), innerDiv = document.createElement("div");
+				innerDiv.appendChild(document.createTextNode(text + " - " + new Date().toTimeString()));
+				div.appendChild(innerDiv);
+				return div;
+			}
+
+			function createLeakedNodes() {
+				var i;
+				for ( i = 0; i < 200000; i++) {
+					leakedNodes.push(createNode("Leaked:" + i));
+				}
+			}
+
+			function createGCNodes() {
+				var i;
+				for ( i = 0; i < 200000; i++) {
+					createNode("Collected:" + i);
+				}
+			}
+
+			function createNodes() {
+				createLeakedNodes();
+				createGCNodes();
+			}
+
+			function loaded() {
+				var createNodesBtn = document.querySelector("#createNodes");
+				createNodesBtn.addEventListener("click", function(event) {
+					createNodes();
+					var a=leakedNodes;
+				}, false);
+				var destoryBtn = document.querySelector("#destoryBtn");
+				createNodesBtn.addEventListener("click", function(event) {
+					destory();
+				}, false);
+			}
+
+			function destory() {
+				leakedNodes = null;
+			}
+
+
+			document.addEventListener('DOMContentLoaded', loaded, false);
+		</script>
+	</body>
+</html>

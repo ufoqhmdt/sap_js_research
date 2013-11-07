@@ -1,0 +1,26 @@
+{
+	"stime": 1383623763,
+	"status": {
+		"miphone": {
+			"reg": true,
+			"hdstart": false,
+			"hdstop": false,
+			"hdurl": "",
+			"duration": null
+		},
+		"mibox": {
+			"reg": true,
+			"hdstart": false,
+			"hdstop": false,
+			"hdurl": "",
+			"duration": null
+		},
+		"mitv": {
+			"reg": false,
+			"hdstart": false,
+			"hdstop": false,
+			"hdurl": "",
+			"duration": null
+		}
+	}
+}

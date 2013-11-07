@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<body>
+		<button id="start">
+			start
+		</button>
+		<button id="end">
+			endR
+		</button>
+		<p id="p"></p>
+		<script>
+			function start() {
+				var p = document.getElementById("p");
+				detached = document.createElement("section");
+				p.appendChild(detached);				
+				p.removeChild(detached);
+				fill();
+			}
+
+			function fill() {
+				for (var i = 0; i < 25; ++i) {
+					var div = document.createElement('div');
+					div.data = new Array(10000);
+					for (var j = 0, l = div.data.length; j < l; ++j)
+						div.data[j] = j.toString();
+					detached.appendChild(div);
+				}
+			}
+
+			function loaded() {
+				var startBtn = document.querySelector("#start");
+				startBtn.addEventListener("click", function(event) {
+					start();
+				}, false);
+				var end = document.querySelector("#end");
+				end.addEventListener("click", function(event) {
+					detached=null;
+				}, false);
+			}
+
+			function destory() {
+			}
+
+
+			document.addEventListener('DOMContentLoaded', loaded, false);
+		</script>
+	</body>
+</html>

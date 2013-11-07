@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			li {
+				margin: 3px;
+				padding: 3px;
+				background: #EEEEEE;
+			}
+			li.hilight {
+				background: yellow;
+			}
+		</style>
+		<script src="../../../lib/js/vendor/jquery.js"></script>
+	</head>
+	<body>
+		<script>
+			var o = {
+				"a" : "a",
+				"b" : "b",
+				"c" : {
+					c1 : "c1",
+					"c2" : "c2"
+				}
+			};
+			var oo = $("<div>", o).after("<span>");
+			var oo1 = $("<div>");
+			$("body").append(oo);
+
+		</script>
+
+	</body>
+</html>

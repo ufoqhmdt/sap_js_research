@@ -7,7 +7,7 @@
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>longpress</title>
+		<title>verticalalign</title>
 		<meta name="description" content="">
 		<meta name="author" content="C5193511">
 
@@ -16,36 +16,11 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-		<script>
-			var num = 0;
-			var timer_alert = 0;
-			function longdown(e) {
-				console.log("start");
-				timer_alert = setTimeout(function() {
-					console.log(e);
-					if (e.which == 1) {
-						num++;
-						if (num == 2) {
-							console.log(num);
-						} else {
-							longdown(e);
-						}
-					}
-				}, 1000);
-			};
-
-			function longup(e) {
-				console.log("end");
-				clearTimeout(timer_alert);
-			}
-
-		</script>
 	</head>
 
-	<body  style="background-color:#aaaaaa;">
-		<button onmousedown="longdown(event);" onmouseup="longup(event)">
-
-		</button>
-
+	<body>
+		<div style="line-height:200px; border:1px solid #34538b;">
+			<span style="font-size:60px; border:1px solid #a0b3d6; vertical-align:text-top;">大大的文字</span>后面是静止的文字。
+		</div>
 	</body>
 </html>
