@@ -19,7 +19,7 @@ function log(a) {
 var http = require('http');
 
 function compute1() {
-	console.log("----compute")
+	console.log("----compute");
 	for (var i = 1000000000 - 1; i >= 0; i--) {
 		if (i % 100000000 == 0) {
 			console.log("-----" + i);
@@ -31,14 +31,14 @@ function compute1() {
 }
 
 function compute() {
-	log("---->>>compute")
+	log("---->>>compute");
 	for (var i = 0; i < 1024 * 1024; i++) {
 		if (i % 100000000 == 0) {
 			console.log("-----" + i);
 		}
 		process.nextTick(function() {
 			Math.sqrt(i);
-		})
+		});
 	}
 }
 // process.nextTick(compute);

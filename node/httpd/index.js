@@ -16,5 +16,5 @@ handles["/start4Img"] = requestHandlers.start4Img;
 handles["/upload4Img"] = requestHandlers.upload4Img;
 handles["/show4Img"] = requestHandlers.show4Img;
 
-// server.start2(router.route, handles);  
-server.start4Img(router.route4Img, handles);  
+// server.start2(router.route, handles);
+server.start4Img(router.route4Img, handles);
